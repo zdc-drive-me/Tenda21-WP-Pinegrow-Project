@@ -1421,6 +1421,15 @@
   .text-center {
     text-align: center;
   }
+  .text-justify {
+    text-align: justify;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
   .font-sans {
     font-family: var(--font-sans);
   }
@@ -1628,6 +1637,9 @@
   }
   .\!text-white {
     color: var(--color-white) !important;
+  }
+  .text-black {
+    color: var(--color-black);
   }
   .text-bone-50 {
     color: var(--color-bone-50);
@@ -1906,6 +1918,13 @@
       }
     }
   }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
   .hover\:underline {
     &:hover {
       @media (hover: hover) {
@@ -2173,14 +2192,12 @@ body, html {
 }
 a, a:visited {
   text-decoration: none;
-  color: inherit;
 }
 a:hover, a:focus, a:active {
   text-decoration: none;
 }
 .site-main-nav a, .site-main-nav a:visited, .site-footer-nav .footer-menu a, .site-footer-nav .footer-menu a:visited {
   text-decoration: none;
-  color: inherit;
 }
 .site-main-nav a:hover, .site-main-nav a:focus, .site-footer-nav .footer-menu a:hover, .site-footer-nav .footer-menu a:focus {
   text-decoration: underline;

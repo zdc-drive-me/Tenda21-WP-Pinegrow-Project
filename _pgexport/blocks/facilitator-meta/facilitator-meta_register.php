@@ -28,5 +28,5 @@
 'languages_label' => 'Languages', 'website_label' => 'Website', 'instagram_label' => 'Instagram'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

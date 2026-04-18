@@ -51,5 +51,5 @@
 'section_label' => 'Details', 'location_heading' => 'Location', 'location_text' => 'Nestled in the foothills of Serra da Estrela, Portugal. Two hours from Porto, a world away from everywhere else.', 'accommodation_heading' => 'Accommodation', 'accommodation_text' => 'Private canvas tents with wooden floors, linen bedding, and wood-burning stoves. Shared bathhouse with hot water and composting toilets.', 'included_heading' => 'What\'s Included', 'included_text' => 'Three seasonal vegetarian meals daily, guided practices, access to trails and natural swimming spots, herbal tea library, journal and pen.', 'not_included_heading' => 'Not Included', 'not_included_text' => 'Your phone. (We lock them away on arrival. You\'ll thank us later.)'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" wp-template>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,14 +23,14 @@
             </div>
         </nav>
         <!-- Page Hero -->
-        <section class="relative pt-40 pb-16 px-6 bg-bone-200" data-block-name="page-hero-host">
+        <section class="relative pt-40 pb-16 px-6 bg-bone-200" data-block-name="page-hero-host" cms-block="tenda21-page-hero-host" cms-block-title="Page Hero Host" cms-block-description="Hero section for the A Anfitriã host page" cms-block-category="tenda21_host">
             <div class="max-w-4xl mx-auto w-full text-center">
-                <h1 class="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.2] tracking-[0.02em] text-charcoal-900 mb-4">A Anfitriã</h1>
-                <p class="font-sans font-light text-base uppercase tracking-[0.12em] text-charcoal-600">Sobre quem sustenta a casa</p>
+                <h1 class="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.2] tracking-[0.02em] text-charcoal-900 mb-4" cms-block-field="hero_title" cms-block-field-type="content" cms-block-field-title="Hero Title">A Anfitriã</h1>
+                <p class="font-sans font-light text-base uppercase tracking-[0.12em] text-charcoal-600" cms-block-field="hero_subtitle" cms-block-field-type="content" cms-block-field-title="Hero Subtitle">Sobre quem sustenta a casa</p>
             </div>
         </section>
         <!-- Host Profile -->
-        <section class="py-8 md:py-24 px-6 bg-bone-200" data-block-name="host-profile">
+        <section class="py-8 md:py-24 px-6 bg-bone-200" data-block-name="host-profile" cms-block="tenda21-host-profile" cms-block-title="Host Profile" cms-block-description="Portrait image and bio for the host" cms-block-category="tenda21_host">
             <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-start">
                 <!-- Portrait slot -->
                 <figure class="md:col-span-5 lg:col-span-5">
@@ -39,30 +39,30 @@
                         Replace the `src` below with the final filename if different.
                     -->
                     <div class="aspect-[4/5] bg-mist-200 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1649976128988-3af35adda2d7?ixid=M3wyMDkyMnwwfDF8c2VhcmNofDExfHxhc3NldHMlMkZzJTJGaG9zdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MzE3NDAzMnww&ixlib=rb-4.1.0q=85&fm=jpg&crop=faces&cs=srgb&w=1200&h=800&fit=crop" alt="Retrato da anfitriã" class="absolute inset-0 h-full w-full object-cover object-center" loading="eager" decoding="async" onerror="this.style.display='none'; this.parentElement.classList.add('bg-[url(/assets/images/background_coastal_sunset_cliffs_2000w_q90.webp)]','bg-cover','bg-center');">
+                        <img src="https://images.unsplash.com/photo-1649976128988-3af35adda2d7?ixid=M3wyMDkyMnwwfDF8c2VhcmNofDExfHxhc3NldHMlMkZzJTJGaG9zdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MzE3NDAzMnww&ixlib=rb-4.1.0q=85&fm=jpg&crop=faces&cs=srgb&w=1200&h=800&fit=crop" alt="Retrato da anfitriã" class="absolute inset-0 h-full w-full object-cover object-center" loading="eager" decoding="async" onerror="this.style.display='none'; this.parentElement.classList.add('bg-[url(/assets/images/background_coastal_sunset_cliffs_2000w_q90.webp)]','bg-cover','bg-center');" cms-block-field="portrait_image" cms-block-field-type="image" cms-block-field-title="Portrait Image">
                         <!-- Subtle vignette for focus -->
                         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-950/10 via-transparent to-transparent"></div>
                     </div>
                     <figcaption class="mt-4 flex items-center justify-between">
-                        <span class="font-sans text-xs uppercase tracking-[0.14em] text-charcoal-600">A anfitriã</span>
+                        <span class="font-sans text-xs uppercase tracking-[0.14em] text-charcoal-600" cms-block-field="figure_label" cms-block-field-type="content" cms-block-field-title="Figure Label">A anfitriã</span>
                         <span class="font-sans text-xs text-charcoal-500">Retrato • 4:5</span>
                     </figcaption>
                 </figure>
                 <!-- Bio content -->
                 <div class="md:col-span-7 lg:col-span-6 md:pt-2">
                     <div class="max-w-2xl space-y-6">
-                        <p class="font-sans font-light text-lg leading-[1.9] text-charcoal-800">
+                        <p class="font-sans font-light text-lg leading-[1.9] text-charcoal-800" cms-block-field="bio_p1" cms-block-field-type="content" cms-block-field-title="Bio Paragraph 1">
                             Sempre fui movida por encontros. Pelo desejo de abrir a casa, reunir pessoas e cuidar do espaço que as recebe, para que se sintam bem. Há algo simples e bonito nesse gesto. </p>
-                        <p class="font-sans font-light text-lg leading-[1.9] text-charcoal-800">
+                        <p class="font-sans font-light text-lg leading-[1.9] text-charcoal-800" cms-block-field="bio_p2" cms-block-field-type="content" cms-block-field-title="Bio Paragraph 2">
                             Venho das artes e da fotografia, onde aprendi a afinar a sensibilidade e o olhar, a perceber nuances e a reconhecer o que é essencial. Nasci no Brasil e ainda jovem fui viver na Itália. Essa travessia me ensinou a me reinventar e a receber o mundo com outros olhos. Com o tempo, fui me aproximando de estudos e práticas que ampliam a percepção e aprofundam a escuta. Não como teoria, mas como caminho vivido. Aos poucos, esse modo de viver foi pedindo forma. </p>
-                        <p class="font-sans font-light text-lg leading-[1.9] text-charcoal-800">
+                        <p class="font-sans font-light text-lg leading-[1.9] text-charcoal-800" cms-block-field="bio_p3" cms-block-field-type="content" cms-block-field-title="Bio Paragraph 3">
                             Foi assim que a Tenda 21 começou a se revelar. Não como um plano, mas como uma continuidade espontânea&nbsp;do que sempre fiz naturalmente. Um espaço que reúne presença, integração e expansão, onde os encontros acontecem com verdade. </p>
-                        <p class="font-sans font-light text-lg leading-[1.9] text-charcoal-800">
+                        <p class="font-sans font-light text-lg leading-[1.9] text-charcoal-800" cms-block-field="bio_p4" cms-block-field-type="content" cms-block-field-title="Bio Paragraph 4">
                             Aqui, meu papel não é conduzir. É sustentar. Convido facilitadores, organizo o ritmo da casa, preparo a mesa, cuido da atmosfera. A Tenda acolhe grupos pequenos, preservando a proximidade que sustenta a troca. </p>
                     </div>
                     <!-- Soft pull-quote card -->
                     <div class="mt-10 bg-bone-100/60 p-6">
-                        <p class="font-serif text-[clamp(1.25rem,2.4vw,1.75rem)] leading-snug text-charcoal-900">
+                        <p class="font-serif text-[clamp(1.25rem,2.4vw,1.75rem)] leading-snug text-charcoal-900" cms-block-field="pull_quote" cms-block-field-type="content" cms-block-field-title="Pull Quote">
                             “Acolher é criar espaço para que o essencial apareça.” </p>
                     </div>
                 </div>

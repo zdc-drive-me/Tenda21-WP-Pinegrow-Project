@@ -27,5 +27,5 @@
 'background_image' => array('id' => 0, 'url' => '', 'size' => '', 'svg' => '', 'alt' => null), 'title' => 'Tenda 21', 'subtitle' => 'Shelter for Presence'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

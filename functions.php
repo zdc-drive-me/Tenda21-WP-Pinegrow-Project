@@ -161,10 +161,10 @@ if ( ! function_exists( 'tenda21_enqueue_scripts' ) ) :
         /* Pinegrow generated Enqueue Styles Begin */
 
     wp_deregister_style( 'tenda21-tailwind' );
-    wp_enqueue_style( 'tenda21-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', [], '1.0.98', 'all');
+    wp_enqueue_style( 'tenda21-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', [], '1.0.105', 'all');
 
     wp_deregister_style( 'tenda21-style' );
-    wp_enqueue_style( 'tenda21-style', get_bloginfo('stylesheet_url'), [], '1.0.98', 'all');
+    wp_enqueue_style( 'tenda21-style', get_bloginfo('stylesheet_url'), [], '1.0.105', 'all');
 
     /* Pinegrow generated Enqueue Styles End */
 
@@ -195,11 +195,11 @@ function tenda21_blocks_init() {
     require_once 'blocks/event-hero/event-hero_register.php';
     require_once 'blocks/event-row/event-row_register.php';
     require_once 'blocks/events-hero/events-hero_register.php';
+    require_once 'blocks/events-list/events-list_register.php';
     require_once 'blocks/experience-back-nav/experience-back-nav_register.php';
     require_once 'blocks/experience-card/experience-card_register.php';
     require_once 'blocks/experience-content/experience-content_register.php';
     require_once 'blocks/experience-cta/experience-cta_register.php';
-    require_once 'blocks/events-list/events-list_register.php';
     require_once 'blocks/experience-facilitator/experience-facilitator_register.php';
     require_once 'blocks/experience-hero/experience-hero_register.php';
     require_once 'blocks/experiences-cta/experiences-cta_register.php';
@@ -214,6 +214,8 @@ function tenda21_blocks_init() {
     require_once 'blocks/facilitators-grid/facilitators-grid_register.php';
     require_once 'blocks/facilitators-hero/facilitators-hero_register.php';
     require_once 'blocks/experience-upcoming-events/experience-upcoming-events_register.php';
+    require_once 'blocks/tenda21-page-hero-host/tenda21-page-hero-host_register.php';
+    require_once 'blocks/tenda21-host-profile/tenda21-host-profile_register.php';
     require_once 'blocks/main-navigation/main-navigation_register.php';
     require_once 'blocks/hero-tenda21/hero-tenda21_register.php';
     require_once 'blocks/philosophy/philosophy_register.php';

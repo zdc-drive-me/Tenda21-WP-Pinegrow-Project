@@ -1228,6 +1228,9 @@
   .bg-\[url\(\/assets\/images\/background_coastal_sunset_cliffs_2000w_q90\.webp\)\] {
     background-image: url(/assets/images/background_coastal_sunset_cliffs_2000w_q90.webp);
   }
+  .bg-\[url\(\/assets\/images\/sea-mist-1-optimized\.webp\)\] {
+    background-image: url(/assets/images/sea-mist-1-optimized.webp);
+  }
   .from-charcoal-950\/10 {
     --tw-gradient-from: color-mix(in srgb, oklch(0.10 0.005 90) 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1417,6 +1420,15 @@
   }
   .text-center {
     text-align: center;
+  }
+  .text-justify {
+    text-align: justify;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
   }
   .font-sans {
     font-family: var(--font-sans);
@@ -1626,6 +1638,9 @@
   .\!text-white {
     color: var(--color-white) !important;
   }
+  .text-black {
+    color: var(--color-black);
+  }
   .text-bone-50 {
     color: var(--color-bone-50);
   }
@@ -1714,65 +1729,11 @@
   .opacity-0 {
     opacity: 0%;
   }
-  .opacity-5 {
-    opacity: 5%;
-  }
-  .opacity-10 {
-    opacity: 10%;
-  }
-  .opacity-15 {
-    opacity: 15%;
-  }
-  .opacity-20 {
-    opacity: 20%;
-  }
-  .opacity-25 {
-    opacity: 25%;
-  }
-  .opacity-30 {
-    opacity: 30%;
-  }
-  .opacity-35 {
-    opacity: 35%;
-  }
-  .opacity-40 {
-    opacity: 40%;
-  }
-  .opacity-45 {
-    opacity: 45%;
-  }
   .opacity-50 {
     opacity: 50%;
   }
-  .opacity-55 {
-    opacity: 55%;
-  }
-  .opacity-60 {
-    opacity: 60%;
-  }
-  .opacity-65 {
-    opacity: 65%;
-  }
-  .opacity-70 {
-    opacity: 70%;
-  }
-  .opacity-75 {
-    opacity: 75%;
-  }
   .opacity-80 {
     opacity: 80%;
-  }
-  .opacity-85 {
-    opacity: 85%;
-  }
-  .opacity-90 {
-    opacity: 90%;
-  }
-  .opacity-95 {
-    opacity: 95%;
-  }
-  .opacity-100 {
-    opacity: 100%;
   }
   .shadow-\[0_1px_0_rgba\(42\,41\,38\,0\.04\)\,0_1px_2px_rgba\(42\,41\,38\,0\.06\)\] {
     --tw-shadow: 0 1px 0 var(--tw-shadow-color, rgba(42,41,38,0.04)), 0 1px 2px var(--tw-shadow-color, rgba(42,41,38,0.06));
@@ -1954,6 +1915,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-forest-800);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }
@@ -2224,14 +2192,12 @@ body, html {
 }
 a, a:visited {
   text-decoration: none;
-  color: inherit;
 }
 a:hover, a:focus, a:active {
   text-decoration: none;
 }
 .site-main-nav a, .site-main-nav a:visited, .site-footer-nav .footer-menu a, .site-footer-nav .footer-menu a:visited {
   text-decoration: none;
-  color: inherit;
 }
 .site-main-nav a:hover, .site-main-nav a:focus, .site-footer-nav .footer-menu a:hover, .site-footer-nav .footer-menu a:focus {
   text-decoration: underline;

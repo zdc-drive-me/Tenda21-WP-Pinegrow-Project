@@ -68,5 +68,5 @@
 'event_featured' => array('id' => 0, 'url' => 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80', 'size' => '', 'svg' => '', 'alt' => null), 'event_experience' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => ''), 'event_location_type' => 'On-site', 'event_excerpt' => 'Three days of contemplative silence, mindful movement, and nature-based ritual held in a small circle.', 'event_location' => 'Serra da Estrela · Portugal', 'event_start_date' => '12 April 2024', 'event_start_time' => '09:00', 'event_end_date' => '14 April 2024', 'event_end_time' => '14:00', 'event_price_label' => 'Investment', 'event_price' => '€420', 'event_booking_status' => 'Few seats left', 'event_booking' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => '')
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

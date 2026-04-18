@@ -28,5 +28,5 @@
 'starts_label' => 'Starts', 'ends_label' => 'Ends', 'timezone_label' => 'GMT+1 · Serra da Estrela'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

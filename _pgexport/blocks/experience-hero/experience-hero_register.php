@@ -28,5 +28,5 @@
 'back_link_label' => '← All Experiences', 'duration_label' => 'Duration', 'format_label' => 'Format'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

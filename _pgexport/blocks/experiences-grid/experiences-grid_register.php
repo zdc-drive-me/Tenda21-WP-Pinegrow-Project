@@ -36,5 +36,5 @@
 'experience_permalink' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => ''), 'experience_featured' => array('id' => 0, 'url' => '', 'size' => '', 'svg' => '', 'alt' => null), 'experience_category_label' => 'Category', 'title' => 'Experience Title', 'experience_short_description' => 'Short description of this experience.'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

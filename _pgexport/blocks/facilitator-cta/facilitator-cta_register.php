@@ -28,5 +28,5 @@
 'facilitator_cta_heading' => 'Are you a facilitator?', 'facilitator_cta_body' => 'We\'re always open to collaborating with practitioners who share our values of presence, integrity, and deep respect for the process of transformation.', 'facilitator_cta_link' => array('post_id' => 0, 'url' => 'mailto:hello@tenda21.com?subject=Facilitator%20Collaboration', 'post_type' => '', 'title' => '')
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

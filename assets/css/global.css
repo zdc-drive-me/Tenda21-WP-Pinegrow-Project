@@ -1,7 +1,6 @@
 a,
 a:visited {
     text-decoration: none;
-    color: inherit;
 }
 
 a:hover,
@@ -16,7 +15,6 @@ a:active {
 .site-footer-nav .footer-menu a,
 .site-footer-nav .footer-menu a:visited {
     text-decoration: none;
-    color: inherit;
 }
 
 .site-main-nav a:hover,

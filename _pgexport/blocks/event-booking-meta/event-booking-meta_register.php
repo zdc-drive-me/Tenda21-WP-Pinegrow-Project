@@ -28,5 +28,5 @@
 'investment_label' => 'Investment', 'booking_note' => 'Need a custom date or private immersion? Mention it in your note.', 'booking_cta_label' => 'Book Your Place'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

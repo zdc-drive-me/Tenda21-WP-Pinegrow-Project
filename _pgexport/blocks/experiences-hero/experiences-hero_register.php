@@ -24,5 +24,5 @@
 'title' => 'Experiences', 'intro' => 'Each immersion is designed to guide you back to what matters most. Choose the path that calls to you—or let us help you find it.'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

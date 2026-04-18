@@ -32,5 +32,5 @@
 'experiences_cta_heading' => 'Not sure which experience is right for you?', 'experiences_cta_body' => 'We also offer custom immersions for groups and individuals with specific intentions. Reach out and let\'s create something together.', 'experiences_cta_url' => array('post_id' => 0, 'url' => 'mailto:hello@tenda21.com?subject=Custom%20Experience%20Inquiry', 'post_type' => '', 'title' => ''), 'experiences_cta_label' => 'Inquire About Custom Retreats'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

@@ -44,5 +44,5 @@
 'title' => 'Event Title', 'post_excerpt' => 'Short event excerpt.', 'event_start_time' => '00:00', 'event_price' => '€ —', 'event_start_date' => 'TBA', 'event_booking_status' => 'Open', 'event_booking' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => '')
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

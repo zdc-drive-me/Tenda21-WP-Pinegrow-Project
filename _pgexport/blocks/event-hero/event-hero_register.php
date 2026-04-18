@@ -52,5 +52,5 @@
 'back_link_label' => '← Back to Events', 'experience_label' => 'from the Experience', 'type_label' => 'Type', 'location_label' => 'Location', 'facilitated_by_label' => 'Facilitated by', 'starts_label' => 'From', 'ends_label' => 'To', 'investment_label' => 'Investment', 'booking_note' => 'Need a custom date or private immersion? Mention it in your note.'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

@@ -31,5 +31,5 @@
 'heading' => 'When you\'re ready,<br>we\'re here.', 'description' => 'Retreats run year-round with limited capacity. Reach out to learn about upcoming dates or inquire about a custom immersion for your group.', 'button_email' => 'Get in Touch', 'button_label' => 'Get in Touch'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

@@ -32,5 +32,5 @@
 'events_eyebrow' => 'Monthly Agenda · 2026', 'events_title' => 'Events &amp;<br><em class="italic text-clay-500">Immersions</em>', 'events_intro' => 'An editorial view of upcoming circles, retreats, and seasonal gatherings at Tenda 21. Each line tells you who is guiding, when it unfolds, and how to reserve your place.', 'events_scroll_label' => 'Scroll'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

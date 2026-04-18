@@ -24,5 +24,5 @@
 'events_schedule_label' => 'Upcoming Schedule', 'events_timezone_label' => 'All times · Serra da Estrela, Portugal · GMT+1'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

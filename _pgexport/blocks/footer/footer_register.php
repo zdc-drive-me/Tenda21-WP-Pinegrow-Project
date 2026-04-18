@@ -67,5 +67,5 @@
 'address' => 'Serra da Estrela<br> 6260 Manteigas<br> Portugal', 'phone' => 'T: +351 275 000 000', 'email' => 'E: hello@tenda21.com', 'btn_experiences_link' => array('post_id' => 0, 'url' => 'experiences.html', 'post_type' => '', 'title' => ''), 'btn_experiences_label' => 'Experiences', 'btn_book_link' => array('post_id' => 0, 'url' => 'mailto:hello@tenda21.com?subject=Booking%20Inquiry', 'post_type' => '', 'title' => ''), 'btn_book_label' => 'Book Now', 'btn_support_link' => array('post_id' => 0, 'url' => 'mailto:hello@tenda21.com?subject=Support%20Inquiry', 'post_type' => '', 'title' => ''), 'btn_support_label' => 'Support', 'visit_heading' => 'Visit Us', 'social_ig' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => ''), 'social_fb' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => ''), 'nif' => 'PT000000000'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

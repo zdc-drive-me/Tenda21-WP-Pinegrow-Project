@@ -28,5 +28,5 @@
 'expectations_label' => 'What to Expect', 'benefits_label' => 'Benefits', 'audience_label' => 'Who This Is For'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

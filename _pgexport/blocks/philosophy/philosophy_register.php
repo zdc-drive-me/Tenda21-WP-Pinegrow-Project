@@ -31,5 +31,5 @@
 'quote' => 'In the quiet,<br>we remember who we are.', 'paragraph_1' => 'Tenda 21 is not an escape. It is a return—to presence, to the body, to the earth beneath our feet. Here, time moves differently. Days unfold without the relentless pulse of notifications, the weight of screens, the noise that drowns out our own thoughts.', 'paragraph_2' => 'We offer space. Not empty space, but space filled with birdsong, the smell of rain on stone, the texture of linen, the warmth of shared silence. Space to breathe fully. Space to listen. Space to simply be.', 'paragraph_3' => 'This is where you practice the art of living deliberately—where every moment is an invitation to arrive, again and again, in the only place we ever truly are: here, now.'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

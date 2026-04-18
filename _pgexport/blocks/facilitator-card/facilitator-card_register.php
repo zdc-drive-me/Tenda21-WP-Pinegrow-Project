@@ -36,5 +36,5 @@
 'facilitator_permalink' => array('post_id' => 0, 'url' => '#', 'post_type' => '', 'title' => ''), 'facilitator_featured' => array('id' => 0, 'url' => '', 'size' => '', 'svg' => '', 'alt' => null), 'title' => 'Facilitator Name', 'facilitator_role_label' => 'Role / Practice', 'facilitator_short_bio' => 'Short facilitator bio.'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

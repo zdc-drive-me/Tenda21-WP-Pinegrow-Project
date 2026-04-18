@@ -20,5 +20,5 @@
 'facilitator_specialties' => '<span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty One</span> <span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty Two</span> <span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty Three</span>'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

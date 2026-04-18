@@ -56,5 +56,5 @@
 'section_heading' => 'Upcoming Sessions', 'event_label' => 'Event', 'start_label' => 'Start', 'end_label' => 'End', 'format_label' => 'Format', 'location_label' => 'Location', 'price_label' => 'Price', 'status_label' => 'Status', 'cta_label' => 'Register', 'empty_state_label' => 'No upcoming sessions for this facilitator yet.'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

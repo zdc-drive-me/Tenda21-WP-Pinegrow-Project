@@ -24,5 +24,5 @@
 'heading_label' => 'Facilitated By', 'link_label' => 'View Full Profile →'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

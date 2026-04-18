@@ -28,5 +28,5 @@
 'experience_booking_note' => 'Booking note or availability message.', 'experience_cta_url' => array('post_id' => 0, 'url' => 'mailto:hello@tenda21.com', 'post_type' => '', 'title' => ''), 'experience_cta_label' => 'Reserve Your Place'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

@@ -24,5 +24,5 @@
 'title' => 'Facilitators', 'intro' => 'Each facilitator brings deep practice, embodied wisdom, and a genuine commitment to holding space for transformation. They are not teachers standing above—they are fellow travelers walking alongside.'
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );

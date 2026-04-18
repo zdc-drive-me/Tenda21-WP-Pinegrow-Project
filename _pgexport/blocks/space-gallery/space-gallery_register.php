@@ -31,5 +31,5 @@
 'section_title' => 'The Space', 'image_1' => array('id' => 0, 'url' => '', 'size' => '', 'svg' => '', 'alt' => null), 'image_2' => array('id' => 0, 'url' => '', 'size' => '', 'svg' => '', 'alt' => null), 'image_wide' => array('id' => 0, 'url' => '', 'size' => '', 'svg' => '', 'alt' => null)
             ),
             'dynamic' => true,
-            'version' => '1.0.98'
+            'version' => '1.0.105'
         ) );
