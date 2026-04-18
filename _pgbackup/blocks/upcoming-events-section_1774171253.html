@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Upcoming Events Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <style>:root { color-scheme: light; } body { font-family: "Work Sans", system-ui, sans-serif; font-weight: 300; }</style>
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: upcoming-events-section
+             Structure-only block for upcoming Events tied to an Experience.
+             Event CPT fields (event_title, event_date, etc.) will be wired via
+             a WordPress query loop in a future pass — this block defines the design shell.
+        -->
+        <section class="py-24 px-6 bg-bone-200"
+                 cms-block="upcoming-events"
+                 cms-block-title="Upcoming Events"
+                 cms-block-description="Upcoming events/sessions for an Experience. Structure shell — Event CPT query loop to be wired in a later pass.">
+            <div class="max-w-5xl mx-auto w-full">
+                <h2 class="font-sans uppercase text-[0.75rem] tracking-[0.15em] font-medium text-charcoal-600 text-center mb-16">Upcoming Sessions</h2>
+                <div class="space-y-6">
+                    <!-- Repeated by WordPress query loop for Events linked to this Experience -->
+                    <article class="bg-bone-100 p-8 border-l-2 border-forest-700">
+                        <div class="grid md:grid-cols-3 gap-8 items-start">
+                            <div class="md:col-span-2 space-y-3">
+                                <h3 class="font-serif font-light text-2xl leading-[1.3] text-charcoal-900"
+                                    cms-block-field="event_title"
+                                    cms-block-field-type="content"
+                                    cms-block-field-title="Event Title">Event Title</h3>
+                                <p class="font-sans font-light text-base leading-[1.8] text-charcoal-700"
+                                   cms-block-field="event_description"
+                                   cms-block-field-type="content"
+                                   cms-block-field-title="Event Description">Short event description.</p>
+                                <div class="flex gap-8 text-sm">
+                                    <div>
+                                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Duration</span>
+                                        <span class="font-sans text-charcoal-800"
+                                              cms-block-field="event_duration"
+                                              cms-block-field-type="content"
+                                              cms-block-field-title="Event Duration">90 min</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Spots</span>
+                                        <span class="font-sans text-charcoal-800"
+                                              cms-block-field="event_spots"
+                                              cms-block-field-type="content"
+                                              cms-block-field-title="Spots">Limited</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-2">Date</span>
+                                    <span class="font-sans text-sm text-charcoal-800"
+                                          cms-block-field="event_date"
+                                          cms-block-field-type="content"
+                                          cms-block-field-title="Event Date">TBA</span>
+                                </div>
+                                <a href="#"
+                                   cms-block-field="event_cta_url"
+                                   cms-block-field-type="link"
+                                   cms-block-field-title="Booking URL"
+                                   cms-block-field-2="event_cta_label"
+                                   cms-block-field-type-2="content"
+                                   cms-block-field-title-2="Booking Label"
+                                   class="inline-block bg-clay-500 text-bone-50 font-sans font-medium text-xs uppercase tracking-[0.12em] px-8 py-3 transition-all duration-300 hover:bg-clay-600">Book Now</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

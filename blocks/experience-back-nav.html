@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" wp-template>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Experience Back Navigation Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: experience-back-nav
+             Bottom back-link for a single Experience page.
+             Links back to the Experiences archive.
+             No dynamic fields — the archive URL is resolved at runtime via get_post_type_archive_link().
+        -->
+        <section class="py-16 px-6 bg-bone-200" cms-block="experience-back-nav" cms-block-category="tenda21_experience" cms-block-title="Experience Back Navigation" cms-block-description="Bottom back-link for a single Experience page. Renders a centred '← View All Experiences' link pointing to the Experiences archive.">
+            <div class="max-w-6xl mx-auto text-center" wp-loop>
+                <a href="experiences.html" class="inline-block font-sans text-sm text-charcoal-700 hover:text-charcoal-900 uppercase tracking-[0.1em] transition-colors">← View All Experiences</a>
+            </div>
+        </section>
+    </body>
+</html>

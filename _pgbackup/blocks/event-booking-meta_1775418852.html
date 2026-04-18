@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Event Booking Meta Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: event-booking-meta -->
+        <!-- Price, booking status, and CTA wired to SCF fields -->
+        <div class="flex flex-col justify-between gap-6 rounded-sm border border-mist-300 bg-bone-50/80 p-6" cms-block="event-booking-meta" cms-block-title="Event Booking Meta" cms-block-description="Price, booking status and CTA for an Event">
+            <div class="space-y-3">
+                <div>
+                    <span class="font-sans uppercase text-[0.6rem] tracking-[0.2em] font-medium text-charcoal-500 block mb-2">Investment</span>
+                    <span class="font-serif text-2xl text-charcoal-900" cms-block-field="event_price" cms-block-field-type="content" cms-block-field-title="Price">€420</span>
+                </div>
+                <span class="inline-flex items-center rounded-full border border-charcoal-900/20 px-3 py-1 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-700" cms-block-field="event_booking_status" cms-block-field-type="content" cms-block-field-title="Booking Status">Few seats left</span>
+                <p class="font-sans text-sm text-charcoal-600">Need a custom date or private immersion? Mention it in your message.</p>
+            </div>
+            <a href="mailto:hello@tenda21.com" cms-block-field="event_booking" cms-block-field-type="link" cms-block-field-title="Booking Link" class="inline-flex items-center justify-center bg-clay-500 text-bone-50 font-sans font-medium text-xs uppercase tracking-[0.2em] px-8 py-4 transition-all duration-300 hover:bg-clay-600">Book Your Place</a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Facilitator Card Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <style>:root { color-scheme: light; } body { font-family: "Work Sans", system-ui, sans-serif; font-weight: 300; }</style>
+    </head>
+    <body class="bg-bone-200 p-8">
+        <!-- Block root: facilitator-card
+             Archive card for a single Facilitator post.
+             Maps to SCF fields: facilitator_role_label, facilitator_short_bio, facilitator_featured.
+             Post title and permalink are pulled automatically by WordPress.
+             No next-date displayed — dates are driven by related Events only.
+        -->
+        <article class="group"
+                 cms-block="facilitator-card"
+                 cms-block-title="Facilitator Card"
+                 cms-block-description="Archive card linking to a single Facilitator post. Displays photo, name, role label, and short bio.">
+            <a href="#"
+               cms-block-field="url" cms-block-field-type="link" cms-block-field-title="Facilitator URL"
+               class="block">
+                <div class="aspect-[3/4] bg-mist-300 bg-cover bg-center mb-6 transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(42,41,38,0.12)]"
+                     cms-block-field="facilitator_featured" cms-block-field-type="background-image" cms-block-field-title="Featured Photo"></div>
+                <div class="space-y-2">
+                    <h3 class="font-serif font-light text-2xl md:text-3xl leading-[1.3] text-charcoal-900 group-hover:text-forest-800 transition-colors"
+                        cms-block-field="title" cms-block-field-type="content" cms-block-field-title="Name">Facilitator Name</h3>
+                    <p class="font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700"
+                       cms-block-field="facilitator_role_label" cms-block-field-type="content" cms-block-field-title="Role Label">Role / Specialty</p>
+                    <p class="font-sans font-light text-base leading-[1.8] text-charcoal-700"
+                       cms-block-field="facilitator_short_bio" cms-block-field-type="content" cms-block-field-title="Short Bio">Short bio for the archive card.</p>
+                </div>
+            </a>
+        </article>
+    </body>
+</html>

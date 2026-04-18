@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Facilitator Upcoming Events Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body class="bg-mist-100">
+        <!--
+            Block root: facilitator-upcoming-events
+            Displays upcoming Events connected to the current Facilitator.
+
+            NOTE — custom.php helper required (lightest possible):
+            The event_facilitators field is a relationship field (not a taxonomy).
+            Pinegrow's native loop cannot query "Events where event_facilitators contains current post ID."
+            A single function in custom.php is needed:
+
+            add_filter('pg_query_args', function($args, $block_id) {
+                if ($block_id === 'facilitator-upcoming-events') {
+                    $args['post_type'] = 'event';
+                    $args['meta_query'] = [['key' => 'event_facilitators', 'value' => get_the_ID(), 'compare' => 'LIKE']];
+                    $args['meta_key'] = 'event_start_date';
+                    $args['orderby'] = 'meta_value';
+                    $args['order'] = 'ASC';
+                    $args['date_query'] = [['after' => 'today', 'inclusive' => true]];
+                }
+                return $args;
+            }, 10, 2);
+
+            Maps Event SCF fields: event_experience, event_start_date, event_start_time,
+            event_end_date, event_end_time, event_location_type, event_location,
+            event_price, event_booking_status, event_booking.
+        -->
+        <section class="py-24 px-6 bg-mist-100" cms-block="facilitator-upcoming-events" cms-block-title="Facilitator Upcoming Events" cms-block-description="Upcoming Events connected to the current Facilitator via event_facilitators relationship field. Requires pg_query_args filter in custom.php.">
+            <div class="max-w-6xl mx-auto w-full">
+                <h2 class="font-sans uppercase text-[0.75rem] tracking-[0.15em] font-medium text-charcoal-600 mb-12">Upcoming Sessions</h2>
+                <div class="space-y-8" cms-loop="facilitator-upcoming-events" cms-loop-description="Loop upcoming Events connected to the current Facilitator via event_facilitators relationship field.">
+                    <!-- Event row — repeated by WordPress query loop -->
+                    <article class="bg-bone-100 p-8 md:p-10 border-l-2 border-forest-700">
+                        <div class="grid md:grid-cols-3 gap-8 items-start">
+                            <div class="md:col-span-2 space-y-4">
+                                <!-- Linked Experience title -->
+                                <div>
+                                    <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Experience</span>
+                                    <a href="#" cms-block-field="event_experience" cms-block-field-type="link" cms-block-field-title="Linked Experience" class="font-serif font-light text-2xl md:text-3xl leading-[1.3] text-charcoal-900 hover:text-forest-800 transition-colors block">Experience Title</a>
+                                </div>
+                                <!-- Date / Time -->
+                                <div class="flex flex-wrap gap-x-10 gap-y-3 text-sm">
+                                    <div>
+                                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Start</span>
+                                        <span class="font-sans text-charcoal-800" cms-block-field="event_start_date" cms-block-field-type="content" cms-block-field-title="Start Date">DD MMM YYYY</span>
+                                        <span class="font-sans text-charcoal-600 ml-2" cms-block-field="event_start_time" cms-block-field-type="content" cms-block-field-title="Start Time">00:00</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">End</span>
+                                        <span class="font-sans text-charcoal-800" cms-block-field="event_end_date" cms-block-field-type="content" cms-block-field-title="End Date">DD MMM YYYY</span>
+                                        <span class="font-sans text-charcoal-600 ml-2" cms-block-field="event_end_time" cms-block-field-type="content" cms-block-field-title="End Time">00:00</span>
+                                    </div>
+                                </div>
+                                <!-- Location -->
+                                <div class="flex gap-10 text-sm">
+                                    <div>
+                                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Format</span>
+                                        <span class="font-sans text-charcoal-800" cms-block-field="event_location_type" cms-block-field-type="content" cms-block-field-title="Location Type">In-person</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Location</span>
+                                        <span class="font-sans text-charcoal-800" cms-block-field="event_location" cms-block-field-type="content" cms-block-field-title="Location">Tenda 21, Serra da Estrela</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price / Status / CTA column -->
+                            <div class="space-y-5">
+                                <div>
+                                    <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Price</span>
+                                    <span class="font-sans text-sm text-charcoal-800" cms-block-field="event_price" cms-block-field-type="content" cms-block-field-title="Price">€ —</span>
+                                </div>
+                                <div>
+                                    <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Status</span>
+                                    <span class="font-sans text-sm text-charcoal-800" cms-block-field="event_booking_status" cms-block-field-type="content" cms-block-field-title="Booking Status">Open</span>
+                                </div>
+                                <div class="pt-2">
+                                    <a href="#" cms-block-field="event_booking" cms-block-field-type="link" cms-block-field-title="Booking Link" class="inline-block bg-clay-500 text-bone-50 font-sans font-medium text-xs uppercase tracking-[0.12em] px-8 py-3 transition-all duration-300 hover:bg-clay-600">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

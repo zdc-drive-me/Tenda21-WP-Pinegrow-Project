@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Event Row Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body class="bg-bone-100">
+        <!-- Block root: event-row -->
+        <!-- Agenda row that can live in archives or relationship loops. -->
+        <article class="bg-bone-50/90 border border-mist-300 px-5 py-8 md:px-8 md:py-10 shadow-[0_1px_0_rgba(42,41,38,0.04)]" cms-block="event-row" cms-block-title="Event Row" cms-block-description="Single event row with timeline, facilitators, location, and booking metadata">
+            <div class="grid gap-8 lg:grid-cols-[220px,1fr,220px]">
+                <div class="flex flex-col gap-5 rounded-sm border border-mist-300 bg-bone-50/80 p-6">
+                    <div class="space-y-2">
+                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.3em] font-medium text-charcoal-500">Starts</span>
+                        <p class="font-serif text-4xl leading-tight text-charcoal-900" cms-block-field="event_start_date" cms-block-field-type="content" cms-block-field-title="Start Date">12 April 2024</p>
+                        <p class="font-sans text-sm uppercase tracking-[0.3em] text-charcoal-600" cms-block-field="event_start_time" cms-block-field-type="content" cms-block-field-title="Start Time">09:00</p>
+                    </div>
+                    <div class="h-px w-full bg-mist-300"></div>
+                    <div class="space-y-2">
+                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.3em] font-medium text-charcoal-500">Ends</span>
+                        <p class="font-serif text-2xl leading-tight text-charcoal-800" cms-block-field="event_end_date" cms-block-field-type="content" cms-block-field-title="End Date">14 April 2024</p>
+                        <p class="font-sans text-sm uppercase tracking-[0.3em] text-charcoal-600" cms-block-field="event_end_time" cms-block-field-type="content" cms-block-field-title="End Time">14:00</p>
+                    </div>
+                    <p class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-charcoal-500">GMT+1 · Serra da Estrela</p>
+                </div>
+                <div class="space-y-5">
+                    <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+                        <a href="#" class="font-serif text-2xl md:text-3xl text-charcoal-900 underline-offset-4 hover:underline" cms-block-field="event_experience" cms-block-field-type="link" cms-block-field-title="Linked Experience">Silent Immersion Weekend</a>
+                        <span class="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.25em] text-charcoal-600">
+                            <span class="h-px w-6 bg-charcoal-400"></span>
+                            <span cms-block-field="event_location_type" cms-block-field-type="content" cms-block-field-title="Location Type">On-site</span>
+                        </span>
+                    </div>
+                    <div class="flex flex-wrap gap-3 text-sm">
+                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.2em] text-charcoal-500">Facilitators</span>
+                        <div class="flex flex-wrap gap-2" data-repeater="event_facilitators">
+                            <a href="#" class="inline-flex items-center rounded-full border border-mist-400 px-3 py-1 text-charcoal-700 hover:border-charcoal-700 transition-colors">Ana Silva</a>
+                            <a href="#" class="inline-flex items-center rounded-full border border-mist-400 px-3 py-1 text-charcoal-700 hover:border-charcoal-700 transition-colors">Rafael Santos</a>
+                        </div>
+                    </div>
+                    <p class="font-sans text-base leading-[1.8] text-charcoal-700 max-w-3xl">Three days of contemplative silence, mindful movement, and nature-based ritual held in a small circle.</p>
+                    <div class="grid gap-6 sm:grid-cols-2 text-sm text-charcoal-600">
+                        <div>
+                            <span class="uppercase tracking-[0.15em] text-[0.6rem] font-medium text-charcoal-500 block mb-1">Location</span>
+                            <span cms-block-field="event_location" cms-block-field-type="content" cms-block-field-title="Location">Serra da Estrela · Portugal</span>
+                        </div>
+                        <div class="hidden lg:block">
+                            <span class="uppercase tracking-[0.15em] text-[0.6rem] font-medium text-charcoal-500 block mb-1">Atmosphere</span>
+                            <span>Morning fog, cedar smoke, and linen tents</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="aspect-[4/3] rounded-sm bg-mist-300 bg-[url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center" cms-block-field="event_featured" cms-block-field-type="background-image" cms-block-field-title="Featured Image"></div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between gap-6">
+                    <div class="space-y-3">
+                        <div>
+                            <span class="font-sans uppercase text-[0.6rem] tracking-[0.2em] font-medium text-charcoal-500 block mb-2">Investment</span>
+                            <span class="font-serif text-2xl text-charcoal-900" cms-block-field="event_price" cms-block-field-type="content" cms-block-field-title="Price">€420</span>
+                        </div>
+                        <span class="inline-flex items-center rounded-full border border-charcoal-900/20 px-3 py-1 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-700" cms-block-field="event_booking_status" cms-block-field-type="content" cms-block-field-title="Booking Status">Few seats left</span>
+                    </div>
+                    <a href="#" cms-block-field="event_booking" cms-block-field-type="link" cms-block-field-title="Booking Link" class="inline-flex items-center justify-center bg-clay-500 text-bone-50 font-sans font-medium text-xs uppercase tracking-[0.2em] px-8 py-4 transition-all duration-300 hover:bg-clay-600">Book Your Place</a>
+                </div>
+            </div>
+        </article>
+    </body>
+</html>

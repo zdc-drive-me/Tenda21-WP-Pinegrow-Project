@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Events • Tenda 21</title>
+        <meta name="description" content="Editorial calendar of gatherings, immersions, and retreats hosted by Tenda 21.">
+        <style>
+    :root {
+      --bone:     #F5F0E8;
+      --bone-mid: #EDE6D8;
+      --parchment:#E2D9C7;
+      --mist:     #C8BFB0;
+      --smoke:    #9E9488;
+      --ash:      #6B6459;
+      --charcoal: #2E2A24;
+      --ink:      #1A1713;
+      --clay:     #A0674A;
+      --clay-dk:  #865439;
+      --sage:     #7A8C72;
+      --gold:     #B89A5A;
+      color-scheme: light;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bone);
+      color: var(--charcoal);
+      font-family: 'Jost', system-ui, sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── Noise texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* ─────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(245, 240, 232, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--parchment);
+      transition: padding 0.4s ease;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ash);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.25s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--clay);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--ink); font-weight: 400; }
+    .nav-links a.active::after { width: 100%; background: var(--gold); }
+
+    /* ─────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────── */
+    .hero {
+      padding: 9rem 4rem 6rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--bone);
+    }
+
+    /* Decorative horizontal rule */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--clay) 70%, transparent);
+    }
+
+    /* Big ghosted year */
+    .hero-ghost {
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(10rem, 22vw, 20rem);
+      font-weight: 300;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--parchment);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--smoke);
+      margin-bottom: 2rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--ash);
+      max-width: 55ch;
+    }
+
+    /* ─────────────────────────────────────────
+       SCHEDULE HEADER
+    ───────────────────────────────────────── */
+    .schedule-section {
+      padding: 0 4rem 8rem;
+      background: var(--bone);
+    }
+
+    .schedule-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--parchment);
+      border-bottom: 1px solid var(--parchment);
+      padding: 1rem 0;
+      margin-bottom: 4rem;
+    }
+
+    .schedule-header span {
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--smoke);
+    }
+
+    .schedule-header .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .schedule-header .dots span {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--mist);
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       EVENT CARDS
+    ───────────────────────────────────────── */
+    .events-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .event-card {
+      display: grid;
+      grid-template-columns: 340px 1fr 200px;
+      background: rgba(255, 253, 249, 0.7);
+      box-shadow: 0 2px 24px rgba(26,23,19,0.05), 0 1px 3px rgba(26,23,19,0.04);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.7s forwards;
+      transition: box-shadow 0.4s ease, transform 0.4s ease;
+    }
+
+    .event-card:nth-child(1) { animation-delay: 0.08s; }
+    .event-card:nth-child(2) { animation-delay: 0.22s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .event-card:hover {
+      box-shadow: 0 12px 56px rgba(26,23,19,0.1), 0 2px 8px rgba(26,23,19,0.05);
+      transform: translateY(-2px);
+    }
+
+    /* ── Feature image ── */
+    .event-feature-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .event-feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: sepia(15%) saturate(80%) brightness(0.93);
+      transition: transform 1s ease, filter 0.6s ease;
+    }
+
+    .event-card:hover .event-feature-image img {
+      transform: scale(1.05);
+      filter: sepia(5%) saturate(90%) brightness(1);
+    }
+
+    .event-feature-caption {
+      position: absolute;
+      bottom: 1rem;
+      left: 1.2rem;
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ── Body ── */
+    .event-body {
+      padding: 2.8rem 2.8rem 2.8rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      justify-content: center;
+    }
+
+    .event-title-row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .event-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--ink);
+      text-decoration: none;
+      line-height: 1.1;
+      transition: color 0.2s;
+    }
+
+    .event-title:hover { color: var(--clay); }
+
+    .event-type-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--smoke);
+    }
+
+    .event-type-badge::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: var(--mist);
+    }
+
+    /* ── Inline date ── */
+    .event-date-inline {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .event-date-inline time {
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--smoke);
+    }
+
+    .event-date-inline .date-sep {
+      font-size: 0.58rem;
+      color: var(--mist);
+    }
+
+    .event-date-inline .date-tz {
+      font-size: 0.55rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mist);
+    }
+
+    .event-facilitators {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.8rem;
+    }
+
+    .facilitators-label {
+      font-size: 0.54rem;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--smoke);
+    }
+
+    .facilitator-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.85rem;
+      border: 1px solid var(--mist);
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--ash);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      background: transparent;
+    }
+
+    .facilitator-tag:hover {
+      border-color: var(--clay);
+      color: var(--clay);
+      background: rgba(160, 103, 74, 0.04);
+    }
+
+    .event-desc {
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: var(--ash);
+      max-width: 48ch;
+    }
+
+    .event-meta-row {
+      display: flex;
+      gap: 2.5rem;
+      padding-top: 0.5rem;
+    }
+
+    .meta-item-label {
+      font-size: 0.52rem;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--smoke);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .meta-item-value {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--ash);
+    }
+
+    /* ── Booking panel ── */
+    .event-booking {
+      padding: 2.8rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      background: rgba(237, 230, 216, 0.35);
+    }
+
+    .booking-label {
+      font-size: 0.52rem;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--smoke);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .booking-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .booking-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.56rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ash);
+      margin-top: 1rem;
+    }
+
+    .booking-status::before {
+      content: '';
+      display: block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .booking-status.few::before { background: var(--clay); }
+
+    .booking-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      padding: 1rem 1.4rem;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s;
+    }
+
+    .booking-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .booking-cta.primary {
+      background: var(--ink);
+      color: var(--bone);
+    }
+    .booking-cta.primary::before { background: var(--clay); }
+    .booking-cta.primary:hover { color: var(--bone); }
+
+    .booking-cta.secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--charcoal);
+    }
+    .booking-cta.secondary::before { background: var(--ink); }
+    .booking-cta.secondary:hover { color: var(--bone); }
+
+    .booking-cta:hover::before { transform: scaleX(1); }
+    .booking-cta span { position: relative; z-index: 1; }
+
+    .cta-arrow {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    .booking-cta:hover .cta-arrow { transform: translateX(4px); }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    footer {
+      padding: 5rem 4rem;
+      background: var(--ink);
+      color: var(--mist);
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: 'Tenda 21';
+      position: absolute;
+      bottom: -2rem; right: -1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(8rem, 18vw, 16rem);
+      font-weight: 300;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(200,191,176,0.08);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2rem;
+      letter-spacing: 0.1em;
+      color: var(--bone);
+      text-decoration: none;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.62rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--smoke);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--bone); }
+
+    .footer-line {
+      width: 100%;
+      height: 1px;
+      background: rgba(200,191,176,0.12);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--smoke);
+    }
+
+    .footer-bottom small {
+      font-size: 0.58rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ash);
+    }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .hero { padding: 8rem 2rem 5rem; }
+      .schedule-section { padding: 0 2rem 6rem; }
+
+      .event-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 220px auto auto;
+      }
+
+      .event-feature-image {
+        height: 100%;
+      }
+
+      .event-body { padding: 2rem; }
+
+      .event-booking {
+        padding: 2rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        background: rgba(237, 230, 216, 0.5);
+      }
+
+      footer { padding: 4rem 2rem; }
+    }
+  </style>
+    </head>
+    <body>
+        <!-- NAV -->
+        <nav>
+            <a href="index.html" class="nav-logo">Tenda 21</a>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="experiences.html">Experiences</a>
+                </li>
+                <li>
+                    <a href="facilitators.html">Facilitators</a>
+                </li>
+                <li>
+                    <a href="events.html" class="active">Events</a>
+                </li>
+                <li>
+                    <a href="/cdn-cgi/l/email-protection#cea6aba2a2a18ebaaba0aaaffcffe0ada1a3">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-ghost">2024</div>
+            <div class="hero-inner">
+                <p class="hero-eyebrow">Monthly Agenda</p>
+                <h1>Events &amp;<br><em>Immersions</em></h1>
+                <p class="hero-desc">An editorial view of upcoming circles, retreats, and seasonal gatherings at Tenda 21. Each line tells you who is guiding, when it unfolds, and how to reserve your place.</p>
+            </div>
+        </section>
+        <!-- EVENTS -->
+        <section class="schedule-section">
+            <div class="schedule-header">
+                <span>Upcoming Schedule</span>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>All times · Serra da Estrela, Portugal · GMT+1</span>
+            </div>
+            <div class="events-list">
+                <!-- EVENT 1 -->
+                <article class="event-card">
+                    <!-- Image -->
+                    <div class="event-feature-image">
+                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&h=700&fit=crop&crop=center" alt="Cedar forest at dawn">
+                        <span class="event-feature-caption">Serra da Estrela · April</span>
+                    </div>
+                    <!-- Body -->
+                    <div class="event-body">
+                        <div class="event-title-row">
+                            <a href="experience-breathwork.html" class="event-title">Silent Immersion Weekend</a>
+                            <span class="event-type-badge">On-site</span>
+                        </div>
+                        <div class="event-date-inline">
+                            <time>12 Apr 2024 · 09:00</time>
+                            <span class="date-sep">—</span>
+                            <time>14 Apr 2024 · 14:00</time>
+                            <span class="date-tz">GMT+1</span>
+                        </div>
+                        <div class="event-facilitators">
+                            <span class="facilitators-label">Guided by</span>
+                            <a href="facilitator-ana-silva.html" class="facilitator-tag">Ana Silva</a>
+                            <a href="facilitator-rafael.html" class="facilitator-tag">Rafael Santos</a>
+                        </div>
+                        <p class="event-desc">Three days of contemplative silence, mindful movement, and nature-based ritual held in a small circle amid cedar and stone.</p>
+                        <div class="event-meta-row">
+                            <div>
+                                <span class="meta-item-label">Location</span>
+                                <span class="meta-item-value">Serra da Estrela · Portugal</span>
+                            </div>
+                            <div>
+                                <span class="meta-item-label">Atmosphere</span>
+                                <span class="meta-item-value">Morning fog, cedar smoke, linen tents</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Booking -->
+                    <div class="event-booking">
+                        <div>
+                            <span class="booking-label">Investment</span>
+                            <p class="booking-price">€420</p>
+                            <span class="booking-status few">Few seats left</span>
+                        </div>
+                        <a href="mailto:hello@tenda21.com?subject=Silent%20Immersion" class="booking-cta primary"> <span>Book Your Place</span> <span class="cta-arrow">→</span> </a>
+                    </div>
+                </article>
+                <!-- EVENT 2 -->
+                <article class="event-card">
+                    <!-- Image -->
+                    <div class="event-feature-image">
+                        <img src="https://images.unsplash.com/photo-1476611317561-60117649dd94?w=800&h=700&fit=crop&crop=center" alt="Fire circle gathering">
+                        <span class="event-feature-caption">Tenda 21 · May</span>
+                    </div>
+                    <!-- Body -->
+                    <div class="event-body">
+                        <div class="event-title-row">
+                            <a href="experience-circle.html" class="event-title">Fire Circle Gathering</a>
+                            <span class="event-type-badge">Remote</span>
+                        </div>
+                        <div class="event-date-inline">
+                            <time>03 May 2024 · 18:00</time>
+                            <span class="date-sep">—</span>
+                            <time>03 May 2024 · 22:00</time>
+                            <span class="date-tz">Streaming · GMT+1</span>
+                        </div>
+                        <div class="event-facilitators">
+                            <span class="facilitators-label">Guided by</span>
+                            <a href="facilitator-ana-silva.html" class="facilitator-tag">Ana Silva</a>
+                        </div>
+                        <p class="event-desc">Voices weave across continents for an evening of song, prayer, and story held around the hearth at Tenda 21.</p>
+                        <div class="event-meta-row">
+                            <div>
+                                <span class="meta-item-label">Location</span>
+                                <span class="meta-item-value">Zoom · Link shared after booking</span>
+                            </div>
+                            <div>
+                                <span class="meta-item-label">Price Tier</span>
+                                <span class="meta-item-value">Sliding scale · €45–€75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Booking -->
+                    <div class="event-booking">
+                        <div>
+                            <span class="booking-label">Contribution</span>
+                            <p class="booking-price">€65</p>
+                            <span class="booking-status">Open seats</span>
+                        </div>
+                        <a href="mailto:hello@tenda21.com?subject=Fire%20Circle" class="booking-cta secondary"> <span>RSVP</span> <span class="cta-arrow">→</span> </a>
+                    </div>
+                </article>
+            </div>
+        </section>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" wp-template>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Facilitators Grid Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: facilitators-grid
+             Archive section wrapper for the Facilitators CPT loop.
+             Owns the grid layout and the WP loop.
+             The loop item (single card) belongs to facilitator-card — do NOT put grid classes there.
+             Loop id: facilitators-archive — queries all published Facilitator CPT posts.
+        -->
+        <section class="py-24 px-6 bg-bone-200" cms-block="facilitators-grid" cms-block-category="tenda21_facilitator" cms-block-title="Facilitators Grid" cms-block-description="Archive section wrapper for the Facilitators CPT. Owns the grid layout and loop. Loop item: facilitator-card.">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12" cms-loop="facilitators-archive" cms-loop-description="Loop all published Facilitator CPT posts ordered by menu_order ascending. Each item renders a facilitator-card block.">
+                    <!-- Include facilitator-card block within the loop -->
+                    <article class="group">
+                        <div class="text-center text-sm text-charcoal-500 py-12">Facilitator Card placeholder — replace with tenda21/facilitator-card block.</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

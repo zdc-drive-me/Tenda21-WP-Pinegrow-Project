@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Event Date Meta Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <style>:root { color-scheme: light; } body { font-family: "Work Sans", system-ui, sans-serif; font-weight: 300; }</style>
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: event-date-meta -->
+        <!-- Displays stacked start/end date and time pulled from SCF fields -->
+        <div class="flex flex-col gap-5 rounded-sm border border-mist-300 bg-bone-50/80 p-6" cms-block="event-date-meta" cms-block-title="Event Date Meta" cms-block-description="Start and end date/time cluster for an Event">
+            <div class="space-y-2">
+                <span class="font-sans uppercase text-[0.6rem] tracking-[0.3em] font-medium text-charcoal-500">Starts</span>
+                <p class="font-serif text-4xl leading-tight text-charcoal-900" cms-block-field="event_start_date" cms-block-field-type="content" cms-block-field-title="Start Date">12 April 2024</p>
+                <p class="font-sans text-sm uppercase tracking-[0.3em] text-charcoal-600" cms-block-field="event_start_time" cms-block-field-type="content" cms-block-field-title="Start Time">09:00</p>
+            </div>
+            <div class="h-px w-full bg-mist-300"></div>
+            <div class="space-y-2">
+                <span class="font-sans uppercase text-[0.6rem] tracking-[0.3em] font-medium text-charcoal-500">Ends</span>
+                <p class="font-serif text-2xl leading-tight text-charcoal-800" cms-block-field="event_end_date" cms-block-field-type="content" cms-block-field-title="End Date">14 April 2024</p>
+                <p class="font-sans text-sm uppercase tracking-[0.3em] text-charcoal-600" cms-block-field="event_end_time" cms-block-field-type="content" cms-block-field-title="End Time">14:00</p>
+            </div>
+            <p class="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-charcoal-500">GMT+1 · Serra da Estrela</p>
+        </div>
+    </body>
+</html>

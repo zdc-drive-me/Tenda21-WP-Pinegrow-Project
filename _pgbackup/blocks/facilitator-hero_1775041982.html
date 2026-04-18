@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Facilitator Hero Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: facilitator-hero
+             Hero section for a single Facilitator page.
+             Maps to SCF: facilitator_featured, facilitator_role_label.
+             Post title and post content (long bio) are pulled automatically by WordPress.
+        -->
+        <section class="relative pt-32 pb-24 px-6 bg-bone-200" cms-block="facilitator-hero" cms-block-title="Facilitator Hero" cms-block-description="Hero section for a single Facilitator page. Shows photo, name, role label, and long bio (post content).">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="grid md:grid-cols-5 gap-12 items-start">
+                    <div class="md:col-span-2">
+                        <div class="aspect-[3/4] bg-mist-300 bg-cover bg-center sticky top-32" cms-block-field="facilitator_featured" cms-block-field-type="background-image" cms-block-field-title="Featured Photo"></div>
+                    </div>
+                    <div class="md:col-span-3 space-y-8">
+                        <div>
+                            <a href="facilitators.html" class="inline-block font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700 hover:text-forest-800 mb-6 transition-colors">← All Facilitators</a>
+                            <h1 cms-block-field="title" cms-block-field-type="content" cms-block-field-title="Name" class="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.2] tracking-[0.02em] text-charcoal-900 mb-4">Facilitator Name</h1>
+                            <p class="font-sans uppercase text-[0.75rem] tracking-[0.15em] font-medium text-forest-700" cms-block-field="facilitator_role_label" cms-block-field-type="content" cms-block-field-title="Role Label">Role / Practice</p>
+                        </div>
+                        <div cms-post-content="true" cms-block-field="post_content" cms-block-field-type="content" cms-block-field-control="richtext" cms-block-field-title="Bio (Post Content)" class="space-y-6">
+                            <p class="font-light font-sans leading-[1.8] text-charcoal-700 text-lg md:text-xl">Facilitator long bio text goes here. This is the WordPress post content area.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

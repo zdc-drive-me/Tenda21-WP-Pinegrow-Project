@@ -1,0 +1,41 @@
+a,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+.site-main-nav a,
+.site-main-nav a:visited,
+.site-footer-nav .footer-menu a,
+.site-footer-nav .footer-menu a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-main-nav a:hover,
+.site-main-nav a:focus,
+.site-footer-nav .footer-menu a:hover,
+.site-footer-nav .footer-menu a:focus {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.site-main-nav .current-menu-item > a,
+.site-main-nav .current_page_item > a,
+.site-main-nav .current-menu-ancestor > a,
+.site-main-nav .current-page-ancestor > a,
+.site-main-nav a[aria-current="page"],
+.site-footer-nav .footer-menu .current-menu-item > a,
+.site-footer-nav .footer-menu .current_page_item > a,
+.site-footer-nav .footer-menu .current-menu-ancestor > a,
+.site-footer-nav .footer-menu .current-page-ancestor > a,
+.site-footer-nav .footer-menu a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}

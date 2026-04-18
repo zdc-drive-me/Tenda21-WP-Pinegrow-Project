@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Facilitator Meta Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body class="bg-bone-100">
+        <!-- Block root: facilitator-meta
+             Contact/meta row for a Facilitator page.
+             Maps to SCF: facilitator_languages, facilitator_website, facilitator_instagram.
+        -->
+        <section class="py-12 px-6 bg-bone-100 border-t border-mist-400" cms-block="facilitator-meta" cms-block-title="Facilitator Meta" cms-block-description="Meta row for a Facilitator page. Shows languages, website, and Instagram links.">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="flex flex-wrap gap-x-12 gap-y-6 items-start">
+                    <div>
+                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Languages</span>
+                        <span class="font-sans text-sm text-charcoal-800" cms-block-field="facilitator_languages" cms-block-field-type="content" cms-block-field-title="Languages">Portuguese, English</span>
+                    </div>
+                    <div>
+                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Website</span>
+                        <a href="#" cms-block-field="facilitator_website" cms-block-field-type="link" cms-block-field-title="Website URL" class="font-sans text-sm text-forest-700 hover:text-forest-800 transition-colors">website.com</a>
+                    </div>
+                    <div>
+                        <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 block mb-1">Instagram</span>
+                        <a href="#" cms-block-field="facilitator_instagram" cms-block-field-type="link" cms-block-field-title="Instagram URL" class="font-sans text-sm text-forest-700 hover:text-forest-800 transition-colors">@handle</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

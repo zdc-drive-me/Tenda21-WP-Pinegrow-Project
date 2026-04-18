@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" wp-template>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Event Booking Meta Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: event-booking-meta -->
+        <!-- Price, booking status, and CTA wired to SCF fields -->
+        <div class="flex flex-col gap-5 bg-charcoal-900 px-5 py-5 text-bone-50" cms-block="event-booking-meta" cms-block-category="tenda21_event" cms-block-title="Event Booking Meta" cms-block-description="Price, booking status and CTA for an Event">
+            <div class="flex items-end justify-between">
+                <div class="space-y-1">
+                    <span class="font-sans uppercase text-[0.55rem] tracking-[0.25em] font-medium text-bone-200/60 block">Investment</span>
+                    <span class="font-serif text-3xl leading-tight text-bone-50" cms-block-field="event_price" cms-block-field-type="content" cms-block-field-title="Price">€420</span>
+                </div>
+                <span class="inline-flex items-center border border-bone-200/30 px-3 py-1 text-[0.58rem] font-sans uppercase tracking-[0.18em] text-bone-200" cms-block-field="event_booking_status" cms-block-field-type="content" cms-block-field-title="Booking Status">Few seats left</span>
+            </div>
+            <p class="font-sans text-xs leading-relaxed text-bone-200/55">Need a custom date or private immersion? Mention it in your note.</p>
+            <a href="mailto:hello@tenda21.com" cms-block-field="event_booking" cms-block-field-type="link" cms-block-field-title="Booking Link" class="inline-flex items-center justify-center bg-bone-50 text-charcoal-900 font-sans font-medium text-xs uppercase tracking-[0.2em] px-8 py-3.5 transition-all duration-300 hover:bg-clay-400 hover:text-bone-50">Book Your Place</a>
+        </div>
+    </body>
+</html>

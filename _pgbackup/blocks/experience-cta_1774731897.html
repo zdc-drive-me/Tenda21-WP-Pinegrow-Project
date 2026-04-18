@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Experience CTA Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <style>:root { color-scheme: light; } body { font-family: "Work Sans", system-ui, sans-serif; font-weight: 300; }</style>
+    </head>
+    <body class="bg-bone-100">
+        <!-- Block root: experience-cta
+             Booking call-to-action for a single Experience page.
+             Maps to SCF fields: experience_booking_note, experience_cta_label, experience_cta_url.
+        -->
+        <section class="py-24 px-6 bg-bone-100" cms-block="experience-cta" cms-block-title="Experience CTA" cms-block-description="Booking call-to-action for a single Experience page. Supports custom booking note, CTA label, and CTA URL.">
+            <div class="max-w-3xl mx-auto text-center w-full space-y-8">
+                <p class="font-sans font-light text-base leading-[1.8] text-charcoal-600 max-w-[60ch] mx-auto" cms-block-field="experience_booking_note" cms-block-field-type="content" cms-block-field-title="Booking Note">Booking note or availability message.</p>
+                <a href="mailto:hello@tenda21.com" cms-block-field="experience_cta_url" cms-block-field-type="link" cms-block-field-title="CTA URL" cms-block-field-expression="{{ experience_cta_url }}" cms-block-field-2="experience_cta_label" cms-block-field-type-2="content" cms-block-field-title-2="CTA Label" class="inline-block bg-clay-500 text-bone-50 font-sans font-medium text-sm uppercase tracking-[0.12em] px-12 py-5 transition-all duration-300 hover:bg-clay-600 hover:[transform:translateY(-2px)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)]">Reserve Your Place</a>
+            </div>
+        </section>
+    </body>
+</html>

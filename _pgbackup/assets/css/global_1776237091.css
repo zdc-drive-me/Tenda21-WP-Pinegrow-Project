@@ -1,0 +1,38 @@
+a,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.site-main-nav a,
+.site-main-nav a:visited {
+    text-decoration: none;
+    color: inherit;
+    opacity: 1;
+    transition: opacity 0.2s ease, text-decoration 0.2s ease;
+}
+
+.site-main-nav a:hover,
+.site-main-nav a:focus {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.site-main-nav .current-menu-item > a,
+.site-main-nav .current_page_item > a,
+.site-main-nav .current-menu-ancestor > a,
+.site-main-nav .current-page-ancestor > a {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    opacity: 1;
+}

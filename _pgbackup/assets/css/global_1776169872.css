@@ -1,0 +1,13 @@
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+.legal-content a,
+.entry-content a,
+.prose a {
+    text-decoration: underline;
+}

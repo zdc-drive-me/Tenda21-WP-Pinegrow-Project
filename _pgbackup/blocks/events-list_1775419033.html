@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Events List Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <style>:root { color-scheme: light; } body { font-family: "Work Sans", system-ui, sans-serif; font-weight: 300; }</style>
+    </head>
+    <body class="bg-bone-100">
+        <!-- Block root: events-list -->
+        <!-- Wraps the Event CPT loop in an agenda layout. Use WP loop to repeat event-row block. -->
+        <section class="py-16 md:py-24 px-6 bg-bone-100 border-t border-b border-mist-300" cms-block="events-list" cms-block-title="Events List" cms-block-description="Agenda-style Events archive section with rows for each Event. Loop id: events-schedule.">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="flex items-center justify-between border-b border-mist-400 pb-4 mb-10 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-500">
+                    <span>Upcoming Schedule</span>
+                    <span>All times in Serra da Estrela, Portugal</span>
+                </div>
+                <div class="space-y-6" cms-loop="events-schedule" cms-loop-description="Loop all upcoming Events ordered by event_start_date ascending. Matches pg_query_args filter in custom.php.">
+                    <!-- Include event-row block within the loop -->
+                    <article class="bg-bone-50/90 border border-mist-300 px-5 py-8 md:px-8 md:py-10 shadow-[0_1px_0_rgba(42,41,38,0.04)]">
+                        <div class="text-center text-sm text-charcoal-500">Event Row placeholder — replace with tenda21/event-row block.</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

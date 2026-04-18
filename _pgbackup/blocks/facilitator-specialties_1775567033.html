@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" wp-template>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Facilitator Specialties Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: facilitator-specialties
+             Specialty tags for a Facilitator page.
+             Maps to SCF: facilitator_specialties (repeater or text list).
+        -->
+        <section class="py-0 px-6" cms-block="facilitator-specialties" cms-block-category="tenda21_facilitator" cms-block-title="Facilitator Specialties" cms-block-description="Areas of expertise tag cloud for a Facilitator page. Maps to facilitator_specialties SCF field.">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="pt-8 border-t border-mist-400">
+                    <h3 class="font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-charcoal-600 mb-4">Areas of Expertise</h3>
+                    <div class="flex flex-wrap gap-3" cms-block-field="facilitator_specialties" cms-block-field-type="content" cms-block-field-control="richtext" cms-block-field-title="Specialties">
+                        <span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty One</span>
+                        <span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty Two</span>
+                        <span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty Three</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

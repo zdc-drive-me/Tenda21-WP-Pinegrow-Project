@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" wp-template>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Experiences Grid Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: experiences-grid
+             Archive section wrapper for the Experience CPT loop.
+             Owns the grid layout and the WP loop.
+             The loop item (single card) belongs to experience-card — do NOT put grid classes there.
+             Loop id: experiences-archive — queries all published Experience CPT posts.
+        -->
+        <section class="py-24 px-6 bg-bone-200 border-b border-mist-400" cms-block="experiences-grid" cms-block-category="tenda21_experience" cms-block-title="Experiences Grid" cms-block-description="Archive section wrapper for the Experience CPT. Owns the grid layout and loop. Loop item: experience-card.">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" cms-loop="experiences-archive" cms-loop-description="Loop all published Experience CPT posts ordered by menu_order ascending. Each item renders an experience-card block.">
+                    <!-- Include experience-card block within the loop -->
+                    <a href="#" cms-block-field="experience_permalink" cms-block-field-type="link" cms-block-field-title="Experience Link" class="group flex flex-col bg-bone-100/85 overflow-hidden shadow-[0_1px_0_rgba(42,41,38,0.04),0_1px_2px_rgba(42,41,38,0.06)] transition-all duration-500 hover:-translate-y-[2px] hover:shadow-[0_12px_32px_rgba(42,41,38,0.10)]">
+                        <div class="aspect-[4/3] bg-mist-200 bg-cover bg-center" cms-block-field="experience_featured" cms-block-field-type="background-image" cms-block-field-title="Featured Image"></div>
+                        <div class="p-6 space-y-2">
+                            <p class="font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700" cms-block-field="experience_category_label" cms-block-field-type="content" cms-block-field-title="Category Label">Category</p>
+                            <h2 class="font-serif font-light text-[1.6rem] leading-[1.25] tracking-[0.01em] text-charcoal-900 mb-3" cms-block-field="title" cms-block-field-type="content" cms-block-field-title="Experience Title">Experience Title</h2>
+                            <p class="font-sans text-sm leading-relaxed text-charcoal-600" cms-block-field="experience_short_description" cms-block-field-type="content" cms-block-field-title="Short Description">Short description of this experience.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

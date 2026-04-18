@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Experience Card Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <style>:root { color-scheme: light; } body { font-family: "Work Sans", system-ui, sans-serif; font-weight: 300; }</style>
+    </head>
+    <body class="bg-bone-200 p-8">
+        <!-- Block root: experience-card
+             Reusable archive card for a single Experience post.
+             Maps to SCF fields: experience_subtitle, experience_intro, experience_duration_label.
+             The post title and permalink are pulled automatically by WordPress.
+        -->
+        <a href="#" cms-block="experience-card" cms-block-title="Experience Card" cms-block-description="Archive card linking to a single Experience post. Displays subtitle (category), title, intro, and duration label." cms-block-field="url" cms-block-field-type="link" cms-block-field-title="Card URL" class="group flex flex-col bg-bone-100/85 overflow-hidden shadow-[0_1px_0_rgba(42,41,38,0.04),0_1px_2px_rgba(42,41,38,0.06)] transition-all duration-500 hover:-translate-y-[2px] hover:shadow-[0_12px_32px_rgba(42,41,38,0.10)]"> <div class="aspect-[4/3] bg-mist-200 bg-cover bg-center" cms-block-field="card_image" cms-block-field-type="background-image" cms-block-field-title="Card Image"></div> <div class="p-6 flex flex-col gap-2">
+                <p class="font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700" cms-block-field="experience_subtitle" cms-block-field-type="content" cms-block-field-title="Subtitle / Category">Category</p>
+                <h2 class="font-serif font-light text-[1.6rem] leading-[1.25] tracking-[0.01em] text-charcoal-900" cms-block-field="title" cms-block-field-type="content" cms-block-field-title="Experience Title">Experience Title</h2>
+                <p class="font-sans text-sm leading-relaxed text-charcoal-600" cms-block-field="experience_intro" cms-block-field-type="content" cms-block-field-title="Intro">Short description of this experience.</p>
+                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-500 block pt-2" cms-block-field="experience_duration_label" cms-block-field-type="content" cms-block-field-title="Duration Label">Duration</span>
+            </div> </a>
+    </body>
+</html>

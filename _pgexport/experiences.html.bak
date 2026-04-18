@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Experiences • Tenda 21</title>
+        <meta name="description" content="Explore immersive retreat experiences at Tenda 21. Silent meditation, nature practice, and creative retreats in the foothills of Serra da Estrela, Portugal.">
+        <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <style>:root { color-scheme: light; } body { font-family: "Work Sans", system-ui, sans-serif; font-weight: 300; } @media (prefers-reduced-motion: reduce) { *, *::before, *::after {  animation-duration: 0.01ms !important;  animation-iteration-count: 1 !important;  transition-duration: 0.01ms !important; } } @keyframes fadeInUp { from {  opacity: 0;  transform: translateY(20px); }  to {  opacity: 1;  transform: translateY(0); } } @keyframes fadeIn { from {  opacity: 0; }  to {  opacity: 1; } }</style>
+    </head>
+    <body class="bg-bone-200 text-charcoal-800 antialiased">
+        <!-- Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-bone-200/90 backdrop-blur-md border-b border-mist-400" data-block-name="main-navigation">
+            <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between w-full">
+                <a href="index.html" class="font-serif font-light text-2xl text-charcoal-900 hover:text-charcoal-700 transition-colors">
+                Tenda 21 </a>
+                <div class="flex gap-8 items-center">
+                    <a href="index.html" class="font-sans text-sm font-normal text-charcoal-700 hover:text-charcoal-900 transition-colors tracking-[0.1em]">Home</a>
+                    <a href="a-anfitria.html" class="font-sans text-sm font-normal text-charcoal-700 hover:text-charcoal-900 transition-colors tracking-[0.1em]">A Anfitriã</a>
+                    <a href="experiences.html" class="font-sans text-sm font-medium text-charcoal-900 tracking-[0.1em]">Experiences</a>
+                    <a href="mailto:hello@tenda21.com" class="font-sans text-sm font-normal text-charcoal-700 hover:text-charcoal-900 transition-colors tracking-[0.1em]">Contact</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Hero -->
+        <section class="relative pt-40 pb-24 px-6 bg-bone-200" data-block-name="page-hero-experiences">
+            <div class="max-w-4xl mx-auto text-center w-full">
+                <h1 class="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.2] tracking-[0.02em] text-charcoal-900 mb-8">
+                Experiences </h1>
+                <p class="font-sans font-light text-lg md:text-xl leading-[1.8] text-charcoal-700 max-w-[65ch] mx-auto">
+                Each immersion is designed to guide you back to what matters most. Choose the path that calls to you—or let us help you find it. </p>
+            </div>
+        </section>
+        <!-- Experience: Silent Immersion -->
+        <article class="py-24 px-6 bg-bone-200 border-b border-mist-400" data-block-name="experience-detail-card">
+            <div class="max-w-5xl mx-auto w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div class="aspect-[4/5] bg-mist-300 bg-[url('https://images.unsplash.com/photo-1615222599276-3d8149bc51ed?ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE0fHxtZWRpdGF0aW9uJTIwcmV0cmVhdHxlbnwwfHx8fDE3NzMwNzgxMTR8MA&ixlib=rb-4.1.0q=85&fm=jpg&crop=faces&cs=srgb&w=1200&h=800&fit=crop')] bg-cover bg-center"></div>
+                    <div class="space-y-6">
+                        <div>
+                            <span class="font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700 block mb-3">
+                            3–5 Days </span>
+                            <h2 class="font-serif font-light text-4xl md:text-5xl leading-[1.3] text-charcoal-900 mb-4">
+                            Silent Immersion </h2>
+                        </div>
+                        <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700">
+                        Three days of noble silence. This is not about deprivation—it's about restoration. When we stop filling every moment with words, something shifts. We begin to hear the quieter voices: intuition, body wisdom, the natural world speaking. </p>
+                        <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700">
+                        Through guided meditation, mindful movement, contemplative walks, and silent shared meals, you'll discover that silence is not empty. It's full—of presence, clarity, and a deep homecoming to yourself. </p>
+                        <div class="pt-4 border-t border-mist-400 space-y-3">
+                            <div class="flex items-start gap-3">
+                                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 min-w-[80px]">Next Dates</span>
+                                <span class="font-sans text-sm text-charcoal-800">March 15–18, April 5–8, May 20–23</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 min-w-[80px]">Facilitator</span>
+                                <a href="#" class="font-sans text-sm text-forest-700 hover:text-forest-800 transition-colors">Ana Silva</a>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 min-w-[80px]">Spots</span>
+                                <span class="font-sans text-sm text-charcoal-800">8 available</span>
+                            </div>
+                        </div>
+                        <div class="pt-6">
+                            <a href="mailto:hello@tenda21.com?subject=Silent%20Immersion%20Inquiry" class="inline-block bg-clay-500 text-bone-50 font-sans font-medium text-sm uppercase tracking-[0.12em] px-10 py-4 transition-all duration-300 hover:bg-clay-600 hover:[transform:translateY(-2px)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
+                            Register Interest </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Experience: Nature Practice -->
+        <article class="py-24 px-6 bg-mist-100 border-b border-mist-400" data-block-name="experience-detail-card">
+            <div class="max-w-5xl mx-auto w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div class="order-2 md:order-1 space-y-6">
+                        <div>
+                            <span class="font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700 block mb-3">
+                            4–7 Days </span>
+                            <h2 class="font-serif font-light text-4xl md:text-5xl leading-[1.3] text-charcoal-900 mb-4">
+                            Nature Practice </h2>
+                        </div>
+                        <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700">
+                        We are not separate from nature—we are nature remembering itself. This immersion is an invitation to dissolve the illusion of separation and restore your relationship with the living world. </p>
+                        <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700">
+                        Through forest bathing, wild foraging, earth-based rituals, and slow wandering, you'll learn to read the language of trees, listen to bird conversations, and feel the pulse of the land. You'll remember what your body has always known. </p>
+                        <div class="pt-4 border-t border-mist-400 space-y-3">
+                            <div class="flex items-start gap-3">
+                                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 min-w-[80px]">Next Dates</span>
+                                <span class="font-sans text-sm text-charcoal-800">April 12–16, May 10–17, June 8–15</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 min-w-[80px]">Facilitator</span>
+                                <a href="#" class="font-sans text-sm text-forest-700 hover:text-forest-800 transition-colors">João Costa</a>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 min-w-[80px]">Spots</span>
+                                <span class="font-sans text-sm text-charcoal-800">6 available</span>
+                            </div>
+                        </div>
+                        <div class="pt-6">
+                            <a href="mailto:hello@tenda21.com?subject=Nature%20Practice%20Inquiry" class="inline-block bg-clay-500 text-bone-50 font-sans font-medium text-sm uppercase tracking-[0.12em] px-10 py-4 transition-all duration-300 hover:bg-clay-600 hover:[transform:translateY(-2px)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
+                            Register Interest </a>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 aspect-[4/5] bg-mist-300 bg-[url('https://images.unsplash.com/photo-1759347310899-dc5ae2c9bd8b?ixid=M3wyMDkyMnwwfDF8c2VhcmNofDJ8fG5hdHVyZSUyMHJpdHVhbHxlbnwwfHx8fDE3NzMwNzgxMTV8MA&ixlib=rb-4.1.0q=85&fm=jpg&crop=faces&cs=srgb&w=1200&h=800&fit=crop')] bg-cover bg-center"></div>
+                </div>
+            </div>
+        </article>
+        <!-- Experience: Creative Retreat -->
+        <article class="py-24 px-6 bg-bone-200 border-b border-mist-400" data-block-name="experience-detail-card">
+            <div class="max-w-5xl mx-auto w-full">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div class="aspect-[4/5] bg-mist-300 bg-[url('https://images.unsplash.com/photo-1637911690230-1e64fc220c8f?ixid=M3wyMDkyMnwwfDF8c2VhcmNofDF8fHJldHJlYXQlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NzMwNzgxMTd8MA&ixlib=rb-4.1.0q=85&fm=jpg&crop=faces&cs=srgb&w=1200&h=800&fit=crop')] bg-cover bg-center"></div>
+                    <div class="space-y-6">
+                        <div>
+                            <span class="font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700 block mb-3">
+                            5–10 Days </span>
+                            <h2 class="font-serif font-light text-4xl md:text-5xl leading-[1.3] text-charcoal-900 mb-4">
+                            Creative Retreat </h2>
+                        </div>
+                        <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700">
+                        Creativity doesn't come from force. It emerges from spaciousness, from the fertile void that opens when the mind finally stops its endless chatter. This retreat creates the conditions for your creative voice to surface. </p>
+                        <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700">
+                        Whether you write, draw, paint, or simply need time to dream, you'll find gentle structure—morning rituals, dedicated studio time, evening gatherings around the fire—balanced with ample solitude. Bring your project or come empty-handed. Both are welcome. </p>
+                        <div class="pt-4 border-t border-mist-400 space-y-3">
+                            <div class="flex items-start gap-3">
+                                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 min-w-[80px]">Next Dates</span>
+                                <span class="font-sans text-sm text-charcoal-800">May 5–10, June 15–25, July 8–18</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 min-w-[80px]">Facilitator</span>
+                                <a href="#" class="font-sans text-sm text-forest-700 hover:text-forest-800 transition-colors">Maria Lopes</a>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="font-sans uppercase text-[0.6rem] tracking-[0.12em] font-medium text-charcoal-600 min-w-[80px]">Spots</span>
+                                <span class="font-sans text-sm text-charcoal-800">10 available</span>
+                            </div>
+                        </div>
+                        <div class="pt-6">
+                            <a href="mailto:hello@tenda21.com?subject=Creative%20Retreat%20Inquiry" class="inline-block bg-clay-500 text-bone-50 font-sans font-medium text-sm uppercase tracking-[0.12em] px-10 py-4 transition-all duration-300 hover:bg-clay-600 hover:[transform:translateY(-2px)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
+                            Register Interest </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- CTA Section -->
+        <section class="py-32 px-6 bg-bone-100" data-block-name="cta-custom-inquiry">
+            <div class="max-w-3xl mx-auto text-center w-full">
+                <h2 class="font-serif font-light text-[clamp(1.75rem,4vw,3rem)] leading-[1.4] text-charcoal-800 mb-8">
+                Not sure which experience is right for you? </h2>
+                <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700 mb-12 max-w-[65ch] mx-auto">
+                We also offer custom immersions for groups and individuals with specific intentions. Reach out and let's create something together. </p>
+                <a href="mailto:hello@tenda21.com?subject=Custom%20Experience%20Inquiry" class="inline-block bg-clay-500 text-bone-50 font-sans font-medium text-sm uppercase tracking-[0.12em] px-12 py-5 transition-all duration-300 hover:bg-clay-600 hover:[transform:translateY(-2px)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
+                Inquire About Custom Retreats </a>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="py-20 px-6 bg-bone-200 border-t border-mist-400" data-block-name="site-footer">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="text-center mb-12">
+                    <a href="index.html" class="font-serif font-light text-3xl text-charcoal-900 hover:text-charcoal-700 transition-colors inline-block mb-8">
+                    Tenda 21 </a>
+                    <div class="flex gap-8 items-center justify-center mb-8">
+                        <a href="index.html" class="font-sans text-sm font-normal text-charcoal-700 hover:text-charcoal-900 transition-colors tracking-[0.1em]">Home</a>
+                        <a href="experiences.html" class="font-sans text-sm font-normal text-charcoal-700 hover:text-charcoal-900 transition-colors tracking-[0.1em]">Experiences</a>
+                        <a href="mailto:hello@tenda21.com" class="font-sans text-sm font-normal text-charcoal-700 hover:text-charcoal-900 transition-colors tracking-[0.1em]">Contact</a>
+                    </div>
+                </div>
+                <div class="text-center border-t border-mist-400 pt-8">
+                    <p class="font-sans text-sm font-light text-charcoal-600 mb-4">
+                    hello@tenda21.com </p>
+                    <p class="font-sans text-xs font-light text-charcoal-500 uppercase tracking-[0.12em]">
+                    © 2026 Tenda 21 — All Rights Reserved </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" wp-template>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Experience Facilitator Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-mist-100">
+        <!-- Block root: experience-facilitator
+             Facilitated By section for a single Experience page.
+             Maps to SCF field: experience_facilitator (relationship → Facilitator CPT).
+             Pulls from the linked Facilitator: title, facilitator_role_label,
+             facilitator_short_bio, facilitator_featured, and permalink.
+        -->
+        <section class="py-24 px-6 bg-mist-100" cms-block="experience-facilitator" cms-block-category="tenda21_experience" cms-block-title="Experience Facilitator" cms-block-description="Facilitated By section for a single Experience page. Pulls facilitator image, role, short bio, and profile link from the experience_facilitator relationship field.">
+            <div class="max-w-5xl mx-auto w-full">
+                <h2 class="font-sans uppercase text-[0.75rem] tracking-[0.15em] font-medium text-charcoal-600 mb-12" cms-block-field="heading_label" cms-block-field-type="content" cms-block-field-title="Section Heading">Facilitated By</h2>
+                <div class="grid md:grid-cols-4 gap-8 items-start">
+                    <div class="md:col-span-1">
+                        <div class="aspect-[3/4] bg-mist-300 bg-cover bg-center mb-4"></div>
+                    </div>
+                    <div class="md:col-span-3 space-y-4">
+                        <div>
+                            <h3 class="font-serif font-light text-2xl md:text-3xl leading-[1.3] text-charcoal-900 mb-2">Facilitator Name</h3>
+                            <p class="font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700">Role / Practice</p>
+                        </div>
+                        <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700">Short bio excerpt for the facilitator.</p>
+                        <a href="facilitators.html" class="inline-block font-sans text-sm text-forest-700 hover:text-forest-800 uppercase tracking-[0.1em] transition-colors" cms-block-field="link_label" cms-block-field-type="content" cms-block-field-title="Link Label">View Full Profile →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

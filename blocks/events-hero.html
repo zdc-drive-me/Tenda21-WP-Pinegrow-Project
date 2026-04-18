@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" wp-template>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Events Hero Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <style>:root { color-scheme: light; } body { font-family: "Work Sans", system-ui, sans-serif; font-weight: 300; }</style>
+    </head>
+    <body class="bg-bone-200">
+        <!-- Block root: events-hero
+             Archive intro for the Events page.
+             Holds the eyebrow label, title, and intro copy.
+             Does NOT include the schedule list — that belongs to events-list.
+        -->
+        <section class="relative bg-bone-200 min-h-[65vh] flex flex-col items-center justify-center pt-32 pb-24 px-6 md:px-16 overflow-hidden text-center" cms-block="events-hero" cms-block-category="tenda21_event" cms-block-title="Events Hero" cms-block-description="Intro hero for the Events archive page with eyebrow label, title, and intro paragraph.">
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-clay-400 to-transparent"></div>
+            <div class="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center">
+                <div class="flex items-center gap-5 mb-10">
+                    <span class="block w-12 h-px bg-clay-400 shrink-0"></span>
+                    <p class="font-sans uppercase text-[0.6rem] tracking-[0.3em] font-medium text-forest-700 whitespace-nowrap" cms-block-field="events_eyebrow" cms-block-field-type="content" cms-block-field-title="Eyebrow Label">Monthly Agenda · 2026</p>
+                    <span class="block w-12 h-px bg-clay-400 shrink-0"></span>
+                </div>
+                <h1 class="font-serif font-light text-[clamp(3.8rem,8vw,7.5rem)] leading-[1.0] tracking-[-0.01em] text-charcoal-900 mb-10" cms-block-field="events_title" cms-block-field-type="content" cms-block-field-control="richtext" cms-block-field-title="Hero Title">
+                    Events &amp;<br><em class="italic text-clay-500">Immersions</em>
+                </h1>
+                <div class="w-px h-10 bg-mist-400 mb-10"></div>
+                <p class="font-sans font-light text-base md:text-lg leading-[1.9] text-charcoal-700 max-w-[52ch] mx-auto" cms-block-field="events_intro" cms-block-field-type="content" cms-block-field-control="richtext" cms-block-field-title="Intro Paragraph">
+                    An editorial view of upcoming circles, retreats, and seasonal gatherings at Tenda 21. Each line tells you who is guiding, when it unfolds, and how to reserve your place.
+                </p>
+            </div>
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+                <span class="font-sans uppercase text-[0.5rem] tracking-[0.28em] text-charcoal-500" cms-block-field="events_scroll_label" cms-block-field-type="content" cms-block-field-title="Scroll Label">Scroll</span>
+                <div class="w-px h-8 bg-mist-500"></div>
+            </div>
+        </section>
+    </body>
+</html>

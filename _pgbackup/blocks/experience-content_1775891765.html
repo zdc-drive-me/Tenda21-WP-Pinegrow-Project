@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" wp-template>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Experience Content Block • Tenda 21</title>
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-mist-100">
+        <!-- Block root: experience-content
+             Editorial middle section for a single Experience page.
+             Covers: What to Expect, Benefits, Who This Is For.
+             Maps to SCF fields: experience_what_to_expect, experience_benefits, experience_who_its_for.
+        -->
+        <section class="py-24 px-6 bg-mist-100" cms-block="experience-content" cms-block-category="tenda21_experience" cms-block-title="Experience Content" cms-block-description="Editorial middle section for a single Experience page. Contains What to Expect, Benefits, and Who This Is For subsections.">
+            <div class="max-w-4xl mx-auto w-full space-y-16">
+                <!-- What to Expect -->
+                <div class="space-y-8">
+                    <h2 class="font-serif font-light text-3xl md:text-4xl leading-[1.3] text-charcoal-900">What to Expect</h2>
+                    <div class="space-y-6" cms-block-field="experience_what_to_expect" cms-block-field-type="content" cms-block-field-control="richtext" cms-block-field-title="What to Expect">
+                        <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700">Describe what participants can expect during the experience.</p>
+                    </div>
+                </div>
+                <!-- Benefits -->
+                <div class="border-t border-mist-400 pt-12 space-y-8">
+                    <h2 class="font-serif font-light text-3xl md:text-4xl leading-[1.3] text-charcoal-900">Benefits</h2>
+                    <ul class="space-y-4" cms-block-field="experience_benefits" cms-block-field-type="content" cms-block-field-control="textarea" cms-block-field-title="Benefits (bullet list)">
+                        <li class="font-sans font-light text-lg leading-[1.8] text-charcoal-700 pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-forest-700">Benefit item</li>
+                    </ul>
+                </div>
+                <!-- Who This Is For -->
+                <div class="border-t border-mist-400 pt-12 space-y-8">
+                    <h2 class="font-serif font-light text-3xl md:text-4xl leading-[1.3] text-charcoal-900">Who This Is For</h2>
+                    <div class="space-y-6" cms-block-field="experience_who_its_for" cms-block-field-type="content" cms-block-field-control="richtext" cms-block-field-title="Who This Is For">
+                        <p class="font-sans font-light text-lg leading-[1.8] text-charcoal-700">Describe who the experience is suited for, including any contraindications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
