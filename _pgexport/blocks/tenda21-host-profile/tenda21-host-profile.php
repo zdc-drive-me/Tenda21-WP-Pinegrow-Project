@@ -18,7 +18,6 @@
             </div>
             <figcaption class="mt-4 flex items-center justify-between">
                 <span class="font-sans text-xs uppercase tracking-[0.14em] text-charcoal-600"><?php echo PG_Blocks_v4::getAttribute( $args, 'figure_label' ) ?></span>
-                <span class="font-sans text-xs text-charcoal-500"><?php _e( 'Retrato • 4:5', 'tenda21' ); ?></span>
             </figcaption>
         </figure>
         <!-- Bio content -->
