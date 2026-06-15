@@ -24,5 +24,5 @@
 'hero_title' => 'A Anfitriã', 'hero_subtitle' => 'Sobre quem sustenta a casa'
             ),
             'dynamic' => true,
-            'version' => '1.0.108'
+            'version' => '1.0.110'
         ) );

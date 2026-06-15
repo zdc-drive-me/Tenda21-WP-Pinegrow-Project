@@ -995,7 +995,7 @@ function tenda21_render_event_hero_block( $post_id, $block = null ) {
     <section <?php echo $wrapper_attributes; ?>>
         <div class="max-w-6xl mx-auto px-6">
             <a href="<?php echo esc_url( $archive_url ); ?>" class="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.2em] text-forest-700 hover:text-forest-800 transition-colors mb-8 block"> <?php echo esc_html( $labels['back_link_label'] ); ?> </a>
-            <div class="w-full aspect-[16/7] bg-mist-300 bg-cover bg-center border border-mist-400 overflow-hidden" ?php echo $bg_style; ?></div>
+            <div class="w-full aspect-[16/7] bg-mist-300 bg-cover bg-center border border-mist-400 overflow-hidden" ?php if ( $featured_url ) : ? style="background-image: url('<?php echo esc_url( $featured_url ); ?>')" ?php endif; ?></div>
             <div class="grid gap-10 lg:grid-cols-[1.2fr,0.8fr] pt-10 pb-16">
                 <div class="space-y-7">
                     <div class="space-y-4">
@@ -1271,7 +1271,7 @@ function tenda21_render_events_archive_row( $event_id ) {
     ?>
     <article class="bg-bone-50/90 border border-mist-300 px-4 py-4 md:px-6 md:py-5 shadow-[0_1px_0_rgba(42,41,38,0.04)]">
         <div class="grid grid-cols-[96px_1fr] md:grid-cols-[120px_1fr_148px_164px] gap-4 md:gap-x-6 items-start">
-            <div class="aspect-square rounded-sm bg-mist-300 bg-cover bg-center shrink-0" ?php echo $thumb_style; ?></div>
+            <div class="aspect-square rounded-sm bg-mist-300 bg-cover bg-center shrink-0" ?php if ( $featured_url ) : ? style="background-image: url('<?php echo esc_url( $featured_url ); ?>')" ?php endif; ?></div>
             <div class="min-w-0 space-y-2">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                     <a href="<?php echo esc_url( $event_url ); ?>" class="font-serif text-xl md:text-2xl leading-tight text-charcoal-900 underline-offset-4 hover:underline"><?php echo esc_html( $event_name ); ?></a>
@@ -1481,7 +1481,7 @@ function tenda21_render_experience_hero_block( $post_id, $block = null ) {
                         </div>
                     </div>
                 </div>
-                <div class="aspect-[4/5] bg-mist-300 bg-cover bg-center sticky top-32" ?php echo $bg_style; ?></div>
+                <div class="aspect-[4/5] bg-mist-300 bg-cover bg-center sticky top-32" ?php if ( $featured_url ) : ? style="background-image: url('<?php echo esc_url( $featured_url ); ?>')" ?php endif; ?></div>
             </div>
         </div>
     </section>
