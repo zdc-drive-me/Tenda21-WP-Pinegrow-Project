@@ -20,5 +20,5 @@
 'back_link_label' => '← All Facilitators'
             ),
             'dynamic' => true,
-            'version' => '1.0.107'
+            'version' => '1.0.109'
         ) );

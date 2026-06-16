@@ -3,6 +3,11 @@
         <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between border-b border-mist-400 pb-4 mb-10 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-500">
             <span><?php echo PG_Blocks_v4::getAttribute( $args, 'events_schedule_label' ) ?></span>
             <span><?php echo PG_Blocks_v4::getAttribute( $args, 'events_timezone_label' ) ?></span>
+            <div class="flex items-center gap-2 normal-case tracking-[0.08em] text-[11px]">
+                <a href="?" class="underline underline-offset-4"><?php _e( 'Upcoming', 'tenda21' ); ?></a>
+                <span>·</span>
+                <a href="?events_view=all" class="opacity-60 hover:opacity-100"><?php _e( 'All Events', 'tenda21' ); ?></a>
+            </div>
         </div>
         <div class="space-y-6">
             <!-- Loop item placeholder: drop the tenda21/event-row block inside this loop when assembling the archive template. -->

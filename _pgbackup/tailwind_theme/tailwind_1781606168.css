@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.4 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.2.2 | MIT License | https://tailwindcss.com */
 @import url('../assets/css/fonts.css');
 @layer properties;
 @layer theme, base, components, utilities;
@@ -250,6 +250,50 @@
     --color-stone-800: oklch(0.268 0.007 34.298);
     --color-stone-900: oklch(0.216 0.006 56.043);
     --color-stone-950: oklch(0.147 0.004 49.25);
+    --color-mauve-50: oklch(98.5% 0 0);
+    --color-mauve-100: oklch(96% 0.003 325.6);
+    --color-mauve-200: oklch(92.2% 0.005 325.62);
+    --color-mauve-300: oklch(86.5% 0.012 325.68);
+    --color-mauve-400: oklch(71.1% 0.019 323.02);
+    --color-mauve-500: oklch(54.2% 0.034 322.5);
+    --color-mauve-600: oklch(43.5% 0.029 321.78);
+    --color-mauve-700: oklch(36.4% 0.029 323.89);
+    --color-mauve-800: oklch(26.3% 0.024 320.12);
+    --color-mauve-900: oklch(21.2% 0.019 322.12);
+    --color-mauve-950: oklch(14.5% 0.008 326);
+    --color-olive-50: oklch(98.8% 0.003 106.5);
+    --color-olive-100: oklch(96.6% 0.005 106.5);
+    --color-olive-200: oklch(93% 0.007 106.5);
+    --color-olive-300: oklch(88% 0.011 106.6);
+    --color-olive-400: oklch(73.7% 0.021 106.9);
+    --color-olive-500: oklch(58% 0.031 107.3);
+    --color-olive-600: oklch(46.6% 0.025 107.3);
+    --color-olive-700: oklch(39.4% 0.023 107.4);
+    --color-olive-800: oklch(28.6% 0.016 107.4);
+    --color-olive-900: oklch(22.8% 0.013 107.4);
+    --color-olive-950: oklch(15.3% 0.006 107.1);
+    --color-mist-50: oklch(0.98 0.002 90);
+    --color-mist-100: oklch(0.95 0.003 90);
+    --color-mist-200: oklch(0.92 0.004 90);
+    --color-mist-300: oklch(0.88 0.005 90);
+    --color-mist-400: oklch(0.82 0.006 90);
+    --color-mist-500: oklch(0.75 0.008 90);
+    --color-mist-600: oklch(0.65 0.01 90);
+    --color-mist-700: oklch(0.55 0.012 90);
+    --color-mist-800: oklch(0.45 0.015 90);
+    --color-mist-900: oklch(0.35 0.018 90);
+    --color-mist-950: oklch(0.25 0.02 90);
+    --color-taupe-50: oklch(98.6% 0.002 67.8);
+    --color-taupe-100: oklch(96% 0.002 17.2);
+    --color-taupe-200: oklch(92.2% 0.005 34.3);
+    --color-taupe-300: oklch(86.8% 0.007 39.5);
+    --color-taupe-400: oklch(71.4% 0.014 41.2);
+    --color-taupe-500: oklch(54.7% 0.021 43.1);
+    --color-taupe-600: oklch(43.8% 0.017 39.3);
+    --color-taupe-700: oklch(36.7% 0.016 35.7);
+    --color-taupe-800: oklch(26.8% 0.011 36.5);
+    --color-taupe-900: oklch(21.4% 0.009 43.1);
+    --color-taupe-950: oklch(14.7% 0.004 49.3);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -414,17 +458,6 @@
     --color-clay-800: oklch(0.35 0.09 35);
     --color-clay-900: oklch(0.28 0.07 35);
     --color-clay-950: oklch(0.20 0.05 35);
-    --color-mist-50: oklch(0.98 0.002 90);
-    --color-mist-100: oklch(0.95 0.003 90);
-    --color-mist-200: oklch(0.92 0.004 90);
-    --color-mist-300: oklch(0.88 0.005 90);
-    --color-mist-400: oklch(0.82 0.006 90);
-    --color-mist-500: oklch(0.75 0.008 90);
-    --color-mist-600: oklch(0.65 0.01 90);
-    --color-mist-700: oklch(0.55 0.012 90);
-    --color-mist-800: oklch(0.45 0.015 90);
-    --color-mist-900: oklch(0.35 0.018 90);
-    --color-mist-950: oklch(0.25 0.02 90);
     --color-verde_oliva-50: #f4f4f0;
     --color-verde_oliva-100: #e4e5da;
     --color-verde_oliva-200: #d4d6c3;
@@ -570,6 +603,9 @@
   ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
     padding-block: 0;
   }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
   :-moz-ui-invalid {
     box-shadow: none;
   }
@@ -618,7 +654,7 @@
     left: calc(var(--spacing) * 0);
   }
   .left-1\/2 {
-    left: calc(1/2 * 100%);
+    left: calc(1 / 2 * 100%);
   }
   .z-10 {
     z-index: 10;
@@ -728,6 +764,9 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -807,7 +846,7 @@
     flex-shrink: 0;
   }
   .-translate-x-1\/2 {
-    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .\[animation\:fadeInScale_1s_ease-out_forwards\] {
@@ -854,6 +893,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .justify-start {
+    justify-content: flex-start;
   }
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
@@ -1013,6 +1055,10 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
+  .border-b-2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
+  }
   .border-l {
     border-left-style: var(--tw-border-style);
     border-left-width: 1px;
@@ -1054,6 +1100,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-charcoal-900) 20%, transparent);
     }
+  }
+  .border-clay-400 {
+    border-color: var(--color-clay-400);
   }
   .border-forest-700 {
     border-color: var(--color-forest-700);
@@ -1268,6 +1317,9 @@
   .object-center {
     object-position: center;
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
@@ -1279,6 +1331,9 @@
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
+  }
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
   }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
@@ -1315,6 +1370,9 @@
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
@@ -1400,6 +1458,9 @@
   .pb-0 {
     padding-bottom: calc(var(--spacing) * 0);
   }
+  .pb-1 {
+    padding-bottom: calc(var(--spacing) * 1);
+  }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
   }
@@ -1473,6 +1534,9 @@
   }
   .text-\[0\.58rem\] {
     font-size: 0.58rem;
+  }
+  .text-\[0\.62rem\] {
+    font-size: 0.62rem;
   }
   .text-\[0\.65rem\] {
     font-size: 0.65rem;
@@ -1599,6 +1663,10 @@
     --tw-tracking: 0.3em;
     letter-spacing: 0.3em;
   }
+  .tracking-\[0\.08em\] {
+    --tw-tracking: 0.08em;
+    letter-spacing: 0.08em;
+  }
   .tracking-\[0\.12em\] {
     --tw-tracking: 0.12em;
     letter-spacing: 0.12em;
@@ -1610,6 +1678,10 @@
   .tracking-\[0\.15em\] {
     --tw-tracking: 0.15em;
     letter-spacing: 0.15em;
+  }
+  .tracking-\[0\.16em\] {
+    --tw-tracking: 0.16em;
+    letter-spacing: 0.16em;
   }
   .tracking-\[0\.18em\] {
     --tw-tracking: 0.18em;
@@ -1629,74 +1701,8 @@
   .\!text-white {
     color: var(--color-white) !important;
   }
-  .text-amber-50 {
-    color: var(--color-amber-50);
-  }
-  .text-amber-100 {
-    color: var(--color-amber-100);
-  }
-  .text-amber-200 {
-    color: var(--color-amber-200);
-  }
-  .text-amber-300 {
-    color: var(--color-amber-300);
-  }
-  .text-amber-400 {
-    color: var(--color-amber-400);
-  }
-  .text-amber-500 {
-    color: var(--color-amber-500);
-  }
-  .text-amber-600 {
-    color: var(--color-amber-600);
-  }
-  .text-amber-700 {
-    color: var(--color-amber-700);
-  }
-  .text-amber-800 {
-    color: var(--color-amber-800);
-  }
-  .text-amber-900 {
-    color: var(--color-amber-900);
-  }
-  .text-amber-950 {
-    color: var(--color-amber-950);
-  }
   .text-black {
     color: var(--color-black);
-  }
-  .text-blue-50 {
-    color: var(--color-blue-50);
-  }
-  .text-blue-100 {
-    color: var(--color-blue-100);
-  }
-  .text-blue-200 {
-    color: var(--color-blue-200);
-  }
-  .text-blue-300 {
-    color: var(--color-blue-300);
-  }
-  .text-blue-400 {
-    color: var(--color-blue-400);
-  }
-  .text-blue-500 {
-    color: var(--color-blue-500);
-  }
-  .text-blue-600 {
-    color: var(--color-blue-600);
-  }
-  .text-blue-700 {
-    color: var(--color-blue-700);
-  }
-  .text-blue-800 {
-    color: var(--color-blue-800);
-  }
-  .text-blue-900 {
-    color: var(--color-blue-900);
-  }
-  .text-blue-950 {
-    color: var(--color-blue-950);
   }
   .text-bone-50 {
     color: var(--color-bone-50);
@@ -1725,39 +1731,6 @@
       color: color-mix(in oklab, var(--color-bone-200) 80%, transparent);
     }
   }
-  .text-bone-300 {
-    color: var(--color-bone-300);
-  }
-  .text-bone-400 {
-    color: var(--color-bone-400);
-  }
-  .text-bone-500 {
-    color: var(--color-bone-500);
-  }
-  .text-bone-600 {
-    color: var(--color-bone-600);
-  }
-  .text-bone-700 {
-    color: var(--color-bone-700);
-  }
-  .text-bone-800 {
-    color: var(--color-bone-800);
-  }
-  .text-bone-900 {
-    color: var(--color-bone-900);
-  }
-  .text-bone-950 {
-    color: var(--color-bone-950);
-  }
-  .text-charcoal-50 {
-    color: var(--color-charcoal-50);
-  }
-  .text-charcoal-100 {
-    color: var(--color-charcoal-100);
-  }
-  .text-charcoal-200 {
-    color: var(--color-charcoal-200);
-  }
   .text-charcoal-300 {
     color: var(--color-charcoal-300);
   }
@@ -1785,812 +1758,23 @@
   .text-charcoal-900 {
     color: var(--color-charcoal-900);
   }
-  .text-charcoal-950 {
-    color: var(--color-charcoal-950);
-  }
-  .text-clay-50 {
-    color: var(--color-clay-50);
-  }
-  .text-clay-100 {
-    color: var(--color-clay-100);
-  }
-  .text-clay-200 {
-    color: var(--color-clay-200);
-  }
-  .text-clay-300 {
-    color: var(--color-clay-300);
-  }
-  .text-clay-400 {
-    color: var(--color-clay-400);
-  }
   .text-clay-500 {
     color: var(--color-clay-500);
-  }
-  .text-clay-600 {
-    color: var(--color-clay-600);
-  }
-  .text-clay-700 {
-    color: var(--color-clay-700);
-  }
-  .text-clay-800 {
-    color: var(--color-clay-800);
-  }
-  .text-clay-900 {
-    color: var(--color-clay-900);
-  }
-  .text-clay-950 {
-    color: var(--color-clay-950);
   }
   .text-current {
     color: currentcolor;
   }
-  .text-cyan-50 {
-    color: var(--color-cyan-50);
-  }
-  .text-cyan-100 {
-    color: var(--color-cyan-100);
-  }
-  .text-cyan-200 {
-    color: var(--color-cyan-200);
-  }
-  .text-cyan-300 {
-    color: var(--color-cyan-300);
-  }
-  .text-cyan-400 {
-    color: var(--color-cyan-400);
-  }
-  .text-cyan-500 {
-    color: var(--color-cyan-500);
-  }
-  .text-cyan-600 {
-    color: var(--color-cyan-600);
-  }
-  .text-cyan-700 {
-    color: var(--color-cyan-700);
-  }
-  .text-cyan-800 {
-    color: var(--color-cyan-800);
-  }
-  .text-cyan-900 {
-    color: var(--color-cyan-900);
-  }
-  .text-cyan-950 {
-    color: var(--color-cyan-950);
-  }
-  .text-emerald-50 {
-    color: var(--color-emerald-50);
-  }
-  .text-emerald-100 {
-    color: var(--color-emerald-100);
-  }
-  .text-emerald-200 {
-    color: var(--color-emerald-200);
-  }
-  .text-emerald-300 {
-    color: var(--color-emerald-300);
-  }
-  .text-emerald-400 {
-    color: var(--color-emerald-400);
-  }
-  .text-emerald-500 {
-    color: var(--color-emerald-500);
-  }
-  .text-emerald-600 {
-    color: var(--color-emerald-600);
-  }
-  .text-emerald-700 {
-    color: var(--color-emerald-700);
-  }
-  .text-emerald-800 {
-    color: var(--color-emerald-800);
-  }
-  .text-emerald-900 {
-    color: var(--color-emerald-900);
-  }
-  .text-emerald-950 {
-    color: var(--color-emerald-950);
-  }
-  .text-forest-50 {
-    color: var(--color-forest-50);
-  }
-  .text-forest-100 {
-    color: var(--color-forest-100);
-  }
-  .text-forest-200 {
-    color: var(--color-forest-200);
-  }
-  .text-forest-300 {
-    color: var(--color-forest-300);
-  }
-  .text-forest-400 {
-    color: var(--color-forest-400);
-  }
-  .text-forest-500 {
-    color: var(--color-forest-500);
-  }
-  .text-forest-600 {
-    color: var(--color-forest-600);
-  }
   .text-forest-700 {
     color: var(--color-forest-700);
-  }
-  .text-forest-800 {
-    color: var(--color-forest-800);
-  }
-  .text-forest-900 {
-    color: var(--color-forest-900);
-  }
-  .text-forest-950 {
-    color: var(--color-forest-950);
-  }
-  .text-fuchsia-50 {
-    color: var(--color-fuchsia-50);
-  }
-  .text-fuchsia-100 {
-    color: var(--color-fuchsia-100);
-  }
-  .text-fuchsia-200 {
-    color: var(--color-fuchsia-200);
-  }
-  .text-fuchsia-300 {
-    color: var(--color-fuchsia-300);
-  }
-  .text-fuchsia-400 {
-    color: var(--color-fuchsia-400);
-  }
-  .text-fuchsia-500 {
-    color: var(--color-fuchsia-500);
-  }
-  .text-fuchsia-600 {
-    color: var(--color-fuchsia-600);
-  }
-  .text-fuchsia-700 {
-    color: var(--color-fuchsia-700);
-  }
-  .text-fuchsia-800 {
-    color: var(--color-fuchsia-800);
-  }
-  .text-fuchsia-900 {
-    color: var(--color-fuchsia-900);
-  }
-  .text-fuchsia-950 {
-    color: var(--color-fuchsia-950);
-  }
-  .text-gray-50 {
-    color: var(--color-gray-50);
-  }
-  .text-gray-100 {
-    color: var(--color-gray-100);
-  }
-  .text-gray-200 {
-    color: var(--color-gray-200);
-  }
-  .text-gray-300 {
-    color: var(--color-gray-300);
-  }
-  .text-gray-400 {
-    color: var(--color-gray-400);
-  }
-  .text-gray-500 {
-    color: var(--color-gray-500);
-  }
-  .text-gray-600 {
-    color: var(--color-gray-600);
-  }
-  .text-gray-700 {
-    color: var(--color-gray-700);
-  }
-  .text-gray-800 {
-    color: var(--color-gray-800);
-  }
-  .text-gray-900 {
-    color: var(--color-gray-900);
-  }
-  .text-gray-950 {
-    color: var(--color-gray-950);
-  }
-  .text-green-50 {
-    color: var(--color-green-50);
-  }
-  .text-green-100 {
-    color: var(--color-green-100);
-  }
-  .text-green-200 {
-    color: var(--color-green-200);
-  }
-  .text-green-300 {
-    color: var(--color-green-300);
-  }
-  .text-green-400 {
-    color: var(--color-green-400);
-  }
-  .text-green-500 {
-    color: var(--color-green-500);
-  }
-  .text-green-600 {
-    color: var(--color-green-600);
-  }
-  .text-green-700 {
-    color: var(--color-green-700);
-  }
-  .text-green-800 {
-    color: var(--color-green-800);
-  }
-  .text-green-900 {
-    color: var(--color-green-900);
-  }
-  .text-green-950 {
-    color: var(--color-green-950);
-  }
-  .text-indigo-50 {
-    color: var(--color-indigo-50);
-  }
-  .text-indigo-100 {
-    color: var(--color-indigo-100);
-  }
-  .text-indigo-200 {
-    color: var(--color-indigo-200);
-  }
-  .text-indigo-300 {
-    color: var(--color-indigo-300);
-  }
-  .text-indigo-400 {
-    color: var(--color-indigo-400);
-  }
-  .text-indigo-500 {
-    color: var(--color-indigo-500);
-  }
-  .text-indigo-600 {
-    color: var(--color-indigo-600);
-  }
-  .text-indigo-700 {
-    color: var(--color-indigo-700);
-  }
-  .text-indigo-800 {
-    color: var(--color-indigo-800);
-  }
-  .text-indigo-900 {
-    color: var(--color-indigo-900);
-  }
-  .text-indigo-950 {
-    color: var(--color-indigo-950);
-  }
-  .text-inherit {
-    color: inherit;
-  }
-  .text-lime-50 {
-    color: var(--color-lime-50);
-  }
-  .text-lime-100 {
-    color: var(--color-lime-100);
-  }
-  .text-lime-200 {
-    color: var(--color-lime-200);
   }
   .text-lime-300 {
     color: var(--color-lime-300);
   }
-  .text-lime-400 {
-    color: var(--color-lime-400);
-  }
-  .text-lime-500 {
-    color: var(--color-lime-500);
-  }
-  .text-lime-600 {
-    color: var(--color-lime-600);
-  }
-  .text-lime-700 {
-    color: var(--color-lime-700);
-  }
-  .text-lime-800 {
-    color: var(--color-lime-800);
-  }
-  .text-lime-900 {
-    color: var(--color-lime-900);
-  }
-  .text-lime-950 {
-    color: var(--color-lime-950);
-  }
-  .text-mist-50 {
-    color: var(--color-mist-50);
-  }
-  .text-mist-100 {
-    color: var(--color-mist-100);
-  }
-  .text-mist-200 {
-    color: var(--color-mist-200);
-  }
-  .text-mist-300 {
-    color: var(--color-mist-300);
-  }
-  .text-mist-400 {
-    color: var(--color-mist-400);
-  }
-  .text-mist-500 {
-    color: var(--color-mist-500);
-  }
-  .text-mist-600 {
-    color: var(--color-mist-600);
-  }
-  .text-mist-700 {
-    color: var(--color-mist-700);
-  }
-  .text-mist-800 {
-    color: var(--color-mist-800);
-  }
-  .text-mist-900 {
-    color: var(--color-mist-900);
-  }
-  .text-mist-950 {
-    color: var(--color-mist-950);
-  }
-  .text-neutral-50 {
-    color: var(--color-neutral-50);
-  }
-  .text-neutral-100 {
-    color: var(--color-neutral-100);
-  }
-  .text-neutral-200 {
-    color: var(--color-neutral-200);
-  }
-  .text-neutral-300 {
-    color: var(--color-neutral-300);
-  }
-  .text-neutral-400 {
-    color: var(--color-neutral-400);
-  }
-  .text-neutral-500 {
-    color: var(--color-neutral-500);
-  }
-  .text-neutral-600 {
-    color: var(--color-neutral-600);
-  }
-  .text-neutral-700 {
-    color: var(--color-neutral-700);
-  }
-  .text-neutral-800 {
-    color: var(--color-neutral-800);
-  }
-  .text-neutral-900 {
-    color: var(--color-neutral-900);
-  }
-  .text-neutral-950 {
-    color: var(--color-neutral-950);
-  }
-  .text-orange-50 {
-    color: var(--color-orange-50);
-  }
-  .text-orange-100 {
-    color: var(--color-orange-100);
-  }
-  .text-orange-200 {
-    color: var(--color-orange-200);
-  }
-  .text-orange-300 {
-    color: var(--color-orange-300);
-  }
-  .text-orange-400 {
-    color: var(--color-orange-400);
-  }
-  .text-orange-500 {
-    color: var(--color-orange-500);
-  }
-  .text-orange-600 {
-    color: var(--color-orange-600);
-  }
-  .text-orange-700 {
-    color: var(--color-orange-700);
-  }
-  .text-orange-800 {
-    color: var(--color-orange-800);
-  }
-  .text-orange-900 {
-    color: var(--color-orange-900);
-  }
-  .text-orange-950 {
-    color: var(--color-orange-950);
-  }
-  .text-pink-50 {
-    color: var(--color-pink-50);
-  }
-  .text-pink-100 {
-    color: var(--color-pink-100);
-  }
-  .text-pink-200 {
-    color: var(--color-pink-200);
-  }
-  .text-pink-300 {
-    color: var(--color-pink-300);
-  }
-  .text-pink-400 {
-    color: var(--color-pink-400);
-  }
-  .text-pink-500 {
-    color: var(--color-pink-500);
-  }
-  .text-pink-600 {
-    color: var(--color-pink-600);
-  }
-  .text-pink-700 {
-    color: var(--color-pink-700);
-  }
-  .text-pink-800 {
-    color: var(--color-pink-800);
-  }
-  .text-pink-900 {
-    color: var(--color-pink-900);
-  }
-  .text-pink-950 {
-    color: var(--color-pink-950);
-  }
-  .text-purple-50 {
-    color: var(--color-purple-50);
-  }
-  .text-purple-100 {
-    color: var(--color-purple-100);
-  }
-  .text-purple-200 {
-    color: var(--color-purple-200);
-  }
-  .text-purple-300 {
-    color: var(--color-purple-300);
-  }
-  .text-purple-400 {
-    color: var(--color-purple-400);
-  }
-  .text-purple-500 {
-    color: var(--color-purple-500);
-  }
-  .text-purple-600 {
-    color: var(--color-purple-600);
-  }
-  .text-purple-700 {
-    color: var(--color-purple-700);
-  }
-  .text-purple-800 {
-    color: var(--color-purple-800);
-  }
-  .text-purple-900 {
-    color: var(--color-purple-900);
-  }
-  .text-purple-950 {
-    color: var(--color-purple-950);
-  }
-  .text-red-50 {
-    color: var(--color-red-50);
-  }
-  .text-red-100 {
-    color: var(--color-red-100);
-  }
-  .text-red-200 {
-    color: var(--color-red-200);
-  }
-  .text-red-300 {
-    color: var(--color-red-300);
-  }
-  .text-red-400 {
-    color: var(--color-red-400);
-  }
-  .text-red-500 {
-    color: var(--color-red-500);
-  }
-  .text-red-600 {
-    color: var(--color-red-600);
-  }
-  .text-red-700 {
-    color: var(--color-red-700);
-  }
-  .text-red-800 {
-    color: var(--color-red-800);
-  }
-  .text-red-900 {
-    color: var(--color-red-900);
-  }
-  .text-red-950 {
-    color: var(--color-red-950);
-  }
-  .text-rose-50 {
-    color: var(--color-rose-50);
-  }
-  .text-rose-100 {
-    color: var(--color-rose-100);
-  }
-  .text-rose-200 {
-    color: var(--color-rose-200);
-  }
-  .text-rose-300 {
-    color: var(--color-rose-300);
-  }
-  .text-rose-400 {
-    color: var(--color-rose-400);
-  }
-  .text-rose-500 {
-    color: var(--color-rose-500);
-  }
-  .text-rose-600 {
-    color: var(--color-rose-600);
-  }
-  .text-rose-700 {
-    color: var(--color-rose-700);
-  }
-  .text-rose-800 {
-    color: var(--color-rose-800);
-  }
-  .text-rose-900 {
-    color: var(--color-rose-900);
-  }
-  .text-rose-950 {
-    color: var(--color-rose-950);
-  }
-  .text-sky-50 {
-    color: var(--color-sky-50);
-  }
-  .text-sky-100 {
-    color: var(--color-sky-100);
-  }
-  .text-sky-200 {
-    color: var(--color-sky-200);
-  }
-  .text-sky-300 {
-    color: var(--color-sky-300);
-  }
-  .text-sky-400 {
-    color: var(--color-sky-400);
-  }
-  .text-sky-500 {
-    color: var(--color-sky-500);
-  }
-  .text-sky-600 {
-    color: var(--color-sky-600);
-  }
-  .text-sky-700 {
-    color: var(--color-sky-700);
-  }
-  .text-sky-800 {
-    color: var(--color-sky-800);
-  }
-  .text-sky-900 {
-    color: var(--color-sky-900);
-  }
-  .text-sky-950 {
-    color: var(--color-sky-950);
-  }
-  .text-slate-50 {
-    color: var(--color-slate-50);
-  }
-  .text-slate-100 {
-    color: var(--color-slate-100);
-  }
-  .text-slate-200 {
-    color: var(--color-slate-200);
-  }
-  .text-slate-300 {
-    color: var(--color-slate-300);
-  }
-  .text-slate-400 {
-    color: var(--color-slate-400);
-  }
-  .text-slate-500 {
-    color: var(--color-slate-500);
-  }
-  .text-slate-600 {
-    color: var(--color-slate-600);
-  }
-  .text-slate-700 {
-    color: var(--color-slate-700);
-  }
-  .text-slate-800 {
-    color: var(--color-slate-800);
-  }
-  .text-slate-900 {
-    color: var(--color-slate-900);
-  }
-  .text-slate-950 {
-    color: var(--color-slate-950);
-  }
-  .text-stone-50 {
-    color: var(--color-stone-50);
-  }
-  .text-stone-100 {
-    color: var(--color-stone-100);
-  }
-  .text-stone-200 {
-    color: var(--color-stone-200);
-  }
-  .text-stone-300 {
-    color: var(--color-stone-300);
-  }
-  .text-stone-400 {
-    color: var(--color-stone-400);
-  }
-  .text-stone-500 {
-    color: var(--color-stone-500);
-  }
-  .text-stone-600 {
-    color: var(--color-stone-600);
-  }
-  .text-stone-700 {
-    color: var(--color-stone-700);
-  }
-  .text-stone-800 {
-    color: var(--color-stone-800);
-  }
-  .text-stone-900 {
-    color: var(--color-stone-900);
-  }
-  .text-stone-950 {
-    color: var(--color-stone-950);
-  }
-  .text-teal-50 {
-    color: var(--color-teal-50);
-  }
-  .text-teal-100 {
-    color: var(--color-teal-100);
-  }
-  .text-teal-200 {
-    color: var(--color-teal-200);
-  }
-  .text-teal-300 {
-    color: var(--color-teal-300);
-  }
-  .text-teal-400 {
-    color: var(--color-teal-400);
-  }
-  .text-teal-500 {
-    color: var(--color-teal-500);
-  }
-  .text-teal-600 {
-    color: var(--color-teal-600);
-  }
-  .text-teal-700 {
-    color: var(--color-teal-700);
-  }
-  .text-teal-800 {
-    color: var(--color-teal-800);
-  }
-  .text-teal-900 {
-    color: var(--color-teal-900);
-  }
-  .text-teal-950 {
-    color: var(--color-teal-950);
-  }
-  .text-transparent {
-    color: transparent;
-  }
-  .text-verde_oliva-50 {
-    color: var(--color-verde_oliva-50);
-  }
-  .text-verde_oliva-100 {
-    color: var(--color-verde_oliva-100);
-  }
-  .text-verde_oliva-200 {
-    color: var(--color-verde_oliva-200);
-  }
-  .text-verde_oliva-300 {
-    color: var(--color-verde_oliva-300);
-  }
-  .text-verde_oliva-400 {
-    color: var(--color-verde_oliva-400);
-  }
-  .text-verde_oliva-500 {
-    color: var(--color-verde_oliva-500);
-  }
-  .text-verde_oliva-600 {
-    color: var(--color-verde_oliva-600);
-  }
-  .text-verde_oliva-700 {
-    color: var(--color-verde_oliva-700);
-  }
-  .text-verde_oliva-800 {
-    color: var(--color-verde_oliva-800);
-  }
-  .text-verde_oliva-900 {
-    color: var(--color-verde_oliva-900);
-  }
-  .text-verde_oliva-950 {
-    color: var(--color-verde_oliva-950);
-  }
-  .text-violet-50 {
-    color: var(--color-violet-50);
-  }
-  .text-violet-100 {
-    color: var(--color-violet-100);
-  }
-  .text-violet-200 {
-    color: var(--color-violet-200);
-  }
-  .text-violet-300 {
-    color: var(--color-violet-300);
-  }
-  .text-violet-400 {
-    color: var(--color-violet-400);
-  }
-  .text-violet-500 {
-    color: var(--color-violet-500);
-  }
-  .text-violet-600 {
-    color: var(--color-violet-600);
-  }
-  .text-violet-700 {
-    color: var(--color-violet-700);
-  }
-  .text-violet-800 {
-    color: var(--color-violet-800);
-  }
-  .text-violet-900 {
-    color: var(--color-violet-900);
-  }
-  .text-violet-950 {
-    color: var(--color-violet-950);
-  }
   .text-white {
     color: var(--color-white);
   }
-  .text-yellow-50 {
-    color: var(--color-yellow-50);
-  }
-  .text-yellow-100 {
-    color: var(--color-yellow-100);
-  }
-  .text-yellow-200 {
-    color: var(--color-yellow-200);
-  }
-  .text-yellow-300 {
-    color: var(--color-yellow-300);
-  }
-  .text-yellow-400 {
-    color: var(--color-yellow-400);
-  }
-  .text-yellow-500 {
-    color: var(--color-yellow-500);
-  }
-  .text-yellow-600 {
-    color: var(--color-yellow-600);
-  }
-  .text-yellow-700 {
-    color: var(--color-yellow-700);
-  }
-  .text-yellow-800 {
-    color: var(--color-yellow-800);
-  }
-  .text-yellow-900 {
-    color: var(--color-yellow-900);
-  }
-  .text-yellow-950 {
-    color: var(--color-yellow-950);
-  }
-  .text-zinc-50 {
-    color: var(--color-zinc-50);
-  }
-  .text-zinc-100 {
-    color: var(--color-zinc-100);
-  }
-  .text-zinc-200 {
-    color: var(--color-zinc-200);
-  }
-  .text-zinc-300 {
-    color: var(--color-zinc-300);
-  }
-  .text-zinc-400 {
-    color: var(--color-zinc-400);
-  }
-  .text-zinc-500 {
-    color: var(--color-zinc-500);
-  }
-  .text-zinc-600 {
-    color: var(--color-zinc-600);
-  }
-  .text-zinc-700 {
-    color: var(--color-zinc-700);
-  }
-  .text-zinc-800 {
-    color: var(--color-zinc-800);
-  }
-  .text-zinc-900 {
-    color: var(--color-zinc-900);
-  }
-  .text-zinc-950 {
-    color: var(--color-zinc-950);
+  .normal-case {
+    text-transform: none;
   }
   .uppercase {
     text-transform: uppercase;
@@ -2706,7 +1890,6 @@
   }
   .before\:content-\[\'•\'\] {
     &::before {
-      content: var(--tw-content);
       --tw-content: '•';
       content: var(--tw-content);
     }
@@ -2775,290 +1958,10 @@
       }
     }
   }
-  .hover\:text-amber-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-50);
-      }
-    }
-  }
-  .hover\:text-amber-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-100);
-      }
-    }
-  }
-  .hover\:text-amber-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-200);
-      }
-    }
-  }
-  .hover\:text-amber-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-300);
-      }
-    }
-  }
-  .hover\:text-amber-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-400);
-      }
-    }
-  }
-  .hover\:text-amber-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-500);
-      }
-    }
-  }
-  .hover\:text-amber-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-600);
-      }
-    }
-  }
-  .hover\:text-amber-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-700);
-      }
-    }
-  }
-  .hover\:text-amber-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-800);
-      }
-    }
-  }
-  .hover\:text-amber-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-900);
-      }
-    }
-  }
-  .hover\:text-amber-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-amber-950);
-      }
-    }
-  }
-  .hover\:text-black {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-black);
-      }
-    }
-  }
-  .hover\:text-blue-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-50);
-      }
-    }
-  }
-  .hover\:text-blue-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-100);
-      }
-    }
-  }
-  .hover\:text-blue-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-200);
-      }
-    }
-  }
-  .hover\:text-blue-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-300);
-      }
-    }
-  }
-  .hover\:text-blue-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-400);
-      }
-    }
-  }
-  .hover\:text-blue-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-500);
-      }
-    }
-  }
-  .hover\:text-blue-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-600);
-      }
-    }
-  }
-  .hover\:text-blue-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-700);
-      }
-    }
-  }
-  .hover\:text-blue-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-800);
-      }
-    }
-  }
-  .hover\:text-blue-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-900);
-      }
-    }
-  }
-  .hover\:text-blue-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-950);
-      }
-    }
-  }
   .hover\:text-bone-50 {
     &:hover {
       @media (hover: hover) {
         color: var(--color-bone-50);
-      }
-    }
-  }
-  .hover\:text-bone-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-100);
-      }
-    }
-  }
-  .hover\:text-bone-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-200);
-      }
-    }
-  }
-  .hover\:text-bone-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-300);
-      }
-    }
-  }
-  .hover\:text-bone-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-400);
-      }
-    }
-  }
-  .hover\:text-bone-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-500);
-      }
-    }
-  }
-  .hover\:text-bone-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-600);
-      }
-    }
-  }
-  .hover\:text-bone-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-700);
-      }
-    }
-  }
-  .hover\:text-bone-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-800);
-      }
-    }
-  }
-  .hover\:text-bone-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-900);
-      }
-    }
-  }
-  .hover\:text-bone-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-bone-950);
-      }
-    }
-  }
-  .hover\:text-charcoal-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-charcoal-50);
-      }
-    }
-  }
-  .hover\:text-charcoal-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-charcoal-100);
-      }
-    }
-  }
-  .hover\:text-charcoal-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-charcoal-200);
-      }
-    }
-  }
-  .hover\:text-charcoal-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-charcoal-300);
-      }
-    }
-  }
-  .hover\:text-charcoal-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-charcoal-400);
-      }
-    }
-  }
-  .hover\:text-charcoal-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-charcoal-500);
-      }
-    }
-  }
-  .hover\:text-charcoal-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-charcoal-600);
       }
     }
   }
@@ -3069,318 +1972,10 @@
       }
     }
   }
-  .hover\:text-charcoal-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-charcoal-800);
-      }
-    }
-  }
   .hover\:text-charcoal-900 {
     &:hover {
       @media (hover: hover) {
         color: var(--color-charcoal-900);
-      }
-    }
-  }
-  .hover\:text-charcoal-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-charcoal-950);
-      }
-    }
-  }
-  .hover\:text-clay-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-50);
-      }
-    }
-  }
-  .hover\:text-clay-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-100);
-      }
-    }
-  }
-  .hover\:text-clay-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-200);
-      }
-    }
-  }
-  .hover\:text-clay-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-300);
-      }
-    }
-  }
-  .hover\:text-clay-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-400);
-      }
-    }
-  }
-  .hover\:text-clay-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-500);
-      }
-    }
-  }
-  .hover\:text-clay-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-600);
-      }
-    }
-  }
-  .hover\:text-clay-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-700);
-      }
-    }
-  }
-  .hover\:text-clay-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-800);
-      }
-    }
-  }
-  .hover\:text-clay-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-900);
-      }
-    }
-  }
-  .hover\:text-clay-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-clay-950);
-      }
-    }
-  }
-  .hover\:text-current {
-    &:hover {
-      @media (hover: hover) {
-        color: currentcolor;
-      }
-    }
-  }
-  .hover\:text-cyan-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-50);
-      }
-    }
-  }
-  .hover\:text-cyan-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-100);
-      }
-    }
-  }
-  .hover\:text-cyan-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-200);
-      }
-    }
-  }
-  .hover\:text-cyan-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-300);
-      }
-    }
-  }
-  .hover\:text-cyan-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-400);
-      }
-    }
-  }
-  .hover\:text-cyan-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-500);
-      }
-    }
-  }
-  .hover\:text-cyan-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-600);
-      }
-    }
-  }
-  .hover\:text-cyan-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-700);
-      }
-    }
-  }
-  .hover\:text-cyan-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-800);
-      }
-    }
-  }
-  .hover\:text-cyan-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-900);
-      }
-    }
-  }
-  .hover\:text-cyan-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-cyan-950);
-      }
-    }
-  }
-  .hover\:text-emerald-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-50);
-      }
-    }
-  }
-  .hover\:text-emerald-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-100);
-      }
-    }
-  }
-  .hover\:text-emerald-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-200);
-      }
-    }
-  }
-  .hover\:text-emerald-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-300);
-      }
-    }
-  }
-  .hover\:text-emerald-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-400);
-      }
-    }
-  }
-  .hover\:text-emerald-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-500);
-      }
-    }
-  }
-  .hover\:text-emerald-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-600);
-      }
-    }
-  }
-  .hover\:text-emerald-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-700);
-      }
-    }
-  }
-  .hover\:text-emerald-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-800);
-      }
-    }
-  }
-  .hover\:text-emerald-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-900);
-      }
-    }
-  }
-  .hover\:text-emerald-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-emerald-950);
-      }
-    }
-  }
-  .hover\:text-forest-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-50);
-      }
-    }
-  }
-  .hover\:text-forest-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-100);
-      }
-    }
-  }
-  .hover\:text-forest-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-200);
-      }
-    }
-  }
-  .hover\:text-forest-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-300);
-      }
-    }
-  }
-  .hover\:text-forest-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-400);
-      }
-    }
-  }
-  .hover\:text-forest-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-500);
-      }
-    }
-  }
-  .hover\:text-forest-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-600);
-      }
-    }
-  }
-  .hover\:text-forest-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-700);
       }
     }
   }
@@ -3391,1578 +1986,10 @@
       }
     }
   }
-  .hover\:text-forest-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-900);
-      }
-    }
-  }
-  .hover\:text-forest-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-forest-950);
-      }
-    }
-  }
-  .hover\:text-fuchsia-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-50);
-      }
-    }
-  }
-  .hover\:text-fuchsia-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-100);
-      }
-    }
-  }
-  .hover\:text-fuchsia-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-200);
-      }
-    }
-  }
-  .hover\:text-fuchsia-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-300);
-      }
-    }
-  }
-  .hover\:text-fuchsia-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-400);
-      }
-    }
-  }
-  .hover\:text-fuchsia-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-500);
-      }
-    }
-  }
-  .hover\:text-fuchsia-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-600);
-      }
-    }
-  }
-  .hover\:text-fuchsia-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-700);
-      }
-    }
-  }
-  .hover\:text-fuchsia-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-800);
-      }
-    }
-  }
-  .hover\:text-fuchsia-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-900);
-      }
-    }
-  }
-  .hover\:text-fuchsia-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-fuchsia-950);
-      }
-    }
-  }
-  .hover\:text-gray-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-50);
-      }
-    }
-  }
-  .hover\:text-gray-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-100);
-      }
-    }
-  }
-  .hover\:text-gray-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-200);
-      }
-    }
-  }
-  .hover\:text-gray-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-300);
-      }
-    }
-  }
-  .hover\:text-gray-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-400);
-      }
-    }
-  }
-  .hover\:text-gray-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-500);
-      }
-    }
-  }
-  .hover\:text-gray-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-600);
-      }
-    }
-  }
-  .hover\:text-gray-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-700);
-      }
-    }
-  }
-  .hover\:text-gray-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-800);
-      }
-    }
-  }
-  .hover\:text-gray-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-900);
-      }
-    }
-  }
-  .hover\:text-gray-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-gray-950);
-      }
-    }
-  }
-  .hover\:text-green-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-50);
-      }
-    }
-  }
-  .hover\:text-green-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-100);
-      }
-    }
-  }
-  .hover\:text-green-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-200);
-      }
-    }
-  }
-  .hover\:text-green-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-300);
-      }
-    }
-  }
-  .hover\:text-green-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-400);
-      }
-    }
-  }
-  .hover\:text-green-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-500);
-      }
-    }
-  }
-  .hover\:text-green-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-600);
-      }
-    }
-  }
-  .hover\:text-green-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-700);
-      }
-    }
-  }
-  .hover\:text-green-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-800);
-      }
-    }
-  }
-  .hover\:text-green-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-900);
-      }
-    }
-  }
-  .hover\:text-green-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-950);
-      }
-    }
-  }
-  .hover\:text-indigo-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-50);
-      }
-    }
-  }
-  .hover\:text-indigo-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-100);
-      }
-    }
-  }
-  .hover\:text-indigo-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-200);
-      }
-    }
-  }
-  .hover\:text-indigo-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-300);
-      }
-    }
-  }
-  .hover\:text-indigo-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-400);
-      }
-    }
-  }
-  .hover\:text-indigo-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-500);
-      }
-    }
-  }
-  .hover\:text-indigo-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-600);
-      }
-    }
-  }
-  .hover\:text-indigo-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-700);
-      }
-    }
-  }
-  .hover\:text-indigo-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-800);
-      }
-    }
-  }
-  .hover\:text-indigo-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-900);
-      }
-    }
-  }
-  .hover\:text-indigo-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-indigo-950);
-      }
-    }
-  }
-  .hover\:text-inherit {
-    &:hover {
-      @media (hover: hover) {
-        color: inherit;
-      }
-    }
-  }
-  .hover\:text-lime-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-50);
-      }
-    }
-  }
-  .hover\:text-lime-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-100);
-      }
-    }
-  }
-  .hover\:text-lime-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-200);
-      }
-    }
-  }
-  .hover\:text-lime-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-300);
-      }
-    }
-  }
-  .hover\:text-lime-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-400);
-      }
-    }
-  }
-  .hover\:text-lime-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-500);
-      }
-    }
-  }
-  .hover\:text-lime-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-600);
-      }
-    }
-  }
-  .hover\:text-lime-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-700);
-      }
-    }
-  }
-  .hover\:text-lime-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-800);
-      }
-    }
-  }
-  .hover\:text-lime-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-900);
-      }
-    }
-  }
-  .hover\:text-lime-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-lime-950);
-      }
-    }
-  }
-  .hover\:text-mist-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-50);
-      }
-    }
-  }
-  .hover\:text-mist-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-100);
-      }
-    }
-  }
-  .hover\:text-mist-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-200);
-      }
-    }
-  }
-  .hover\:text-mist-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-300);
-      }
-    }
-  }
-  .hover\:text-mist-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-400);
-      }
-    }
-  }
-  .hover\:text-mist-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-500);
-      }
-    }
-  }
-  .hover\:text-mist-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-600);
-      }
-    }
-  }
-  .hover\:text-mist-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-700);
-      }
-    }
-  }
-  .hover\:text-mist-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-800);
-      }
-    }
-  }
-  .hover\:text-mist-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-900);
-      }
-    }
-  }
-  .hover\:text-mist-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-mist-950);
-      }
-    }
-  }
-  .hover\:text-neutral-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-50);
-      }
-    }
-  }
-  .hover\:text-neutral-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-100);
-      }
-    }
-  }
-  .hover\:text-neutral-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-200);
-      }
-    }
-  }
-  .hover\:text-neutral-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-300);
-      }
-    }
-  }
-  .hover\:text-neutral-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-400);
-      }
-    }
-  }
-  .hover\:text-neutral-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-500);
-      }
-    }
-  }
-  .hover\:text-neutral-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-600);
-      }
-    }
-  }
-  .hover\:text-neutral-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-700);
-      }
-    }
-  }
-  .hover\:text-neutral-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-800);
-      }
-    }
-  }
-  .hover\:text-neutral-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-900);
-      }
-    }
-  }
-  .hover\:text-neutral-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-neutral-950);
-      }
-    }
-  }
-  .hover\:text-orange-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-50);
-      }
-    }
-  }
-  .hover\:text-orange-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-100);
-      }
-    }
-  }
-  .hover\:text-orange-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-200);
-      }
-    }
-  }
-  .hover\:text-orange-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-300);
-      }
-    }
-  }
-  .hover\:text-orange-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-400);
-      }
-    }
-  }
-  .hover\:text-orange-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-500);
-      }
-    }
-  }
-  .hover\:text-orange-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-600);
-      }
-    }
-  }
-  .hover\:text-orange-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-700);
-      }
-    }
-  }
-  .hover\:text-orange-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-800);
-      }
-    }
-  }
-  .hover\:text-orange-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-900);
-      }
-    }
-  }
-  .hover\:text-orange-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-orange-950);
-      }
-    }
-  }
-  .hover\:text-pink-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-50);
-      }
-    }
-  }
-  .hover\:text-pink-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-100);
-      }
-    }
-  }
-  .hover\:text-pink-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-200);
-      }
-    }
-  }
-  .hover\:text-pink-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-300);
-      }
-    }
-  }
-  .hover\:text-pink-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-400);
-      }
-    }
-  }
-  .hover\:text-pink-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-500);
-      }
-    }
-  }
-  .hover\:text-pink-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-600);
-      }
-    }
-  }
-  .hover\:text-pink-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-700);
-      }
-    }
-  }
-  .hover\:text-pink-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-800);
-      }
-    }
-  }
-  .hover\:text-pink-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-900);
-      }
-    }
-  }
-  .hover\:text-pink-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-pink-950);
-      }
-    }
-  }
-  .hover\:text-purple-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-50);
-      }
-    }
-  }
-  .hover\:text-purple-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-100);
-      }
-    }
-  }
-  .hover\:text-purple-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-200);
-      }
-    }
-  }
-  .hover\:text-purple-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-300);
-      }
-    }
-  }
-  .hover\:text-purple-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-400);
-      }
-    }
-  }
-  .hover\:text-purple-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-500);
-      }
-    }
-  }
-  .hover\:text-purple-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-600);
-      }
-    }
-  }
-  .hover\:text-purple-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-700);
-      }
-    }
-  }
-  .hover\:text-purple-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-800);
-      }
-    }
-  }
-  .hover\:text-purple-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-900);
-      }
-    }
-  }
-  .hover\:text-purple-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-purple-950);
-      }
-    }
-  }
-  .hover\:text-red-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-50);
-      }
-    }
-  }
-  .hover\:text-red-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-100);
-      }
-    }
-  }
-  .hover\:text-red-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-200);
-      }
-    }
-  }
-  .hover\:text-red-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-300);
-      }
-    }
-  }
-  .hover\:text-red-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-400);
-      }
-    }
-  }
-  .hover\:text-red-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-500);
-      }
-    }
-  }
-  .hover\:text-red-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-600);
-      }
-    }
-  }
-  .hover\:text-red-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-700);
-      }
-    }
-  }
-  .hover\:text-red-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-800);
-      }
-    }
-  }
-  .hover\:text-red-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-900);
-      }
-    }
-  }
-  .hover\:text-red-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-950);
-      }
-    }
-  }
-  .hover\:text-rose-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-50);
-      }
-    }
-  }
-  .hover\:text-rose-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-100);
-      }
-    }
-  }
-  .hover\:text-rose-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-200);
-      }
-    }
-  }
-  .hover\:text-rose-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-300);
-      }
-    }
-  }
-  .hover\:text-rose-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-400);
-      }
-    }
-  }
-  .hover\:text-rose-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-500);
-      }
-    }
-  }
-  .hover\:text-rose-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-600);
-      }
-    }
-  }
-  .hover\:text-rose-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-700);
-      }
-    }
-  }
-  .hover\:text-rose-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-800);
-      }
-    }
-  }
-  .hover\:text-rose-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-900);
-      }
-    }
-  }
-  .hover\:text-rose-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-rose-950);
-      }
-    }
-  }
-  .hover\:text-sky-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-50);
-      }
-    }
-  }
-  .hover\:text-sky-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-100);
-      }
-    }
-  }
-  .hover\:text-sky-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-200);
-      }
-    }
-  }
-  .hover\:text-sky-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-300);
-      }
-    }
-  }
-  .hover\:text-sky-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-400);
-      }
-    }
-  }
-  .hover\:text-sky-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-500);
-      }
-    }
-  }
-  .hover\:text-sky-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-600);
-      }
-    }
-  }
-  .hover\:text-sky-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-700);
-      }
-    }
-  }
-  .hover\:text-sky-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-800);
-      }
-    }
-  }
-  .hover\:text-sky-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-900);
-      }
-    }
-  }
-  .hover\:text-sky-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-950);
-      }
-    }
-  }
-  .hover\:text-slate-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-50);
-      }
-    }
-  }
-  .hover\:text-slate-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-100);
-      }
-    }
-  }
-  .hover\:text-slate-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-200);
-      }
-    }
-  }
-  .hover\:text-slate-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-300);
-      }
-    }
-  }
-  .hover\:text-slate-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-400);
-      }
-    }
-  }
-  .hover\:text-slate-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-500);
-      }
-    }
-  }
-  .hover\:text-slate-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-600);
-      }
-    }
-  }
-  .hover\:text-slate-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-700);
-      }
-    }
-  }
-  .hover\:text-slate-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-800);
-      }
-    }
-  }
-  .hover\:text-slate-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-900);
-      }
-    }
-  }
-  .hover\:text-slate-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-slate-950);
-      }
-    }
-  }
-  .hover\:text-stone-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-50);
-      }
-    }
-  }
-  .hover\:text-stone-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-100);
-      }
-    }
-  }
-  .hover\:text-stone-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-200);
-      }
-    }
-  }
-  .hover\:text-stone-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-300);
-      }
-    }
-  }
-  .hover\:text-stone-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-400);
-      }
-    }
-  }
-  .hover\:text-stone-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-500);
-      }
-    }
-  }
-  .hover\:text-stone-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-600);
-      }
-    }
-  }
-  .hover\:text-stone-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-700);
-      }
-    }
-  }
-  .hover\:text-stone-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-800);
-      }
-    }
-  }
-  .hover\:text-stone-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-900);
-      }
-    }
-  }
-  .hover\:text-stone-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-stone-950);
-      }
-    }
-  }
-  .hover\:text-teal-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-50);
-      }
-    }
-  }
-  .hover\:text-teal-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-100);
-      }
-    }
-  }
-  .hover\:text-teal-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-200);
-      }
-    }
-  }
-  .hover\:text-teal-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-300);
-      }
-    }
-  }
-  .hover\:text-teal-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-400);
-      }
-    }
-  }
-  .hover\:text-teal-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-500);
-      }
-    }
-  }
-  .hover\:text-teal-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-600);
-      }
-    }
-  }
-  .hover\:text-teal-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-700);
-      }
-    }
-  }
-  .hover\:text-teal-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-800);
-      }
-    }
-  }
-  .hover\:text-teal-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-900);
-      }
-    }
-  }
-  .hover\:text-teal-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-teal-950);
-      }
-    }
-  }
-  .hover\:text-transparent {
-    &:hover {
-      @media (hover: hover) {
-        color: transparent;
-      }
-    }
-  }
-  .hover\:text-verde_oliva-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-50);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-100);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-200);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-300);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-400);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-500);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-600);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-700);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-800);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-900);
-      }
-    }
-  }
-  .hover\:text-verde_oliva-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-verde_oliva-950);
-      }
-    }
-  }
-  .hover\:text-violet-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-50);
-      }
-    }
-  }
-  .hover\:text-violet-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-100);
-      }
-    }
-  }
-  .hover\:text-violet-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-200);
-      }
-    }
-  }
-  .hover\:text-violet-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-300);
-      }
-    }
-  }
-  .hover\:text-violet-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-400);
-      }
-    }
-  }
-  .hover\:text-violet-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-500);
-      }
-    }
-  }
-  .hover\:text-violet-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-600);
-      }
-    }
-  }
-  .hover\:text-violet-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-700);
-      }
-    }
-  }
-  .hover\:text-violet-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-800);
-      }
-    }
-  }
-  .hover\:text-violet-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-900);
-      }
-    }
-  }
-  .hover\:text-violet-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-violet-950);
-      }
-    }
-  }
   .hover\:text-white {
     &:hover {
       @media (hover: hover) {
         color: var(--color-white);
-      }
-    }
-  }
-  .hover\:text-yellow-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-50);
-      }
-    }
-  }
-  .hover\:text-yellow-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-100);
-      }
-    }
-  }
-  .hover\:text-yellow-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-200);
-      }
-    }
-  }
-  .hover\:text-yellow-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-300);
-      }
-    }
-  }
-  .hover\:text-yellow-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-400);
-      }
-    }
-  }
-  .hover\:text-yellow-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-500);
-      }
-    }
-  }
-  .hover\:text-yellow-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-600);
-      }
-    }
-  }
-  .hover\:text-yellow-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-700);
-      }
-    }
-  }
-  .hover\:text-yellow-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-800);
-      }
-    }
-  }
-  .hover\:text-yellow-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-900);
-      }
-    }
-  }
-  .hover\:text-yellow-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-yellow-950);
-      }
-    }
-  }
-  .hover\:text-zinc-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-50);
-      }
-    }
-  }
-  .hover\:text-zinc-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-100);
-      }
-    }
-  }
-  .hover\:text-zinc-200 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-200);
-      }
-    }
-  }
-  .hover\:text-zinc-300 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-300);
-      }
-    }
-  }
-  .hover\:text-zinc-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-400);
-      }
-    }
-  }
-  .hover\:text-zinc-500 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-500);
-      }
-    }
-  }
-  .hover\:text-zinc-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-600);
-      }
-    }
-  }
-  .hover\:text-zinc-700 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-700);
-      }
-    }
-  }
-  .hover\:text-zinc-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-800);
-      }
-    }
-  }
-  .hover\:text-zinc-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-900);
-      }
-    }
-  }
-  .hover\:text-zinc-950 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-zinc-950);
       }
     }
   }
@@ -5233,14 +2260,12 @@ body, html {
 }
 a, a:visited {
   text-decoration: none;
-  color: inherit;
 }
 a:hover, a:focus, a:active {
   text-decoration: none;
 }
 .site-main-nav a, .site-main-nav a:visited, .site-footer-nav .footer-menu a, .site-footer-nav .footer-menu a:visited {
   text-decoration: none;
-  color: inherit;
 }
 .site-main-nav a:hover, .site-main-nav a:focus, .site-footer-nav .footer-menu a:hover, .site-footer-nav .footer-menu a:focus {
   text-decoration: underline;
@@ -5255,7 +2280,7 @@ a:hover, a:focus, a:active {
   text-underline-offset: 0.18em;
 }
 @layer base {
-  [type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
+  input:where([type='text']),input:where(:not([type])),input:where([type='email']),input:where([type='url']),input:where([type='password']),input:where([type='number']),input:where([type='date']),input:where([type='datetime-local']),input:where([type='month']),input:where([type='search']),input:where([type='tel']),input:where([type='time']),input:where([type='week']),select:where([multiple]),textarea,select {
     appearance: none;
     background-color: #fff;
     border-color: oklch(0.551 0.027 264.364);
@@ -5309,7 +2334,7 @@ a:hover, a:focus, a:active {
     padding-right: 2.5rem;
     print-color-adjust: exact;
   }
-  [multiple],[size]:where(select:not([size="1"])) {
+  select:where([multiple]),select:where([size]:not([size="1"])) {
     background-image: initial;
     background-position: initial;
     background-repeat: unset;
@@ -5317,7 +2342,7 @@ a:hover, a:focus, a:active {
     padding-right: 0.75rem;
     print-color-adjust: unset;
   }
-  [type='checkbox'],[type='radio'] {
+  input:where([type='checkbox']),input:where([type='radio']) {
     appearance: none;
     padding: 0;
     print-color-adjust: exact;
@@ -5334,13 +2359,13 @@ a:hover, a:focus, a:active {
     border-width: 1px;
     --tw-shadow: 0 0 #0000;
   }
-  [type='checkbox'] {
+  input:where([type='checkbox']) {
     border-radius: 0px;
   }
-  [type='radio'] {
+  input:where([type='radio']) {
     border-radius: 100%;
   }
-  [type='checkbox']:focus,[type='radio']:focus {
+  input:where([type='checkbox']):focus,input:where([type='radio']):focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
     --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
@@ -5351,36 +2376,45 @@ a:hover, a:focus, a:active {
     --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  [type='checkbox']:checked,[type='radio']:checked {
+  input:where([type='checkbox']):checked,input:where([type='radio']):checked {
     border-color: transparent;
     background-color: currentColor;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
   }
-  [type='checkbox']:checked {
+  input:where([type='checkbox']):checked {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    @media (forced-colors: active) {
+      appearance: auto;
+    }
   }
-  [type='radio']:checked {
+  input:where([type='radio']):checked {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+    @media (forced-colors: active) {
+      appearance: auto;
+    }
   }
-  [type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {
+  input:where([type='checkbox']):checked:hover,input:where([type='checkbox']):checked:focus,input:where([type='radio']):checked:hover,input:where([type='radio']):checked:focus {
     border-color: transparent;
     background-color: currentColor;
   }
-  [type='checkbox']:indeterminate {
+  input:where([type='checkbox']):indeterminate {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
     border-color: transparent;
     background-color: currentColor;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+    @media (forced-colors: active) {
+      appearance: auto;
+    }
   }
-  [type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {
+  input:where([type='checkbox']):indeterminate:hover,input:where([type='checkbox']):indeterminate:focus {
     border-color: transparent;
     background-color: currentColor;
   }
-  [type='file'] {
+  input:where([type='file']) {
     background: unset;
     border-color: inherit;
     border-width: 0;
@@ -5389,7 +2423,7 @@ a:hover, a:focus, a:active {
     font-size: unset;
     line-height: inherit;
   }
-  [type='file']:focus {
+  input:where([type='file']):focus {
     outline: 1px solid ButtonText;
     outline: 1px auto -webkit-focus-ring-color;
   }
