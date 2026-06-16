@@ -17,5 +17,5 @@
 
             ),
             'dynamic' => true,
-            'version' => '1.0.114'
+            'version' => '1.0.108'
         ) );

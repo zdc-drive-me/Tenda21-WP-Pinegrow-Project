@@ -1317,9 +1317,6 @@
   .object-center {
     object-position: center;
   }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
-  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
@@ -1547,9 +1544,6 @@
   .text-\[1\.6rem\] {
     font-size: 1.6rem;
   }
-  .text-\[11px\] {
-    font-size: 11px;
-  }
   .text-\[clamp\(1\.5rem\,3\.5vw\,2\.5rem\)\] {
     font-size: clamp(1.5rem, 3.5vw, 2.5rem);
   }
@@ -1682,10 +1676,6 @@
     --tw-tracking: 0.15em;
     letter-spacing: 0.15em;
   }
-  .tracking-\[0\.16em\] {
-    --tw-tracking: 0.16em;
-    letter-spacing: 0.16em;
-  }
   .tracking-\[0\.18em\] {
     --tw-tracking: 0.18em;
     letter-spacing: 0.18em;
@@ -1709,9 +1699,6 @@
   }
   .text-bone-50 {
     color: var(--color-bone-50);
-  }
-  .text-bone-100 {
-    color: var(--color-bone-100);
   }
   .text-bone-200 {
     color: var(--color-bone-200);
@@ -1803,9 +1790,6 @@
   }
   .opacity-50 {
     opacity: 50%;
-  }
-  .opacity-60 {
-    opacity: 60%;
   }
   .opacity-80 {
     opacity: 80%;
@@ -2003,13 +1987,6 @@
     &:hover {
       @media (hover: hover) {
         text-decoration-line: underline;
-      }
-    }
-  }
-  .hover\:opacity-100 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 100%;
       }
     }
   }
