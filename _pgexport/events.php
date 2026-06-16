@@ -7,7 +7,7 @@
     <div class="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center">
         <div class="flex items-center gap-5 mb-10">
             <span class="block w-12 h-px bg-clay-400 shrink-0"></span>
-            <p class="font-sans uppercase text-[0.6rem] tracking-[0.3em] font-medium text-forest-700 whitespace-nowrap"><?php _e( 'Monthly Agenda · 2026', 'tenda21' ); ?></p>
+            <p class="font-sans uppercase text-[0.6rem] tracking-[0.3em] font-medium text-forest-700 whitespace-nowrap"><?php _e( 'Monthly Agenda &middot; 2026', 'tenda21' ); ?></p>
             <span class="block w-12 h-px bg-clay-400 shrink-0"></span>
         </div>
         <h1 class="font-serif font-light text-[clamp(3.8rem,8vw,7.5rem)] leading-[1.0] tracking-[-0.01em] text-charcoal-900 mb-10"> <?php _e( 'Events &amp;', 'tenda21' ); ?><br><em class="italic text-clay-500"><?php _e( 'Immersions', 'tenda21' ); ?></em> </h1>

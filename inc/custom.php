@@ -455,7 +455,7 @@ add_filter( 'render_block', function( $block_content, $block ) {
     return ob_get_clean();
 }, 20, 2 );
 ?>
-    <?php
+    <?php<?php
     wp_reset_postdata();
 
     return ob_get_clean();
@@ -580,7 +580,19 @@ add_filter( 'render_block', function( $block_content, $block ) {
 function tenda21_render_facilitator_hero_block( $post_id, $block = null ) {
     $attrs            = ( isset( $block['attrs'] ) && is_array( $block['attrs'] ) ) ? $block['attrs'] : array();
     $back_link_label  = isset( $attrs['back_link_label'] ) && $attrs['back_link_label'] !== '' ? $attrs['back_link_label'] : __( '← All Facilitators', 'tenda21' );
-    $featured_url = get_the_post_thumbnail_url( $post_id, 'full' );
+    $featured_url = '';
+
+    if ( function_exists( 'get_field' ) ) {
+        $featured_url = tenda21_normalize_media_value_to_url( get_field( 'facilitator_featured', $post_id ), 'full' );
+    }
+
+    if ( ! $featured_url ) {
+        $featured_url = tenda21_normalize_media_value_to_url( get_post_meta( $post_id, 'facilitator_featured', true ), 'full' );
+    }
+
+    if ( ! $featured_url ) {
+        $featured_url = get_the_post_thumbnail_url( $post_id, 'full' );
+    }
     $role_label   = get_post_meta( $post_id, 'facilitator_role_label', true );
     $content      = apply_filters( 'the_content', get_post_field( 'post_content', $post_id ) );
     $archive_url  = get_post_type_archive_link( 'facilitator' );
@@ -592,7 +604,7 @@ function tenda21_render_facilitator_hero_block( $post_id, $block = null ) {
     $wrapper_attributes = tenda21_block_wrapper_attributes( $block, 'relative pt-32 pb-24 px-6 bg-bone-200' );
 
     ob_start();
-    ?>
+    ?>?>
     <section <?php echo $wrapper_attributes; ?>>
         <div class="max-w-6xl mx-auto w-full">
             <div class="grid md:grid-cols-5 gap-12 items-start">
@@ -1442,7 +1454,7 @@ function tenda21_render_events_archive_row( $event_id ) {
             </div>
         </div>
     </article>
-    <?php
+    <?php<?php
     return ob_get_clean();
 }
 
@@ -1522,13 +1534,17 @@ function tenda21_render_experience_hero_block( $post_id, $block = null ) {
     $duration_value = get_post_meta( $post_id, 'experience_duration_label', true );
     $format         = get_post_meta( $post_id, 'experience_format', true );
 
-    $featured     = get_field( 'experience_featured', $post_id );
-    if ( is_array( $featured ) ) {
-        $featured_url = isset( $featured['url'] ) ? $featured['url'] : '';
-    } elseif ( is_numeric( $featured ) && $featured ) {
-        $featured_url = wp_get_attachment_image_url( (int) $featured, 'large' );
-    } else {
-        $featured_url = '';
+    $featured_url = '';
+    if ( function_exists( 'get_field' ) ) {
+        $featured_url = tenda21_normalize_media_value_to_url( get_field( 'experience_featured', $post_id ), 'large' );
+    }
+
+    if ( ! $featured_url ) {
+        $featured_url = tenda21_normalize_media_value_to_url( get_post_meta( $post_id, 'experience_featured', true ), 'large' );
+    }
+
+    if ( ! $featured_url ) {
+        $featured_url = get_the_post_thumbnail_url( $post_id, 'large' );
     }
 
     $archive_url = get_post_type_archive_link( 'experience' );
@@ -1540,7 +1556,7 @@ function tenda21_render_experience_hero_block( $post_id, $block = null ) {
     $wrapper_attributes = tenda21_block_wrapper_attributes( $block, 'relative pt-32 pb-16 px-6 bg-bone-200' );
 
     ob_start();
-    ?>
+    ?>?>
     <section <?php echo $wrapper_attributes; ?>>
         <div class="max-w-6xl mx-auto w-full">
             <a href="<?php echo esc_url( $archive_url ); ?>" class="inline-block font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700 hover:text-forest-800 mb-8 transition-colors"><?php echo esc_html( $labels['back_link_label'] ); ?></a>
@@ -1751,7 +1767,7 @@ function tenda21_render_experience_facilitator_block( $post_id, $block = null ) 
             </div>
         </div>
     </section>
-<?php
+<?php<?php
     return ob_get_clean();
 }
 
@@ -1804,12 +1820,12 @@ function tenda21_get_event_feature_image_url( $post_id, $size = 'large' ) {
     $candidates = array();
 
     if ( function_exists( 'get_field' ) ) {
-        $candidates[] = get_field( 'event_feature_image', $post_id );
         $candidates[] = get_field( 'event_featured', $post_id );
+        $candidates[] = get_field( 'event_feature_image', $post_id );
     }
 
-    $candidates[] = get_post_meta( $post_id, 'event_feature_image', true );
     $candidates[] = get_post_meta( $post_id, 'event_featured', true );
+    $candidates[] = get_post_meta( $post_id, 'event_feature_image', true );
 
     foreach ( $candidates as $value ) {
         $url = tenda21_normalize_media_value_to_url( $value, $size );
@@ -2060,3 +2076,5 @@ function tenda21_block_wrapper_attributes( $block, $base_class ) {
 
     return implode( ' ', $compiled );
 }
+
+?>
