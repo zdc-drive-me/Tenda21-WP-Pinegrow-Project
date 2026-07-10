@@ -94,7 +94,7 @@ add_filter( 'pg_query_args', function( $args, $block_id ) {
      * 4. facilitators-archive
      * Used on: Facilitators archive page (facilitators-grid block)
      * Returns: all published Facilitator posts, alphabetically by title
-     * Activates PG_Blocks_v4::loop_start() if Pinegrow generates it for facilitators-grid.
+     * Activates PG_Blocks_v7::loop_start() if Pinegrow generates it for facilitators-grid.
      */
     } elseif ( $block_id === 'facilitators-archive' ) {
         $args['post_type']      = 'facilitator';
@@ -107,7 +107,7 @@ add_filter( 'pg_query_args', function( $args, $block_id ) {
      * 5. experiences-archive
      * Used on: Experiences archive page (experiences-grid block)
      * Returns: all published Experience posts, ordered by menu_order ascending
-     * Activates PG_Blocks_v4::loop_start() if Pinegrow generates it for experiences-grid.
+     * Activates PG_Blocks_v7::loop_start() if Pinegrow generates it for experiences-grid.
      */
     } elseif ( $block_id === 'experiences-archive' ) {
         $args['post_type']      = 'experience';
@@ -301,66 +301,50 @@ add_filter( 'render_block', function( $block_content, $block ) {
     $wrapper_classes = 'py-16 md:py-24 px-6 bg-bone-100 border-t border-b border-mist-300';
     $wrapper_attr    = tenda21_block_wrapper_attributes( $block, $wrapper_classes );
 
-    $query = new WP_Query( array(
+    $events_view = isset( $_GET['events_view'] ) ? sanitize_key( wp_unslash( $_GET['events_view'] ) ) : '';
+    $query_args  = array(
         'post_type'      => 'event',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
         'meta_key'       => 'event_start_date',
         'orderby'        => 'meta_value',
         'order'          => 'ASC',
-    ) );
+    );
+
+    if ( 'all' !== $events_view ) {
+        $query_args['meta_query'] = array(
+            array(
+                'key'     => 'event_start_date',
+                'value'   => current_time( 'Ymd' ),
+                'type'    => 'NUMERIC',
+                'compare' => '>=',
+            ),
+        );
+    }
+
+    $query = new WP_Query( $query_args );
 
     ob_start();
     ?>
     <section <?php echo $wrapper_attr; ?>>
-        <?php
-    $raw_view     = isset( $_GET['events_view'] ) ? sanitize_key( wp_unslash( $_GET['events_view'] ) ) : 'upcoming';
-    $events_view  = ( 'all' === $raw_view ) ? 'all' : 'upcoming';
-    $is_all_view  = ( 'all' === $events_view );
-    $today_value  = (int) current_time( 'Ymd' );
-    $upcoming_url = remove_query_arg( 'events_view' );
-    $all_url      = add_query_arg( 'events_view', 'all' );
-    ?>
         <div class="max-w-6xl mx-auto w-full">
-            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-mist-400 pb-4 mb-10 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-500">
-                <div class="flex items-center gap-3">
-                    <?php if ( $schedule_label ) : ?>
-                        <span><?php echo esc_html( $is_all_view ? __( 'All Events', 'tenda21' ) : $schedule_label ); ?></span>
-                    <?php endif; ?>
-                    <div class="h-4 w-px bg-mist-400"></div>
-                    <div class="inline-flex items-center rounded-sm border border-mist-400 overflow-hidden normal-case tracking-[0.08em] text-[0.62rem]">
-                        <a href="<?php echo esc_url( $upcoming_url ); ?>" class="px-3 py-1.5 <?php echo esc_attr( $is_all_view ? 'text-charcoal-600 hover:text-charcoal-900 hover:bg-mist-200/40' : 'bg-charcoal-900 text-bone-50' ); ?>" <?php echo $is_all_view ? '' : 'aria-current="page"'; ?>><?php esc_html_e( 'Upcoming', 'tenda21' ); ?></a>
-                        <a href="<?php echo esc_url( $all_url ); ?>" class="px-3 py-1.5 border-l border-mist-400 <?php echo esc_attr( $is_all_view ? 'bg-charcoal-900 text-bone-50' : 'text-charcoal-600 hover:text-charcoal-900 hover:bg-mist-200/40' ); ?>" <?php echo $is_all_view ? 'aria-current="page"' : ''; ?>><?php esc_html_e( 'All Events', 'tenda21' ); ?></a>
-                    </div>
-                </div>
+            <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between border-b border-mist-400 pb-4 mb-10 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-500">
+                <?php if ( $schedule_label ) : ?>
+                    <span><?php echo esc_html( $schedule_label ); ?></span>
+                <?php endif; ?>
                 <?php if ( $timezone_label ) : ?>
                     <span><?php echo esc_html( $timezone_label ); ?></span>
                 <?php endif; ?>
             </div>
             <?php if ( $query->have_posts() ) : ?>
-                <?php $rendered_any = false; ?>
                 <div class="space-y-6">
                     <?php
-                while ( $query->have_posts() ) :
-                    $query->the_post();
-
-                    $event_start_raw = get_post_meta( get_the_ID(), 'event_start_date', true );
-                    $event_start_int = $event_start_raw ? (int) preg_replace( '/\D+/', '', (string) $event_start_raw ) : 0;
-
-                    if ( ! $is_all_view && ( ! $event_start_int || $event_start_int < $today_value ) ) {
-                        continue;
-                    }
-
-                    $rendered_any = true;
-                    echo tenda21_render_events_archive_row( get_the_ID() );
-                endwhile;
-                ?>
+                    while ( $query->have_posts() ) :
+                        $query->the_post();
+                        echo tenda21_render_events_archive_row( get_the_ID() );
+                    endwhile;
+                    ?>
                 </div>
-                <?php if ( ! $rendered_any ) : ?>
-                    <div class="rounded border border-dashed border-mist-400/70 bg-bone-50/70 px-6 py-8 text-center font-sans text-sm text-charcoal-500/80">
-                        <?php esc_html_e( 'No events found.', 'tenda21' ); ?>
-                    </div>
-                <?php endif; ?>
             <?php else : ?>
                 <div class="rounded border border-dashed border-mist-400/70 bg-bone-50/70 px-6 py-8 text-center font-sans text-sm text-charcoal-500/80">
                     <?php esc_html_e( 'No events found.', 'tenda21' ); ?>
@@ -368,7 +352,7 @@ add_filter( 'render_block', function( $block_content, $block ) {
             <?php endif; ?>
         </div>
     </section>
-    <?php<?php
+    <?php
     wp_reset_postdata();
 
     return ob_get_clean();
@@ -493,31 +477,24 @@ add_filter( 'render_block', function( $block_content, $block ) {
 function tenda21_render_facilitator_hero_block( $post_id, $block = null ) {
     $attrs            = ( isset( $block['attrs'] ) && is_array( $block['attrs'] ) ) ? $block['attrs'] : array();
     $back_link_label  = isset( $attrs['back_link_label'] ) && $attrs['back_link_label'] !== '' ? $attrs['back_link_label'] : __( '← All Facilitators', 'tenda21' );
-    $featured = get_field( 'facilitator_featured' );
-    if ( is_array( $featured ) ) {
-        $featured_url = isset( $featured['url'] ) ? $featured['url'] : '';
-    } elseif ( is_numeric( $featured ) && $featured ) {
-        $featured_url = wp_get_attachment_image_url( (int) $featured, 'large' );
-    } else {
-        $featured_url = '';
-    }
+    $featured_url = get_the_post_thumbnail_url( $post_id, 'full' );
     $role_label   = get_post_meta( $post_id, 'facilitator_role_label', true );
     $content      = apply_filters( 'the_content', get_post_field( 'post_content', $post_id ) );
     $archive_url  = get_post_type_archive_link( 'facilitator' );
     if ( ! $archive_url ) {
         $archive_url = home_url( '/' );
     }
-    $bg_style = $featured_url ? ' style="background-image: url(' . esc_url( $featured_url ) . ')"' : '';
+    $bg_style = $featured_url ? 'background-image: url(' . esc_url( $featured_url ) . ')' : '';
 
     $wrapper_attributes = tenda21_block_wrapper_attributes( $block, 'relative pt-32 pb-24 px-6 bg-bone-200' );
 
     ob_start();
-    ?>?>
+    ?>
     <section <?php echo $wrapper_attributes; ?>>
         <div class="max-w-6xl mx-auto w-full">
             <div class="grid md:grid-cols-5 gap-12 items-start">
                 <div class="md:col-span-2">
-                    <div class="aspect-[3/4] bg-mist-300 bg-cover bg-center sticky top-32" ?php echo $bg_style; ?></div>
+                    <div class="aspect-[3/4] bg-mist-300 bg-cover bg-center sticky top-32" style="<?php echo esc_attr( $bg_style ); ?>"></div>
                 </div>
                 <div class="md:col-span-3 space-y-8">
                     <div>
@@ -993,7 +970,7 @@ function tenda21_render_event_hero_block( $post_id, $block = null ) {
         $fac_links = '<span class="font-sans inline-flex items-center text-xs uppercase tracking-[0.15em] text-charcoal-400">' . esc_html__( 'Facilitator TBA', 'tenda21' ) . '</span>';
     }
 
-    $bg_style            = $featured_url ? ' style="background-image: url(' . esc_url( $featured_url ) . ')"' : '';
+    $bg_style            = $featured_url ? 'background-image: url(' . esc_url( $featured_url ) . ')' : '';
     $wrapper_attributes  = tenda21_block_wrapper_attributes( $block, 'pt-28 pb-0 bg-bone-200' );
     $experience_has_link = (bool) $experience_url;
 
@@ -1002,7 +979,7 @@ function tenda21_render_event_hero_block( $post_id, $block = null ) {
     <section <?php echo $wrapper_attributes; ?>>
         <div class="max-w-6xl mx-auto px-6">
             <a href="<?php echo esc_url( $archive_url ); ?>" class="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-[0.2em] text-forest-700 hover:text-forest-800 transition-colors mb-8 block"> <?php echo esc_html( $labels['back_link_label'] ); ?> </a>
-            <div class="w-full aspect-[16/7] bg-mist-300 bg-cover bg-center border border-mist-400 overflow-hidden" ?php if ( $featured_url ) : ? style="background-image: url('<?php echo esc_url( $featured_url ); ?>')" ?php endif; ?></div>
+            <div class="w-full aspect-[16/7] bg-mist-300 bg-cover bg-center border border-mist-400 overflow-hidden" style="<?php echo esc_attr( $bg_style ); ?>"></div>
             <div class="grid gap-10 lg:grid-cols-[1.2fr,0.8fr] pt-10 pb-16">
                 <div class="space-y-7">
                     <div class="space-y-4">
@@ -1272,13 +1249,13 @@ function tenda21_render_events_archive_row( $event_id ) {
         $fac_links = '<span class="text-[0.65rem] font-sans uppercase tracking-[0.15em] text-charcoal-400">' . esc_html__( 'Facilitator TBA', 'tenda21' ) . '</span>';
     }
 
-    $thumb_style = $featured_url ? ' style="background-image: url(' . esc_url( $featured_url ) . ')"' : '';
+    $thumb_style = $featured_url ? 'background-image: url(' . esc_url( $featured_url ) . ')' : '';
 
     ob_start();
     ?>
     <article class="bg-bone-50/90 border border-mist-300 px-4 py-4 md:px-6 md:py-5 shadow-[0_1px_0_rgba(42,41,38,0.04)]">
         <div class="grid grid-cols-[96px_1fr] md:grid-cols-[120px_1fr_148px_164px] gap-4 md:gap-x-6 items-start">
-            <div class="aspect-square rounded-sm bg-mist-300 bg-cover bg-center shrink-0" ?php if ( $featured_url ) : ? style="background-image: url('<?php echo esc_url( $featured_url ); ?>')" ?php endif; ?></div>
+            <div class="aspect-square rounded-sm bg-mist-300 bg-cover bg-center shrink-0" style="<?php echo esc_attr( $thumb_style ); ?>"></div>
             <div class="min-w-0 space-y-2">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                     <a href="<?php echo esc_url( $event_url ); ?>" class="font-serif text-xl md:text-2xl leading-tight text-charcoal-900 underline-offset-4 hover:underline"><?php echo esc_html( $event_name ); ?></a>
@@ -1456,7 +1433,7 @@ function tenda21_render_experience_hero_block( $post_id, $block = null ) {
         $archive_url = home_url( '/' );
     }
 
-    $bg_style           = $featured_url ? ' style="background-image: url(' . esc_url( $featured_url ) . ')"' : '';
+    $bg_style           = $featured_url ? 'background-image: url(' . esc_url( $featured_url ) . ')' : '';
     $wrapper_attributes = tenda21_block_wrapper_attributes( $block, 'relative pt-32 pb-16 px-6 bg-bone-200' );
 
     ob_start();
@@ -1488,7 +1465,7 @@ function tenda21_render_experience_hero_block( $post_id, $block = null ) {
                         </div>
                     </div>
                 </div>
-                <div class="aspect-[4/5] bg-mist-300 bg-cover bg-center sticky top-32" ?php if ( $featured_url ) : ? style="background-image: url('<?php echo esc_url( $featured_url ); ?>')" ?php endif; ?></div>
+                <div class="aspect-[4/5] bg-mist-300 bg-cover bg-center sticky top-32" style="<?php echo esc_attr( $bg_style ); ?>"></div>
             </div>
         </div>
     </section>
@@ -1650,7 +1627,7 @@ function tenda21_render_experience_facilitator_block( $post_id, $block = null ) 
                 ?>
                     <div class="grid md:grid-cols-4 gap-8 items-start">
                         <div class="md:col-span-1">
-                            <div class="aspect-[3/4] bg-mist-300 bg-cover bg-center mb-4" ?php echo $fac_bg_style; ?></div>
+                            <div class="aspect-[3/4] bg-mist-300 bg-cover bg-center mb-4" <?php echo $fac_bg_style; ?>></div>
                         </div>
                         <div class="md:col-span-3 space-y-4">
                             <div>

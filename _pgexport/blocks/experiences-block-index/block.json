@@ -49,7 +49,7 @@
             "default": "5–10 Days"
         }
     },
-    "version": "1.0.119",
+    "version": "1.0.121",
     "editorScript": "block-tenda21-experiences-block-index-script",
     "example": {
         "attributes": {}

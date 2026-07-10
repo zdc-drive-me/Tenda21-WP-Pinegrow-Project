@@ -21,7 +21,7 @@
             "default": "Format"
         }
     },
-    "version": "1.0.119",
+    "version": "1.0.121",
     "editorScript": "block-tenda21-experience-hero-script",
     "example": {
         "attributes": {}

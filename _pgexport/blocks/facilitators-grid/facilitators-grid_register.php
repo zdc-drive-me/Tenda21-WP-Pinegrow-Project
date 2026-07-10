@@ -7,5 +7,5 @@
             'metadata_path' => __DIR__,
             'js_file' => 'blocks/facilitators-grid/facilitators-grid.js',
             'dynamic' => true,
-            'version' => '1.0.119'
+            'version' => '1.0.121'
         ) );

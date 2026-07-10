@@ -30,7 +30,7 @@
             "default": "Inquire About Custom Retreats"
         }
     },
-    "version": "1.0.119",
+    "version": "1.0.121",
     "editorScript": "block-tenda21-experiences-cta-script",
     "example": {
         "attributes": {}

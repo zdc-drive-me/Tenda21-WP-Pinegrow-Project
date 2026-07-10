@@ -25,7 +25,7 @@
             "default": "Get in Touch"
         }
     },
-    "version": "1.0.119",
+    "version": "1.0.121",
     "editorScript": "block-tenda21-cta-invitation-script",
     "example": {
         "attributes": {}

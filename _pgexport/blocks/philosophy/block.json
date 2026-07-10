@@ -25,7 +25,7 @@
             "default": "This is where you practice the art of living deliberately—where every moment is an invitation to arrive, again and again, in the only place we ever truly are: here, now."
         }
     },
-    "version": "1.0.119",
+    "version": "1.0.121",
     "editorScript": "block-tenda21-philosophy-script",
     "example": {
         "attributes": {}

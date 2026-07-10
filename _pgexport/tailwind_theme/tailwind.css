@@ -683,6 +683,9 @@
   .mt-auto {
     margin-top: auto;
   }
+  .-mb-\[5px\] {
+    margin-bottom: calc(5px * -1);
+  }
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
   }
@@ -2233,6 +2236,11 @@
     @media (width >= 48rem) {
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .md\:text-charcoal-500 {
+    @media (width >= 48rem) {
+      color: var(--color-charcoal-500);
     }
   }
   .lg\:col-span-5 {

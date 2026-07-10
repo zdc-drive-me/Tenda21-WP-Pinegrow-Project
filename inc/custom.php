@@ -1,4 +1,4 @@
-<?php
+<?php<?php
 /*
  * custom.php — Tenda 21 project-specific PHP helpers
  *
@@ -308,7 +308,7 @@ add_filter( 'render_block', function( $block_content, $block ) {
         'posts_per_page' => -1,
         'meta_key'       => 'event_start_date',
         'orderby'        => 'meta_value',
-        'order'          => 'ASC',
+        'order'          => ( 'all' === $events_view ) ? 'DESC' : 'ASC',
     );
 
     if ( 'all' !== $events_view ) {
@@ -324,16 +324,24 @@ add_filter( 'render_block', function( $block_content, $block ) {
 
     $query = new WP_Query( $query_args );
 
+    $upcoming_url = remove_query_arg( 'events_view' );
+    $all_url      = add_query_arg( 'events_view', 'all' );
+    $is_all       = ( 'all' === $events_view );
+
     ob_start();
-    ?>
+    ?>?>
     <section <?php echo $wrapper_attr; ?>>
         <div class="max-w-6xl mx-auto w-full">
-            <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between border-b border-mist-400 pb-4 mb-10 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-500">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-mist-400 pb-4 mb-10 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-500">
                 <?php if ( $schedule_label ) : ?>
                     <span><?php echo esc_html( $schedule_label ); ?></span>
                 <?php endif; ?>
+                <div class="flex items-center gap-6 font-sans uppercase tracking-[0.15em] text-xs">
+                    <a href="<?php echo esc_url( $upcoming_url ); ?>" class="<?php echo ! $is_all ? 'text-charcoal-900 font-medium border-b border-charcoal-900 pb-1 -mb-[5px]' : 'text-charcoal-400 hover:text-charcoal-900 transition-colors'; ?>" <?php if ( ! $is_all ) echo 'aria-current="page"'; ?>>Upcoming Events</a>
+                    <a href="<?php echo esc_url( $all_url ); ?>" class="<?php echo $is_all ? 'text-charcoal-900 font-medium border-b border-charcoal-900 pb-1 -mb-[5px]' : 'text-charcoal-400 hover:text-charcoal-900 transition-colors'; ?>" <?php if ( $is_all ) echo 'aria-current="page"'; ?>>All Events</a>
+                </div>
                 <?php if ( $timezone_label ) : ?>
-                    <span><?php echo esc_html( $timezone_label ); ?></span>
+                    <span class="text-charcoal-400 md:text-charcoal-500"><?php echo esc_html( $timezone_label ); ?></span>
                 <?php endif; ?>
             </div>
             <?php if ( $query->have_posts() ) : ?>

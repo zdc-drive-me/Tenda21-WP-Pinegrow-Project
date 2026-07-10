@@ -43,7 +43,7 @@
             }
         }
     },
-    "version": "1.0.119",
+    "version": "1.0.121",
     "editorScript": "block-tenda21-space-gallery-script",
     "example": {
         "attributes": {}

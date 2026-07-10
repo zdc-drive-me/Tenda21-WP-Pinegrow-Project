@@ -1,7 +1,11 @@
 <section <?php if(empty($_GET['context']) || $_GET['context'] !== 'edit') echo get_block_wrapper_attributes( array('class' => "py-16 md:py-24 px-6 bg-bone-100 border-t border-b border-mist-300", ) ); else echo 'data-wp-block-props="true"'; ?>>
     <div class="max-w-6xl mx-auto w-full">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between border-b border-mist-400 pb-4 mb-10 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-500">
+        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-mist-400 pb-4 mb-10 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-500">
             <span><?php echo PG_Blocks_v7::getAttribute( $args, 'events_schedule_label' ) ?></span>
+            <div class="flex items-center gap-6 font-sans uppercase tracking-[0.15em] text-xs">
+                <a href="#" class="text-charcoal-900 font-medium border-b border-charcoal-900 pb-1 -mb-[5px]" aria-current="page"><?php _e( 'Upcoming Events', 'tenda21' ); ?></a>
+                <a href="#" class="text-charcoal-400 hover:text-charcoal-900 transition-colors"><?php _e( 'All Events', 'tenda21' ); ?></a>
+            </div>
             <span><?php echo PG_Blocks_v7::getAttribute( $args, 'events_timezone_label' ) ?></span>
         </div>
         <div class="space-y-6">

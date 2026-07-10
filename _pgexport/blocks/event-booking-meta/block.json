@@ -21,7 +21,7 @@
             "default": "Book Your Place"
         }
     },
-    "version": "1.0.119",
+    "version": "1.0.121",
     "editorScript": "block-tenda21-event-booking-meta-script",
     "example": {
         "attributes": {}

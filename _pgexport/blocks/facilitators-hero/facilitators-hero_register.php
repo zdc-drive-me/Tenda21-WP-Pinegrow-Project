@@ -7,5 +7,5 @@
             'metadata_path' => __DIR__,
             'js_file' => 'blocks/facilitators-hero/facilitators-hero.js',
             'dynamic' => true,
-            'version' => '1.0.119'
+            'version' => '1.0.121'
         ) );
