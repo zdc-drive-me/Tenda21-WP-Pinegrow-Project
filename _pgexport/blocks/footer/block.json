@@ -86,7 +86,7 @@
             "default": "PT000000000"
         }
     },
-    "version": "1.0.121",
+    "version": "1.0.122",
     "editorScript": "block-tenda21-footer-script",
     "example": {
         "attributes": {

@@ -7,5 +7,5 @@
             'metadata_path' => __DIR__,
             'js_file' => 'blocks/events-hero/events-hero.js',
             'dynamic' => true,
-            'version' => '1.0.121'
+            'version' => '1.0.122'
         ) );

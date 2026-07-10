@@ -40,7 +40,7 @@
             "default": "Short description of this experience."
         }
     },
-    "version": "1.0.121",
+    "version": "1.0.122",
     "editorScript": "block-tenda21-experience-card-script",
     "example": {
         "attributes": {}

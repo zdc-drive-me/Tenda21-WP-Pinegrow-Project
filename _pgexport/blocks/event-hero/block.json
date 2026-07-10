@@ -45,7 +45,7 @@
             "default": "Need a custom date or private immersion? Mention it in your note."
         }
     },
-    "version": "1.0.121",
+    "version": "1.0.122",
     "editorScript": "block-tenda21-event-hero-script",
     "example": {
         "attributes": {}

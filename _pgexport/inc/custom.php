@@ -1,4 +1,4 @@
-<?php<?php
+<?php
 /*
  * custom.php — Tenda 21 project-specific PHP helpers
  *

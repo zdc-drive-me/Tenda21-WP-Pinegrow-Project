@@ -25,7 +25,7 @@
             "default": "Scroll"
         }
     },
-    "version": "1.0.121",
+    "version": "1.0.122",
     "editorScript": "block-tenda21-events-hero-script",
     "example": {
         "attributes": {}

@@ -17,7 +17,7 @@
             "default": "Each immersion is designed to guide you back to what matters most. Choose the path that calls to you—or let us help you find it."
         }
     },
-    "version": "1.0.121",
+    "version": "1.0.122",
     "editorScript": "block-tenda21-experiences-hero-script",
     "example": {
         "attributes": {}

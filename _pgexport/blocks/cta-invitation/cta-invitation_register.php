@@ -7,5 +7,5 @@
             'metadata_path' => __DIR__,
             'js_file' => 'blocks/cta-invitation/cta-invitation.js',
             'dynamic' => true,
-            'version' => '1.0.121'
+            'version' => '1.0.122'
         ) );
