@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/facilitator-specialties",
+    "title": "Facilitator Specialties",
+    "description": "Areas of expertise tag cloud for a Facilitator page. Maps to facilitator_specialties SCF field.",
+    "category": "tenda21_facilitator",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "facilitator_specialties": {
+            "type": "string",
+            "default": "<span class=\"px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm\">Specialty One</span> <span class=\"px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm\">Specialty Two</span> <span class=\"px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm\">Specialty Three</span>"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-facilitator-specialties-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

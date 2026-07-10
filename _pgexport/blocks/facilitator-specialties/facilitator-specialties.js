@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,31 +14,44 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/facilitator-specialties', {
-        apiVersion: 2,
-        title: 'Facilitator Specialties',
-        description: 'Areas of expertise tag cloud for a Facilitator page. Maps to facilitator_specialties SCF field.',
-        icon: 'block-default',
-        category: 'tenda21_facilitator',
-        keywords: [],
-        supports: {},
-        attributes: {
-            facilitator_specialties: {
-                type: ['string', 'null'],
-                default: `<span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty One</span> <span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty Two</span> <span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty Three</span>`,
-            }
-        },
-        example: { attributes: { facilitator_specialties: `<span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty One</span> <span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty Two</span> <span class="px-4 py-2 bg-mist-200 text-charcoal-700 font-sans text-sm">Specialty Three</span>` } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'py-12 px-6 bg-bone-200' });
             const setAttributes = props.setAttributes; 
+            
+            
             
             
             const innerBlocksProps = null;
@@ -84,7 +97,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/facilitator-specialties', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

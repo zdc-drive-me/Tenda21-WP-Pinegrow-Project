@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/tenda21-page-hero-host",
+    "title": "Page Hero Host",
+    "description": "Hero section for the A Anfitriã host page",
+    "category": "tenda21_host",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "hero_title": {
+            "type": "string",
+            "default": "A Anfitriã"
+        },
+        "hero_subtitle": {
+            "type": "string",
+            "default": "Sobre quem sustenta a casa"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-tenda21-page-hero-host-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

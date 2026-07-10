@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,35 +14,44 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/tenda21-page-hero-host', {
-        apiVersion: 2,
-        title: 'Page Hero Host',
-        description: 'Hero section for the A Anfitriã host page',
-        icon: 'block-default',
-        category: 'tenda21_host',
-        keywords: [],
-        supports: {},
-        attributes: {
-            hero_title: {
-                type: ['string', 'null'],
-                default: `A Anfitriã`,
-            },
-            hero_subtitle: {
-                type: ['string', 'null'],
-                default: `Sobre quem sustenta a casa`,
-            }
-        },
-        example: { attributes: { hero_title: `A Anfitriã`, hero_subtitle: `Sobre quem sustenta a casa` } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'relative pt-40 pb-16 px-6 bg-bone-200', 'data-block-name': 'page-hero-host' });
             const setAttributes = props.setAttributes; 
+            
+            
             
             
             const innerBlocksProps = null;
@@ -85,7 +94,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/tenda21-page-hero-host', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

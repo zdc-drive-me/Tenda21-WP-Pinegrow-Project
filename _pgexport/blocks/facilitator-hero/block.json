@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/facilitator-hero",
+    "title": "Facilitator Hero",
+    "description": "Hero section for a single Facilitator page. Shows photo, name, role label, and long bio (post content).",
+    "category": "tenda21_facilitator",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "back_link_label": {
+            "type": "string",
+            "default": "← All Facilitators"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-facilitator-hero-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/event-hero",
+    "title": "Event Hero",
+    "description": "Single Event hero with relationships, meta, and booking CTA",
+    "category": "tenda21_event",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "back_link_label": {
+            "type": "string",
+            "default": "← Back to Events"
+        },
+        "experience_label": {
+            "type": "string",
+            "default": "from the Experience"
+        },
+        "type_label": {
+            "type": "string",
+            "default": "Type"
+        },
+        "location_label": {
+            "type": "string",
+            "default": "Location"
+        },
+        "facilitated_by_label": {
+            "type": "string",
+            "default": "Facilitated by"
+        },
+        "starts_label": {
+            "type": "string",
+            "default": "From"
+        },
+        "ends_label": {
+            "type": "string",
+            "default": "To"
+        },
+        "investment_label": {
+            "type": "string",
+            "default": "Investment"
+        },
+        "booking_note": {
+            "type": "string",
+            "default": "Need a custom date or private immersion? Mention it in your note."
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-event-hero-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

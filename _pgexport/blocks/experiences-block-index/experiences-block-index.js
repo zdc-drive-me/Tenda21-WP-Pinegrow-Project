@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,67 +14,44 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/experiences-block-index', {
-        apiVersion: 2,
-        title: 'Experiences Grid Home',
-        description: 'Immersions section with three experience cards',
-        icon: 'block-default',
-        category: 'tenda21_blocks',
-        keywords: [],
-        supports: {},
-        attributes: {
-            section_title: {
-                type: ['string', 'null'],
-                default: `Immersions`,
-            },
-            card1_title: {
-                type: ['string', 'null'],
-                default: `Silent Immersion`,
-            },
-            card1_description: {
-                type: ['string', 'null'],
-                default: `Three days of noble silence. Guided meditation, mindful movement, and contemplative practices. Learn to hear the voice beneath the noise.`,
-            },
-            card1_duration: {
-                type: ['string', 'null'],
-                default: `3–5 Days`,
-            },
-            card2_title: {
-                type: ['string', 'null'],
-                default: `Nature Practice`,
-            },
-            card2_description: {
-                type: ['string', 'null'],
-                default: `Forest bathing, wild foraging, earth-based rituals. Restore your relationship with the living world. Remember that you are nature, not separate from it.`,
-            },
-            card2_duration: {
-                type: ['string', 'null'],
-                default: `4–7 Days`,
-            },
-            card3_title: {
-                type: ['string', 'null'],
-                default: `Creative Retreat`,
-            },
-            card3_description: {
-                type: ['string', 'null'],
-                default: `Write, draw, make. Creativity flows when the mind quiets. Supported by gentle structure, ample solitude, and evening gatherings around the fire.`,
-            },
-            card3_duration: {
-                type: ['string', 'null'],
-                default: `5–10 Days`,
-            }
-        },
-        example: { attributes: { section_title: `Immersions`, card1_title: `Silent Immersion`, card1_description: `Three days of noble silence. Guided meditation, mindful movement, and contemplative practices. Learn to hear the voice beneath the noise.`, card1_duration: `3–5 Days`, card2_title: `Nature Practice`, card2_description: `Forest bathing, wild foraging, earth-based rituals. Restore your relationship with the living world. Remember that you are nature, not separate from it.`, card2_duration: `4–7 Days`, card3_title: `Creative Retreat`, card3_description: `Write, draw, make. Creativity flows when the mind quiets. Supported by gentle structure, ample solitude, and evening gatherings around the fire.`, card3_duration: `5–10 Days` } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'py-32 px-6 bg-mist-200', 'data-block-name': 'experiences-grid' });
             const setAttributes = props.setAttributes; 
+            
+            
             
             
             const innerBlocksProps = null;
@@ -203,7 +180,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/experiences-block-index', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

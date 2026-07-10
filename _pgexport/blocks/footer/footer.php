@@ -5,17 +5,17 @@
             <!-- Column 1: Location & Contact -->
             <div class="space-y-4">
                 <h3 class="font-bold font-serif mb-0 text-2xl text-charcoal-900"><?php bloginfo( 'name' ); ?></h3>
-                <address class="font-bold font-sans leading-tight not-italic text-2xl text-charcoal-800"><?php echo PG_Blocks_v4::getAttribute( $args, 'address' ) ?></address>
+                <address class="font-bold font-sans leading-tight not-italic text-2xl text-charcoal-800"><?php echo PG_Blocks_v7::getAttribute( $args, 'address' ) ?></address>
                 <div class="font-sans font-light text-sm text-charcoal-800 space-y-1">
-                    <p> <a href="tel:+351275000000"><?php echo PG_Blocks_v4::getAttribute( $args, 'phone' ) ?></a> </p>
-                    <p> <a href="<?php echo 'mailto:' . PG_Blocks_v4::getAttribute( $args, 'email' ) ?>"><?php echo PG_Blocks_v4::getAttribute( $args, 'email' ) ?></a> </p>
+                    <p> <a href="tel:+351275000000"><?php echo PG_Blocks_v7::getAttribute( $args, 'phone' ) ?></a> </p>
+                    <p> <a href="<?php echo 'mailto:' . PG_Blocks_v7::getAttribute( $args, 'email' ) ?>"><?php echo PG_Blocks_v7::getAttribute( $args, 'email' ) ?></a> </p>
                 </div>
             </div>
             <!-- Column 2: Action Buttons -->
             <div class="flex flex-col items-start space-y-4">
-                <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v4::getLinkUrl( $args, 'btn_experiences_link' ) ?>" class="!text-white bg-clay-500 font-normal font-sans inline-block px-4 py-3 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800"><?php echo PG_Blocks_v4::getAttribute( $args, 'btn_experiences_label' ) ?></a>
-                <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v4::getLinkUrl( $args, 'btn_book_link' ) ?>" class="!text-white bg-clay-500 font-normal font-sans inline-block px-4 py-3 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800"><?php echo PG_Blocks_v4::getAttribute( $args, 'btn_book_label' ) ?></a>
-                <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v4::getLinkUrl( $args, 'btn_support_link' ) ?>" class="!text-white bg-clay-500 font-normal font-sans inline-block px-4 py-3 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800"><?php echo PG_Blocks_v4::getAttribute( $args, 'btn_support_label' ) ?></a>
+                <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v7::getLinkUrl( $args, 'btn_experiences_link' ) ?>" class="!text-white bg-clay-500 font-normal font-sans inline-block px-4 py-3 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800"><?php echo PG_Blocks_v7::getAttribute( $args, 'btn_experiences_label' ) ?></a>
+                <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v7::getLinkUrl( $args, 'btn_book_link' ) ?>" class="!text-white bg-clay-500 font-normal font-sans inline-block px-4 py-3 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800"><?php echo PG_Blocks_v7::getAttribute( $args, 'btn_book_label' ) ?></a>
+                <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v7::getLinkUrl( $args, 'btn_support_link' ) ?>" class="!text-white bg-clay-500 font-normal font-sans inline-block px-4 py-3 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800"><?php echo PG_Blocks_v7::getAttribute( $args, 'btn_support_label' ) ?></a>
             </div>
             <!-- Column 3: About -->
             <div>
@@ -34,7 +34,7 @@
             </div>
             <!-- Column 4: Visit -->
             <div>
-                <h4 class="font-sans font-medium text-sm uppercase tracking-[0.12em] text-charcoal-900 mb-6"><?php echo PG_Blocks_v4::getAttribute( $args, 'visit_heading' ) ?></h4>
+                <h4 class="font-sans font-medium text-sm uppercase tracking-[0.12em] text-charcoal-900 mb-6"><?php echo PG_Blocks_v7::getAttribute( $args, 'visit_heading' ) ?></h4>
                 <?php if ( has_nav_menu( 'footer_block_two' ) ) : ?>
                     <?php
                         PG_Smart_Walker_Nav_Menu::init();
@@ -51,11 +51,11 @@
         <!-- Social Links & Language -->
         <div class="flex items-center justify-between border-t border-charcoal-400/30 pt-8 mb-8">
             <div class="flex gap-6">
-                <?php if ( PG_Blocks_v4::getLinkUrl( $args, 'social_ig', false ) ) : ?>
-                    <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v4::getLinkUrl( $args, 'social_ig' ) ?>" class="font-sans text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors"> <?php _e( 'Instagram', 'tenda21' ); ?> </a>
+                <?php if ( PG_Blocks_v7::getLinkUrl( $args, 'social_ig', false ) ) : ?>
+                    <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v7::getLinkUrl( $args, 'social_ig' ) ?>" class="font-sans text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors"> <?php _e( 'Instagram', 'tenda21' ); ?> </a>
                 <?php endif; ?>
-                <?php if ( PG_Blocks_v4::getLinkUrl( $args, 'social_fb', false ) ) : ?>
-                    <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v4::getLinkUrl( $args, 'social_fb' ) ?>" class="font-sans text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors"> <?php _e( 'Facebook', 'tenda21' ); ?> </a>
+                <?php if ( PG_Blocks_v7::getLinkUrl( $args, 'social_fb', false ) ) : ?>
+                    <a href="<?php echo (!empty($_GET['context']) && $_GET['context'] === 'edit') ? 'javascript:void()' : PG_Blocks_v7::getLinkUrl( $args, 'social_fb' ) ?>" class="font-sans text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors"> <?php _e( 'Facebook', 'tenda21' ); ?> </a>
                 <?php endif; ?>
             </div>
             <div class="flex gap-4">
@@ -65,7 +65,7 @@
         </div>
         <!-- Bottom Legal -->
         <div class="text-center border-t border-charcoal-400/30 pt-8">
-            <p class="font-sans text-xs font-light text-charcoal-700 leading-relaxed"> <?php _e( 'NIF:', 'tenda21' ); ?> <span><?php echo PG_Blocks_v4::getAttribute( $args, 'nif' ) ?></span>
+            <p class="font-sans text-xs font-light text-charcoal-700 leading-relaxed"> <?php _e( 'NIF:', 'tenda21' ); ?> <span><?php echo PG_Blocks_v7::getAttribute( $args, 'nif' ) ?></span>
                 — <a href="#privacy" class="hover:text-charcoal-900 transition-colors"><?php _e( 'Privacy Policy', 'tenda21' ); ?></a>
                 — <a href="#cookies" class="hover:text-charcoal-900 transition-colors"><?php _e( 'Cookie Policy', 'tenda21' ); ?></a>
                 — <a href="#transparency" class="hover:text-charcoal-900 transition-colors"><?php _e( 'Transparency', 'tenda21' ); ?></a>

@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,55 +14,44 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/experience-upcoming-events', {
-        apiVersion: 2,
-        title: 'Experience Upcoming Events',
-        description: 'Upcoming Events for the current Experience page. Loop id: upcoming-events. Requires pg_query_args filter in custom.php.',
-        icon: 'block-default',
-        category: 'tenda21_experience',
-        keywords: [],
-        supports: {},
-        attributes: {
-            title: {
-                type: ['string', 'null'],
-                default: `Event Title`,
-            },
-            post_excerpt: {
-                type: ['string', 'null'],
-                default: `Short event excerpt.`,
-            },
-            event_start_time: {
-                type: ['string', 'null'],
-                default: `00:00`,
-            },
-            event_price: {
-                type: ['string', 'null'],
-                default: `€ —`,
-            },
-            event_start_date: {
-                type: ['string', 'null'],
-                default: `TBA`,
-            },
-            event_booking_status: {
-                type: ['string', 'null'],
-                default: `Open`,
-            },
-            event_booking: {
-                type: ['object', 'null'],
-                default: {post_id: 0, url: '#', title: '', 'post_type': null},
-            }
-        },
-        example: { attributes: { title: `Event Title`, post_excerpt: `Short event excerpt.`, event_start_time: `00:00`, event_price: `€ —`, event_start_date: `TBA`, event_booking_status: `Open`, event_booking: {post_id: 0, url: '#', title: '', 'post_type': null} } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'py-24 px-6 bg-bone-200' });
             const setAttributes = props.setAttributes; 
+            
+            
             
             
             const innerBlocksProps = null;
@@ -121,7 +110,7 @@
                                         onChange: function(val) { setAttributes({event_booking_status: val}) },
                                         type: 'text'
                                     }),
-                                    pgGetFeature4("pgUrlControl")('event_booking', setAttributes, props, 'Booking Link', '', null ),    
+                                    pgGetFeature5("pgUrlControl")('event_booking', setAttributes, props, 'Booking Link', '', null ),    
                                 ])
                             )
                         ]
@@ -134,7 +123,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/experience-upcoming-events', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

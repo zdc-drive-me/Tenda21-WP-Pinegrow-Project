@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/events-list",
+    "title": "Events List",
+    "description": "Archive wrapper for the Events CPT loop. Provides schedule header and loop container. Loop id: events-schedule.",
+    "category": "tenda21_event",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "events_schedule_label": {
+            "type": "string",
+            "default": "Upcoming Schedule"
+        },
+        "events_timezone_label": {
+            "type": "string",
+            "default": "All times · Serra da Estrela, Portugal · GMT+1"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-events-list-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

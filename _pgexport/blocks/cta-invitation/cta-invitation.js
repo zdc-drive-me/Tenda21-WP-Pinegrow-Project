@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,43 +14,44 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/cta-invitation', {
-        apiVersion: 2,
-        title: 'CTA Invitation',
-        description: 'Call to action section with a message and contact button',
-        icon: 'block-default',
-        category: 'tenda21_blocks',
-        keywords: [],
-        supports: {},
-        attributes: {
-            heading: {
-                type: ['string', 'null'],
-                default: `When you're ready,<br>we're here.`,
-            },
-            description: {
-                type: ['string', 'null'],
-                default: `Retreats run year-round with limited capacity. Reach out to learn about upcoming dates or inquire about a custom immersion for your group.`,
-            },
-            button_email: {
-                type: ['string', 'null'],
-                default: `Get in Touch`,
-            },
-            button_label: {
-                type: ['string', 'null'],
-                default: `Get in Touch`,
-            }
-        },
-        example: { attributes: { heading: `When you're ready,<br>we're here.`, description: `Retreats run year-round with limited capacity. Reach out to learn about upcoming dates or inquire about a custom immersion for your group.`, button_email: `Get in Touch`, button_label: `Get in Touch` } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'py-48 px-6 bg-bone-200', 'data-block-name': 'cta-invitation' });
             const setAttributes = props.setAttributes; 
+            
+            
             
             
             const innerBlocksProps = null;
@@ -117,7 +118,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/cta-invitation', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

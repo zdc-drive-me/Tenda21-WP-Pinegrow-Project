@@ -1,0 +1,108 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/footer",
+    "title": "Footer",
+    "description": "Website footer with contact information, navigation and social links",
+    "category": "tenda21_blocks",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "address": {
+            "type": "string",
+            "default": "Serra da Estrela<br> 6260 Manteigas<br> Portugal"
+        },
+        "phone": {
+            "type": "string",
+            "default": "T: +351 275 000 000"
+        },
+        "email": {
+            "type": "string",
+            "default": "E: hello@tenda21.com"
+        },
+        "btn_experiences_link": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "experiences.html",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "btn_experiences_label": {
+            "type": "string",
+            "default": "Experiences"
+        },
+        "btn_book_link": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "mailto:hello@tenda21.com?subject=Booking%20Inquiry",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "btn_book_label": {
+            "type": "string",
+            "default": "Book Now"
+        },
+        "btn_support_link": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "mailto:hello@tenda21.com?subject=Support%20Inquiry",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "btn_support_label": {
+            "type": "string",
+            "default": "Support"
+        },
+        "visit_heading": {
+            "type": "string",
+            "default": "Visit Us"
+        },
+        "social_ig": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "social_fb": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "nif": {
+            "type": "string",
+            "default": "PT000000000"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-footer-script",
+    "example": {
+        "attributes": {
+            "social_ig": {
+                "post_id": 0,
+                "url": "#",
+                "title": "",
+                "post_type": null
+            },
+            "social_fb": {
+                "post_id": 0,
+                "url": "#",
+                "title": "",
+                "post_type": null
+            }
+        }
+    },
+    "icon": "block-default"
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/facilitator-cta",
+    "title": "Facilitator CTA",
+    "description": "Call-to-action section for the Facilitators page. Invites practitioners to get in touch via email.",
+    "category": "tenda21_facilitator",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "facilitator_cta_heading": {
+            "type": "string",
+            "default": "Are you a facilitator?"
+        },
+        "facilitator_cta_body": {
+            "type": "string",
+            "default": "We're always open to collaborating with practitioners who share our values of presence, integrity, and deep respect for the process of transformation."
+        },
+        "facilitator_cta_link": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "mailto:hello@tenda21.com?subject=Facilitator%20Collaboration",
+                "title": "",
+                "post_type": null
+            }
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-facilitator-cta-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/experience-content",
+    "title": "Experience Content",
+    "description": "Editorial middle section for a single Experience page. Contains What to Expect, Benefits, and Who This Is For subsections.",
+    "category": "tenda21_experience",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "expectations_label": {
+            "type": "string",
+            "default": "What to Expect"
+        },
+        "benefits_label": {
+            "type": "string",
+            "default": "Benefits"
+        },
+        "audience_label": {
+            "type": "string",
+            "default": "Who This Is For"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-experience-content-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

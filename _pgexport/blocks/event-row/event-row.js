@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,76 +14,39 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/event-row', {
-        apiVersion: 2,
-        title: 'Event Row',
-        description: 'Single event row with thumbnail, facilitators, schedule, and booking metadata.',
-        icon: 'block-default',
-        category: 'tenda21_event',
-        keywords: [],
-        supports: {},
-        attributes: {
-            event_featured: {
-                type: ['object', 'null'],
-                default: {id: 0, url: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80', size: '', svg: '', alt: null},
-            },
-            event_experience: {
-                type: ['object', 'null'],
-                default: {post_id: 0, url: '#', title: '', 'post_type': null},
-            },
-            event_location_type: {
-                type: ['string', 'null'],
-                default: `On-site`,
-            },
-            event_excerpt: {
-                type: ['string', 'null'],
-                default: `Three days of contemplative silence, mindful movement, and nature-based ritual held in a small circle.`,
-            },
-            event_location: {
-                type: ['string', 'null'],
-                default: `Serra da Estrela · Portugal`,
-            },
-            event_start_date: {
-                type: ['string', 'null'],
-                default: `12 April 2024`,
-            },
-            event_start_time: {
-                type: ['string', 'null'],
-                default: `09:00`,
-            },
-            event_end_date: {
-                type: ['string', 'null'],
-                default: `14 April 2024`,
-            },
-            event_end_time: {
-                type: ['string', 'null'],
-                default: `14:00`,
-            },
-            event_price_label: {
-                type: ['string', 'null'],
-                default: `Investment`,
-            },
-            event_price: {
-                type: ['string', 'null'],
-                default: `€420`,
-            },
-            event_booking_status: {
-                type: ['string', 'null'],
-                default: `Few seats left`,
-            },
-            event_booking: {
-                type: ['object', 'null'],
-                default: {post_id: 0, url: '#', title: '', 'post_type': null},
-            }
-        },
-        example: { attributes: { event_featured: {id: 0, url: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80', size: '', svg: '', alt: null}, event_experience: {post_id: 0, url: '#', title: '', 'post_type': null}, event_location_type: `On-site`, event_excerpt: `Three days of contemplative silence, mindful movement, and nature-based ritual held in a small circle.`, event_location: `Serra da Estrela · Portugal`, event_start_date: `12 April 2024`, event_start_time: `09:00`, event_end_date: `14 April 2024`, event_end_time: `14:00`, event_price_label: `Investment`, event_price: `€420`, event_booking_status: `Few seats left`, event_booking: {post_id: 0, url: '#', title: '', 'post_type': null} } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'bg-bone-50/90 border border-mist-300 px-4 py-4 md:px-6 md:py-5 shadow-[0_1px_0_rgba(42,41,38,0.04)]' });
             const setAttributes = props.setAttributes; 
@@ -95,6 +58,8 @@
             }, [props.attributes.event_featured] ).event_featured;
             
             
+            
+            
             const innerBlocksProps = null;
             
             
@@ -104,14 +69,14 @@
                     el( InspectorControls, {},
                         [
                             
-                        pgGetFeature4("pgMediaImageControl")('event_featured', setAttributes, props, 'full', true, 'Featured Image', '' ),
+                        pgGetFeature5("pgMediaImageControl")('event_featured', setAttributes, props, 'full', true, 'Featured Image', '', function(url) { return propOrDefault(url, 'event_featured', 'url'); } ),
                                         
                             el(Panel, {},
                                 el(PanelBody, {
                                     title: __('Block properties')
                                 }, [
                                     
-                                    pgGetFeature4("pgUrlControl")('event_experience', setAttributes, props, 'Linked Experience', '', null ),
+                                    pgGetFeature5("pgUrlControl")('event_experience', setAttributes, props, 'Linked Experience', '', null ),
                                     el(TextControl, {
                                         value: props.attributes.event_location_type,
                                         help: __( '' ),
@@ -182,7 +147,7 @@
                                         onChange: function(val) { setAttributes({event_booking_status: val}) },
                                         type: 'text'
                                     }),
-                                    pgGetFeature4("pgUrlControl")('event_booking', setAttributes, props, 'Booking Link', '', null ),    
+                                    pgGetFeature5("pgUrlControl")('event_booking', setAttributes, props, 'Booking Link', '', null ),    
                                 ])
                             )
                         ]
@@ -195,7 +160,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/event-row', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

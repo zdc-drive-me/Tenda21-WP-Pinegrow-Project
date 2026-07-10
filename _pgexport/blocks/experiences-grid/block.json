@@ -1,0 +1,49 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/experiences-grid",
+    "title": "Experiences Grid",
+    "description": "Archive section wrapper for the Experience CPT. Owns the grid layout and loop. Loop item: experience-card.",
+    "category": "tenda21_experience",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "experience_permalink": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "#",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "experience_featured": {
+            "type": "object",
+            "default": {
+                "id": 0,
+                "url": "",
+                "size": "",
+                "svg": "",
+                "alt": null
+            }
+        },
+        "experience_category_label": {
+            "type": "string",
+            "default": "Category"
+        },
+        "title": {
+            "type": "string",
+            "default": "Experience Title"
+        },
+        "experience_short_description": {
+            "type": "string",
+            "default": "Short description of this experience."
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-experiences-grid-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/facilitator-meta",
+    "title": "Facilitator Meta",
+    "description": "Meta row for a Facilitator page. Shows languages, website, and Instagram links.",
+    "category": "tenda21_facilitator",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "languages_label": {
+            "type": "string",
+            "default": "Languages"
+        },
+        "website_label": {
+            "type": "string",
+            "default": "Website"
+        },
+        "instagram_label": {
+            "type": "string",
+            "default": "Instagram"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-facilitator-meta-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,43 +14,44 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/experiences-cta', {
-        apiVersion: 2,
-        title: 'Experiences CTA',
-        description: 'Custom inquiry call-to-action for the Experiences archive page. Supports editable heading, body copy, button label, and button URL.',
-        icon: 'block-default',
-        category: 'tenda21_experience',
-        keywords: [],
-        supports: {},
-        attributes: {
-            experiences_cta_heading: {
-                type: ['string', 'null'],
-                default: `Not sure which experience is right for you?`,
-            },
-            experiences_cta_body: {
-                type: ['string', 'null'],
-                default: `We also offer custom immersions for groups and individuals with specific intentions. Reach out and let's create something together.`,
-            },
-            experiences_cta_url: {
-                type: ['object', 'null'],
-                default: {post_id: 0, url: 'mailto:hello@tenda21.com?subject=Custom%20Experience%20Inquiry', title: '', 'post_type': null},
-            },
-            experiences_cta_label: {
-                type: ['string', 'null'],
-                default: `Inquire About Custom Retreats`,
-            }
-        },
-        example: { attributes: { experiences_cta_heading: `Not sure which experience is right for you?`, experiences_cta_body: `We also offer custom immersions for groups and individuals with specific intentions. Reach out and let's create something together.`, experiences_cta_url: {post_id: 0, url: 'mailto:hello@tenda21.com?subject=Custom%20Experience%20Inquiry', title: '', 'post_type': null}, experiences_cta_label: `Inquire About Custom Retreats` } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'py-32 px-6 bg-bone-100' });
             const setAttributes = props.setAttributes; 
+            
+            
             
             
             const innerBlocksProps = null;
@@ -81,7 +82,7 @@
                                         onChange: function(val) { setAttributes({experiences_cta_body: val}) },
                                         type: 'text'
                                     }),
-                                    pgGetFeature4("pgUrlControl")('experiences_cta_url', setAttributes, props, 'CTA URL', '', null ),
+                                    pgGetFeature5("pgUrlControl")('experiences_cta_url', setAttributes, props, 'CTA URL', '', null ),
                                     el(TextControl, {
                                         value: props.attributes.experiences_cta_label,
                                         help: __( '' ),
@@ -101,7 +102,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/experiences-cta', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/facilitators-hero",
+    "title": "Facilitators Hero",
+    "description": "Intro/title section for the Facilitators archive page. Contains page title and intro paragraph.",
+    "category": "tenda21_facilitator",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Facilitators"
+        },
+        "intro": {
+            "type": "string",
+            "default": "Each facilitator brings deep practice, embodied wisdom, and a genuine commitment to holding space for transformation. They are not teachers standing above—they are fellow travelers walking alongside."
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-facilitators-hero-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

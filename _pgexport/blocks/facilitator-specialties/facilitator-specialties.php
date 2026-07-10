@@ -3,7 +3,7 @@
         <div class="pt-8 border-t border-mist-400">
             <h3 class="font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-charcoal-600 mb-4"><?php _e( 'Areas of Expertise', 'tenda21' ); ?></h3>
             <div class="flex flex-wrap gap-3">
-                <?php echo PG_Blocks_v4::getAttribute( $args, 'facilitator_specialties' ) ?>
+                <?php echo PG_Blocks_v7::getAttribute( $args, 'facilitator_specialties' ) ?>
             </div>
         </div>
     </div>

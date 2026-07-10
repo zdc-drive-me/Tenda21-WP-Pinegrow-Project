@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,43 +14,44 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/philosophy', {
-        apiVersion: 2,
-        title: 'Philosophy',
-        description: 'Philosophy section with a quote and descriptive paragraphs',
-        icon: 'block-default',
-        category: 'tenda21_blocks',
-        keywords: [],
-        supports: {},
-        attributes: {
-            quote: {
-                type: ['string', 'null'],
-                default: `In the quiet,<br>we remember who we are.`,
-            },
-            paragraph_1: {
-                type: ['string', 'null'],
-                default: `Tenda 21 is not an escape. It is a return—to presence, to the body, to the earth beneath our feet. Here, time moves differently. Days unfold without the relentless pulse of notifications, the weight of screens, the noise that drowns out our own thoughts.`,
-            },
-            paragraph_2: {
-                type: ['string', 'null'],
-                default: `We offer space. Not empty space, but space filled with birdsong, the smell of rain on stone, the texture of linen, the warmth of shared silence. Space to breathe fully. Space to listen. Space to simply be.`,
-            },
-            paragraph_3: {
-                type: ['string', 'null'],
-                default: `This is where you practice the art of living deliberately—where every moment is an invitation to arrive, again and again, in the only place we ever truly are: here, now.`,
-            }
-        },
-        example: { attributes: { quote: `In the quiet,<br>we remember who we are.`, paragraph_1: `Tenda 21 is not an escape. It is a return—to presence, to the body, to the earth beneath our feet. Here, time moves differently. Days unfold without the relentless pulse of notifications, the weight of screens, the noise that drowns out our own thoughts.`, paragraph_2: `We offer space. Not empty space, but space filled with birdsong, the smell of rain on stone, the texture of linen, the warmth of shared silence. Space to breathe fully. Space to listen. Space to simply be.`, paragraph_3: `This is where you practice the art of living deliberately—where every moment is an invitation to arrive, again and again, in the only place we ever truly are: here, now.` } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'py-32 md:py-48 px-6 bg-bone-200', 'data-block-name': 'philosophy-section' });
             const setAttributes = props.setAttributes; 
+            
+            
             
             
             const innerBlocksProps = null;
@@ -147,7 +148,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/philosophy', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/experience-upcoming-events",
+    "title": "Experience Upcoming Events",
+    "description": "Upcoming Events for the current Experience page. Loop id: upcoming-events. Requires pg_query_args filter in custom.php.",
+    "category": "tenda21_experience",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Event Title"
+        },
+        "post_excerpt": {
+            "type": "string",
+            "default": "Short event excerpt."
+        },
+        "event_start_time": {
+            "type": "string",
+            "default": "00:00"
+        },
+        "event_price": {
+            "type": "string",
+            "default": "€ —"
+        },
+        "event_start_date": {
+            "type": "string",
+            "default": "TBA"
+        },
+        "event_booking_status": {
+            "type": "string",
+            "default": "Open"
+        },
+        "event_booking": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "#",
+                "title": "",
+                "post_type": null
+            }
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-experience-upcoming-events-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

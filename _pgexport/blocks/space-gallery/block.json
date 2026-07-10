@@ -1,0 +1,52 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/space-gallery",
+    "title": "Space Gallery",
+    "description": "Gallery showcasing the space with a heading and three images",
+    "category": "tenda21_blocks",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "section_title": {
+            "type": "string",
+            "default": "The Space"
+        },
+        "image_1": {
+            "type": "object",
+            "default": {
+                "id": 0,
+                "url": "",
+                "size": "",
+                "svg": "",
+                "alt": null
+            }
+        },
+        "image_2": {
+            "type": "object",
+            "default": {
+                "id": 0,
+                "url": "",
+                "size": "",
+                "svg": "",
+                "alt": null
+            }
+        },
+        "image_wide": {
+            "type": "object",
+            "default": {
+                "id": 0,
+                "url": "",
+                "size": "",
+                "svg": "",
+                "alt": null
+            }
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-space-gallery-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

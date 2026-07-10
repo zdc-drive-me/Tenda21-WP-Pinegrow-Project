@@ -1,0 +1,17 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/experience-back-nav",
+    "title": "Experience Back Navigation",
+    "description": "Bottom back-link for a single Experience page. Renders a centred '← View All Experiences' link pointing to the Experiences archive.",
+    "category": "tenda21_experience",
+    "keywords": [],
+    "supports": {},
+    "attributes": {},
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-experience-back-nav-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

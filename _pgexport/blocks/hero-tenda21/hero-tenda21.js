@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,36 +14,39 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/hero-tenda21', {
-        apiVersion: 2,
-        title: 'Hero',
-        description: 'Main hero section with background image',
-        icon: 'block-default',
-        category: 'tenda21_blocks',
-        keywords: [],
-        supports: {},
-        attributes: {
-            background_image: {
-                type: ['object', 'null'],
-                default: {id: 0, url: '', size: '', svg: '', alt: null},
-            },
-            title: {
-                type: ['string', 'null'],
-                default: `Tenda 21`,
-            },
-            subtitle: {
-                type: ['string', 'null'],
-                default: `Shelter for Presence`,
-            }
-        },
-        example: { attributes: { background_image: {id: 0, url: '', size: '', svg: '', alt: null}, title: `Tenda 21`, subtitle: `Shelter for Presence` } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'bg-[url(/assets/images/sea-mist-1-optimized.webp)] bg-center bg-cover flex items-center justify-center min-h-screen overflow-hidden pt-24 relative', style: { ...((propOrDefault( props.attributes.background_image.url, 'background_image', 'url' ) ? ('url(' + propOrDefault( props.attributes.background_image.url, 'background_image', 'url' ) + ')') : null !== null && propOrDefault( props.attributes.background_image.url, 'background_image', 'url' ) ? ('url(' + propOrDefault( props.attributes.background_image.url, 'background_image', 'url' ) + ')') : null !== '') ? {backgroundImage: propOrDefault( props.attributes.background_image.url, 'background_image', 'url' ) ? ('url(' + propOrDefault( props.attributes.background_image.url, 'background_image', 'url' ) + ')') : null} : {}) } });
             const setAttributes = props.setAttributes; 
@@ -55,6 +58,8 @@
             }, [props.attributes.background_image] ).background_image;
             
             
+            
+            
             const innerBlocksProps = null;
             
             
@@ -64,7 +69,7 @@
                     el( InspectorControls, {},
                         [
                             
-                        pgGetFeature4("pgMediaImageControl")('background_image', setAttributes, props, 'full', true, 'Background image', '' ),
+                        pgGetFeature5("pgMediaImageControl")('background_image', setAttributes, props, 'full', true, 'Background image', '', function(url) { return propOrDefault(url, 'background_image', 'url'); } ),
                                         
                             el(Panel, {},
                                 el(PanelBody, {
@@ -97,7 +102,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/hero-tenda21', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

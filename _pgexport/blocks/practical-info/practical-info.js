@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,63 +14,44 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/practical-info', {
-        apiVersion: 2,
-        title: 'Practical Info',
-        description: 'Details section with location, accommodation, and inclusions',
-        icon: 'block-default',
-        category: 'tenda21_blocks',
-        keywords: [],
-        supports: {},
-        attributes: {
-            section_label: {
-                type: ['string', 'null'],
-                default: `Details`,
-            },
-            location_heading: {
-                type: ['string', 'null'],
-                default: `Location`,
-            },
-            location_text: {
-                type: ['string', 'null'],
-                default: `Nestled in the foothills of Serra da Estrela, Portugal. Two hours from Porto, a world away from everywhere else.`,
-            },
-            accommodation_heading: {
-                type: ['string', 'null'],
-                default: `Accommodation`,
-            },
-            accommodation_text: {
-                type: ['string', 'null'],
-                default: `Private canvas tents with wooden floors, linen bedding, and wood-burning stoves. Shared bathhouse with hot water and composting toilets.`,
-            },
-            included_heading: {
-                type: ['string', 'null'],
-                default: `What's Included`,
-            },
-            included_text: {
-                type: ['string', 'null'],
-                default: `Three seasonal vegetarian meals daily, guided practices, access to trails and natural swimming spots, herbal tea library, journal and pen.`,
-            },
-            not_included_heading: {
-                type: ['string', 'null'],
-                default: `Not Included`,
-            },
-            not_included_text: {
-                type: ['string', 'null'],
-                default: `Your phone. (We lock them away on arrival. You'll thank us later.)`,
-            }
-        },
-        example: { attributes: { section_label: `Details`, location_heading: `Location`, location_text: `Nestled in the foothills of Serra da Estrela, Portugal. Two hours from Porto, a world away from everywhere else.`, accommodation_heading: `Accommodation`, accommodation_text: `Private canvas tents with wooden floors, linen bedding, and wood-burning stoves. Shared bathhouse with hot water and composting toilets.`, included_heading: `What's Included`, included_text: `Three seasonal vegetarian meals daily, guided practices, access to trails and natural swimming spots, herbal tea library, journal and pen.`, not_included_heading: `Not Included`, not_included_text: `Your phone. (We lock them away on arrival. You'll thank us later.)` } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'py-32 px-6 bg-bone-100', 'data-block-name': 'practical-info' });
             const setAttributes = props.setAttributes; 
+            
+            
             
             
             const innerBlocksProps = null;
@@ -182,7 +163,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/practical-info', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,

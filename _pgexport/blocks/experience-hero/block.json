@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/experience-hero",
+    "title": "Experience Hero",
+    "description": "Hero section for a single Experience page. Shows back link, title, subtitle, intro, duration, format, and featured image.",
+    "category": "tenda21_experience",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "back_link_label": {
+            "type": "string",
+            "default": "← All Experiences"
+        },
+        "duration_label": {
+            "type": "string",
+            "default": "Duration"
+        },
+        "format_label": {
+            "type": "string",
+            "default": "Format"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-experience-hero-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

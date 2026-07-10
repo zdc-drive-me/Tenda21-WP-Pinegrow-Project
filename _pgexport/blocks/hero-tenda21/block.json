@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/hero-tenda21",
+    "title": "Hero",
+    "description": "Main hero section with background image",
+    "category": "tenda21_blocks",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "background_image": {
+            "type": "object",
+            "default": {
+                "id": 0,
+                "url": "",
+                "size": "",
+                "svg": "",
+                "alt": null
+            }
+        },
+        "title": {
+            "type": "string",
+            "default": "Tenda 21"
+        },
+        "subtitle": {
+            "type": "string",
+            "default": "Shelter for Presence"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-hero-tenda21-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

@@ -1,0 +1,49 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/facilitators-grid",
+    "title": "Facilitators Grid",
+    "description": "Archive section wrapper for the Facilitators CPT. Owns the grid layout and loop. Loop item: facilitator-card.",
+    "category": "tenda21_facilitator",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "facilitator_permalink": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "#",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "facilitator_featured": {
+            "type": "object",
+            "default": {
+                "id": 0,
+                "url": "",
+                "size": "",
+                "svg": "",
+                "alt": null
+            }
+        },
+        "title": {
+            "type": "string",
+            "default": "Facilitator Name"
+        },
+        "facilitator_role_label": {
+            "type": "string",
+            "default": "Role / Practice"
+        },
+        "facilitator_short_bio": {
+            "type": "string",
+            "default": "Short facilitator bio."
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-facilitators-grid-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

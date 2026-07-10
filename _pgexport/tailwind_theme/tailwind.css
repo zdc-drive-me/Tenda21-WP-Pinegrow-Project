@@ -1773,6 +1773,9 @@
   .text-lime-300 {
     color: var(--color-lime-300);
   }
+  .text-mist-500 {
+    color: var(--color-mist-500);
+  }
   .text-white {
     color: var(--color-white);
   }
@@ -2130,6 +2133,11 @@
   .md\:justify-between {
     @media (width >= 48rem) {
       justify-content: space-between;
+    }
+  }
+  .md\:gap-4 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 4);
     }
   }
   .md\:gap-12 {

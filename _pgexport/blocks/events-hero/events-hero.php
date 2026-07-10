@@ -3,15 +3,15 @@
     <div class="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center">
         <div class="flex items-center gap-5 mb-10">
             <span class="block w-12 h-px bg-clay-400 shrink-0"></span>
-            <p class="font-sans uppercase text-[0.6rem] tracking-[0.3em] font-medium text-forest-700 whitespace-nowrap"><?php echo PG_Blocks_v4::getAttribute( $args, 'events_eyebrow' ) ?></p>
+            <p class="font-sans uppercase text-[0.6rem] tracking-[0.3em] font-medium text-forest-700 whitespace-nowrap"><?php echo PG_Blocks_v7::getAttribute( $args, 'events_eyebrow' ) ?></p>
             <span class="block w-12 h-px bg-clay-400 shrink-0"></span>
         </div>
-        <h1 class="font-serif font-light text-[clamp(3.8rem,8vw,7.5rem)] leading-[1.0] tracking-[-0.01em] text-charcoal-900 mb-10"><?php echo PG_Blocks_v4::getAttribute( $args, 'events_title' ) ?></h1>
+        <h1 class="font-serif font-light text-[clamp(3.8rem,8vw,7.5rem)] leading-[1.0] tracking-[-0.01em] text-charcoal-900 mb-10"><?php echo PG_Blocks_v7::getAttribute( $args, 'events_title' ) ?></h1>
         <div class="w-px h-10 bg-mist-400 mb-10"></div>
-        <p class="font-sans font-light text-base md:text-lg leading-[1.9] text-charcoal-700 max-w-[52ch] mx-auto"><?php echo PG_Blocks_v4::getAttribute( $args, 'events_intro' ) ?></p>
+        <p class="font-sans font-light text-base md:text-lg leading-[1.9] text-charcoal-700 max-w-[52ch] mx-auto"><?php echo PG_Blocks_v7::getAttribute( $args, 'events_intro' ) ?></p>
     </div>
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-        <span class="font-sans uppercase text-[0.5rem] tracking-[0.28em] text-charcoal-500"><?php echo PG_Blocks_v4::getAttribute( $args, 'events_scroll_label' ) ?></span>
+        <span class="font-sans uppercase text-[0.5rem] tracking-[0.28em] text-charcoal-500"><?php echo PG_Blocks_v7::getAttribute( $args, 'events_scroll_label' ) ?></span>
         <div class="w-px h-8 bg-mist-500"></div>
     </div>
 </section>

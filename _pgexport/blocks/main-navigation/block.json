@@ -1,0 +1,17 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/main-navigation",
+    "title": "Main Navigation",
+    "description": "Site header with logo and navigation links",
+    "category": "tenda21_blocks",
+    "keywords": [],
+    "supports": {},
+    "attributes": {},
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-main-navigation-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

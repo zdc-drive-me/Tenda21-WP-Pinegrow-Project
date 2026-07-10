@@ -6,7 +6,7 @@
             </div>
             <div class="md:col-span-3 space-y-8">
                 <div>
-                    <a href="facilitators.html" class="inline-block font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700 hover:text-forest-800 mb-6 transition-colors"> <span><?php echo PG_Blocks_v4::getAttribute( $args, 'back_link_label' ) ?></span> </a>
+                    <a href="facilitators.html" class="inline-block font-sans uppercase text-[0.65rem] tracking-[0.15em] font-medium text-forest-700 hover:text-forest-800 mb-6 transition-colors"> <span><?php echo PG_Blocks_v7::getAttribute( $args, 'back_link_label' ) ?></span> </a>
                     <h1 class="font-serif font-light text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.2] tracking-[0.02em] text-charcoal-900 mb-4"><?php _e( 'Facilitator Name', 'tenda21' ); ?></h1>
                     <p class="font-sans uppercase text-[0.75rem] tracking-[0.15em] font-medium text-forest-700"><?php _e( 'Role / Practice', 'tenda21' ); ?></p>
                 </div>

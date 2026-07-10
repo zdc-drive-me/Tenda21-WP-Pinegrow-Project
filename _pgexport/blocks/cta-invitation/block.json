@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/cta-invitation",
+    "title": "CTA Invitation",
+    "description": "Call to action section with a message and contact button",
+    "category": "tenda21_blocks",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "heading": {
+            "type": "string",
+            "default": "When you're ready,<br>we're here."
+        },
+        "description": {
+            "type": "string",
+            "default": "Retreats run year-round with limited capacity. Reach out to learn about upcoming dates or inquire about a custom immersion for your group."
+        },
+        "button_email": {
+            "type": "string",
+            "default": "Get in Touch"
+        },
+        "button_label": {
+            "type": "string",
+            "default": "Get in Touch"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-cta-invitation-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/practical-info",
+    "title": "Practical Info",
+    "description": "Details section with location, accommodation, and inclusions",
+    "category": "tenda21_blocks",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "section_label": {
+            "type": "string",
+            "default": "Details"
+        },
+        "location_heading": {
+            "type": "string",
+            "default": "Location"
+        },
+        "location_text": {
+            "type": "string",
+            "default": "Nestled in the foothills of Serra da Estrela, Portugal. Two hours from Porto, a world away from everywhere else."
+        },
+        "accommodation_heading": {
+            "type": "string",
+            "default": "Accommodation"
+        },
+        "accommodation_text": {
+            "type": "string",
+            "default": "Private canvas tents with wooden floors, linen bedding, and wood-burning stoves. Shared bathhouse with hot water and composting toilets."
+        },
+        "included_heading": {
+            "type": "string",
+            "default": "What's Included"
+        },
+        "included_text": {
+            "type": "string",
+            "default": "Three seasonal vegetarian meals daily, guided practices, access to trails and natural swimming spots, herbal tea library, journal and pen."
+        },
+        "not_included_heading": {
+            "type": "string",
+            "default": "Not Included"
+        },
+        "not_included_text": {
+            "type": "string",
+            "default": "Your phone. (We lock them away on arrival. You'll thank us later.)"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-practical-info-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

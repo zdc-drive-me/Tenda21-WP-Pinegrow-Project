@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/event-booking-meta",
+    "title": "Event Booking Meta",
+    "description": "Price, booking status and CTA for an Event",
+    "category": "tenda21_event",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "investment_label": {
+            "type": "string",
+            "default": "Investment"
+        },
+        "booking_note": {
+            "type": "string",
+            "default": "Need a custom date or private immersion? Mention it in your note."
+        },
+        "booking_cta_label": {
+            "type": "string",
+            "default": "Book Your Place"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-event-booking-meta-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

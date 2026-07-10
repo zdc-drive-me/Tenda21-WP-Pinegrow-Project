@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/experiences-cta",
+    "title": "Experiences CTA",
+    "description": "Custom inquiry call-to-action for the Experiences archive page. Supports editable heading, body copy, button label, and button URL.",
+    "category": "tenda21_experience",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "experiences_cta_heading": {
+            "type": "string",
+            "default": "Not sure which experience is right for you?"
+        },
+        "experiences_cta_body": {
+            "type": "string",
+            "default": "We also offer custom immersions for groups and individuals with specific intentions. Reach out and let's create something together."
+        },
+        "experiences_cta_url": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "mailto:hello@tenda21.com?subject=Custom%20Experience%20Inquiry",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "experiences_cta_label": {
+            "type": "string",
+            "default": "Inquire About Custom Retreats"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-experiences-cta-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

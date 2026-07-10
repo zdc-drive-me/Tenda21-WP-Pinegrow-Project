@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/experience-facilitator",
+    "title": "Experience Facilitator",
+    "description": "Facilitated By section for a single Experience page. Pulls facilitator image, role, short bio, and profile link from the experience_facilitator relationship field.",
+    "category": "tenda21_experience",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "heading_label": {
+            "type": "string",
+            "default": "Facilitated By"
+        },
+        "link_label": {
+            "type": "string",
+            "default": "View Full Profile →"
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-experience-facilitator-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

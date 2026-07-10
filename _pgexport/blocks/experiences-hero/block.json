@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/experiences-hero",
+    "title": "Experiences Hero",
+    "description": "Intro/title section for the Experiences archive page. Contains page title and intro paragraph.",
+    "category": "tenda21_experience",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Experiences"
+        },
+        "intro": {
+            "type": "string",
+            "default": "Each immersion is designed to guide you back to what matters most. Choose the path that calls to you—or let us help you find it."
+        }
+    },
+    "version": "1.0.119",
+    "editorScript": "block-tenda21-experiences-hero-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

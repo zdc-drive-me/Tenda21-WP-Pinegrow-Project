@@ -2,7 +2,7 @@
 ( function ( blocks, element, blockEditor ) {
     const el = element.createElement,
         registerBlockType = blocks.registerBlockType,
-        ServerSideRender = pgGetFeature4("PgGetServerSideRender")(),
+        ServerSideRender = pgGetFeature5("PgGetServerSideRender")(),
         InspectorControls = blockEditor.InspectorControls,
         useBlockProps = blockEditor.useBlockProps;
         
@@ -14,79 +14,44 @@
     const {InnerBlocks, URLInputButton, RichText} = wp.blockEditor;
     const useInnerBlocksProps = blockEditor.useInnerBlocksProps || blockEditor.__experimentalUseInnerBlocksProps;
     
+    let block;
+    const projectData = window.pg_project_data_tenda21 || {};
+
+    const isMediaAttribute = function(prop) {
+        const def = block.attributes && block.attributes[prop] && block.attributes[prop].default;
+        return def && typeof def === 'object' && 'id' in def && 'url' in def && 'svg' in def && 'alt' in def;
+    }
+
+    const resolveMediaUrl = function(url) {
+        if(typeof url === 'string' && url && url.charAt(0) !== '#' && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(url)) {
+            const baseUrl = projectData.url || '';
+            return baseUrl ? baseUrl.replace(/\/$/, '') + (url.charAt(0) === '/' ? url : '/' + url) : url;
+        }
+        return url;
+    }
+
     const propOrDefault = function(val, prop, field) {
-        if(block.attributes[prop] && (val === null || val === '')) {
-            return field ? block.attributes[prop].default[field] : block.attributes[prop].default;
+        let useDefaultValue = false;
+        const defaultValue = block.attributes && block.attributes[prop] ? block.attributes[prop].default : undefined;
+        if(defaultValue !== undefined && (val === null || val === '')) {
+            useDefaultValue = true;
+            val = field && defaultValue ? defaultValue[field] : defaultValue;
+        }
+        if(field && defaultValue && val === defaultValue[field]) {
+            useDefaultValue = true;
+        }
+        if(useDefaultValue && field === 'url' && isMediaAttribute(prop)) {
+            return resolveMediaUrl(val);
         }
         return val;
     }
     
-    const block = registerBlockType( 'tenda21/footer', {
-        apiVersion: 2,
-        title: 'Footer',
-        description: 'Website footer with contact information, navigation and social links',
-        icon: 'block-default',
-        category: 'tenda21_blocks',
-        keywords: [],
-        supports: {},
-        attributes: {
-            address: {
-                type: ['string', 'null'],
-                default: `Serra da Estrela<br> 6260 Manteigas<br> Portugal`,
-            },
-            phone: {
-                type: ['string', 'null'],
-                default: `T: +351 275 000 000`,
-            },
-            email: {
-                type: ['string', 'null'],
-                default: `E: hello@tenda21.com`,
-            },
-            btn_experiences_link: {
-                type: ['object', 'null'],
-                default: {post_id: 0, url: 'experiences.html', title: '', 'post_type': null},
-            },
-            btn_experiences_label: {
-                type: ['string', 'null'],
-                default: `Experiences`,
-            },
-            btn_book_link: {
-                type: ['object', 'null'],
-                default: {post_id: 0, url: 'mailto:hello@tenda21.com?subject=Booking%20Inquiry', title: '', 'post_type': null},
-            },
-            btn_book_label: {
-                type: ['string', 'null'],
-                default: `Book Now`,
-            },
-            btn_support_link: {
-                type: ['object', 'null'],
-                default: {post_id: 0, url: 'mailto:hello@tenda21.com?subject=Support%20Inquiry', title: '', 'post_type': null},
-            },
-            btn_support_label: {
-                type: ['string', 'null'],
-                default: `Support`,
-            },
-            visit_heading: {
-                type: ['string', 'null'],
-                default: `Visit Us`,
-            },
-            social_ig: {
-                type: ['object', 'null'],
-                default: {post_id: 0, url: '', title: '', 'post_type': null},
-            },
-            social_fb: {
-                type: ['object', 'null'],
-                default: {post_id: 0, url: '', title: '', 'post_type': null},
-            },
-            nif: {
-                type: ['string', 'null'],
-                default: `PT000000000`,
-            }
-        },
-        example: { attributes: { address: `Serra da Estrela<br> 6260 Manteigas<br> Portugal`, phone: `T: +351 275 000 000`, email: `E: hello@tenda21.com`, btn_experiences_link: {post_id: 0, url: 'experiences.html', title: '', 'post_type': null}, btn_experiences_label: `Experiences`, btn_book_link: {post_id: 0, url: 'mailto:hello@tenda21.com?subject=Booking%20Inquiry', title: '', 'post_type': null}, btn_book_label: `Book Now`, btn_support_link: {post_id: 0, url: 'mailto:hello@tenda21.com?subject=Support%20Inquiry', title: '', 'post_type': null}, btn_support_label: `Support`, visit_heading: `Visit Us`, social_ig: {post_id: 0, url: '#', title: '', 'post_type': null}, social_fb: {post_id: 0, url: '#', title: '', 'post_type': null}, nif: `PT000000000` } },
+    const blockSettings = {
         edit: function ( props ) {
             const blockProps = useBlockProps({ className: 'bg-verde_oliva-500 px-6 py-16 site-footer-nav text-charcoal-900', 'data-block-name': 'site-footer' });
             const setAttributes = props.setAttributes; 
+            
+            
             
             
             const innerBlocksProps = null;
@@ -134,7 +99,7 @@
                                         onChange: function(val) { setAttributes({email: val}) },
                                         type: 'text'
                                     }),
-                                    pgGetFeature4("pgUrlControl")('btn_experiences_link', setAttributes, props, 'Experiences button link', '', null ),
+                                    pgGetFeature5("pgUrlControl")('btn_experiences_link', setAttributes, props, 'Experiences button link', '', null ),
                                     el(TextControl, {
                                         value: props.attributes.btn_experiences_label,
                                         help: __( '' ),
@@ -142,7 +107,7 @@
                                         onChange: function(val) { setAttributes({btn_experiences_label: val}) },
                                         type: 'text'
                                     }),
-                                    pgGetFeature4("pgUrlControl")('btn_book_link', setAttributes, props, 'Book Now button link', '', null ),
+                                    pgGetFeature5("pgUrlControl")('btn_book_link', setAttributes, props, 'Book Now button link', '', null ),
                                     el(TextControl, {
                                         value: props.attributes.btn_book_label,
                                         help: __( '' ),
@@ -150,7 +115,7 @@
                                         onChange: function(val) { setAttributes({btn_book_label: val}) },
                                         type: 'text'
                                     }),
-                                    pgGetFeature4("pgUrlControl")('btn_support_link', setAttributes, props, 'Support button link', '', null ),
+                                    pgGetFeature5("pgUrlControl")('btn_support_link', setAttributes, props, 'Support button link', '', null ),
                                     el(TextControl, {
                                         value: props.attributes.btn_support_label,
                                         help: __( '' ),
@@ -165,8 +130,8 @@
                                         onChange: function(val) { setAttributes({visit_heading: val}) },
                                         type: 'text'
                                     }),
-                                    pgGetFeature4("pgUrlControl")('social_ig', setAttributes, props, 'Instagram', '', null ),
-                                    pgGetFeature4("pgUrlControl")('social_fb', setAttributes, props, 'Facebook', '', null ),
+                                    pgGetFeature5("pgUrlControl")('social_ig', setAttributes, props, 'Instagram', '', null ),
+                                    pgGetFeature5("pgUrlControl")('social_fb', setAttributes, props, 'Facebook', '', null ),
                                     el(TextControl, {
                                         value: props.attributes.nif,
                                         help: __( '' ),
@@ -186,7 +151,9 @@
             return null;
         }                        
 
-    } );
+    };
+
+    block = registerBlockType( 'tenda21/footer', blockSettings );
 } )(
     window.wp.blocks,
     window.wp.element,
