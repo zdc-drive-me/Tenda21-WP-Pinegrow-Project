@@ -329,7 +329,7 @@ add_filter( 'render_block', function( $block_content, $block ) {
     $is_all       = ( 'all' === $events_view );
 
     ob_start();
-    ?>?>
+    ?>
     <section <?php echo $wrapper_attr; ?>>
         <div class="max-w-6xl mx-auto w-full">
             <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-mist-400 pb-4 mb-10 text-xs font-sans uppercase tracking-[0.2em] text-charcoal-500">

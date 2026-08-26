@@ -13,7 +13,7 @@
             "default": "← All Facilitators"
         }
     },
-    "version": "1.0.122",
+    "version": "1.0.125",
     "editorScript": "block-tenda21-facilitator-hero-script",
     "example": {
         "attributes": {}

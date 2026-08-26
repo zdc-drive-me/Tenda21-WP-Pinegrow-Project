@@ -27,7 +27,7 @@
             "default": "Shelter for Presence"
         }
     },
-    "version": "1.0.122",
+    "version": "1.0.125",
     "editorScript": "block-tenda21-hero-tenda21-script",
     "example": {
         "attributes": {}

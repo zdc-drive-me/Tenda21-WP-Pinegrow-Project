@@ -45,7 +45,7 @@
             "default": "Your phone. (We lock them away on arrival. You'll thank us later.)"
         }
     },
-    "version": "1.0.122",
+    "version": "1.0.125",
     "editorScript": "block-tenda21-practical-info-script",
     "example": {
         "attributes": {}

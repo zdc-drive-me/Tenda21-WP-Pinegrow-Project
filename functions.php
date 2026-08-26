@@ -161,10 +161,10 @@ if ( ! function_exists( 'tenda21_enqueue_scripts' ) ) :
         /* Pinegrow generated Enqueue Styles Begin */
 
     wp_deregister_style( 'tenda21-tailwind' );
-    wp_enqueue_style( 'tenda21-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', [], '1.0.122', 'all');
+    wp_enqueue_style( 'tenda21-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', [], '1.0.125', 'all');
 
     wp_deregister_style( 'tenda21-style' );
-    wp_enqueue_style( 'tenda21-style', get_bloginfo('stylesheet_url'), [], '1.0.122', 'all');
+    wp_enqueue_style( 'tenda21-style', get_bloginfo('stylesheet_url'), [], '1.0.125', 'all');
 
     /* Pinegrow generated Enqueue Styles End */
 
@@ -192,22 +192,22 @@ function tenda21_blocks_init() {
     /* Pinegrow generated Register Pinegrow Blocks Begin */
     require_once 'blocks/event-booking-meta/event-booking-meta_register.php';
     require_once 'blocks/event-date-meta/event-date-meta_register.php';
-    require_once 'blocks/event-hero/event-hero_register.php';
     require_once 'blocks/event-row/event-row_register.php';
     require_once 'blocks/events-hero/events-hero_register.php';
     require_once 'blocks/events-list/events-list_register.php';
     require_once 'blocks/experience-back-nav/experience-back-nav_register.php';
-    require_once 'blocks/experience-card/experience-card_register.php';
     require_once 'blocks/experience-content/experience-content_register.php';
+    require_once 'blocks/experience-card/experience-card_register.php';
     require_once 'blocks/experience-cta/experience-cta_register.php';
-    require_once 'blocks/experience-facilitator/experience-facilitator_register.php';
+    require_once 'blocks/event-hero/event-hero_register.php';
     require_once 'blocks/experience-hero/experience-hero_register.php';
+    require_once 'blocks/experience-facilitator/experience-facilitator_register.php';
     require_once 'blocks/experiences-cta/experiences-cta_register.php';
     require_once 'blocks/experiences-grid/experiences-grid_register.php';
     require_once 'blocks/experiences-hero/experiences-hero_register.php';
+    require_once 'blocks/facilitator-hero/facilitator-hero_register.php';
     require_once 'blocks/facilitator-card/facilitator-card_register.php';
     require_once 'blocks/facilitator-cta/facilitator-cta_register.php';
-    require_once 'blocks/facilitator-hero/facilitator-hero_register.php';
     require_once 'blocks/facilitator-meta/facilitator-meta_register.php';
     require_once 'blocks/facilitator-specialties/facilitator-specialties_register.php';
     require_once 'blocks/facilitator-upcoming-events/facilitator-upcoming-events_register.php';

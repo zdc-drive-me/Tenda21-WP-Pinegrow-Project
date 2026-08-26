@@ -7,5 +7,5 @@
             'metadata_path' => __DIR__,
             'js_file' => 'blocks/space-gallery/space-gallery.js',
             'dynamic' => true,
-            'version' => '1.0.122'
+            'version' => '1.0.125'
         ) );

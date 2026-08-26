@@ -683,6 +683,9 @@
   .mt-auto {
     margin-top: auto;
   }
+  .-mb-\[5px\] {
+    margin-bottom: calc(5px * -1);
+  }
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
   }
@@ -763,6 +766,9 @@
   }
   .aspect-square {
     aspect-ratio: 1 / 1;
+  }
+  .\!h-full {
+    height: 100% !important;
   }
   .h-4 {
     height: calc(var(--spacing) * 4);
@@ -1317,6 +1323,9 @@
   .object-center {
     object-position: center;
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
@@ -1544,6 +1553,9 @@
   .text-\[1\.6rem\] {
     font-size: 1.6rem;
   }
+  .text-\[11px\] {
+    font-size: 11px;
+  }
   .text-\[clamp\(1\.5rem\,3\.5vw\,2\.5rem\)\] {
     font-size: clamp(1.5rem, 3.5vw, 2.5rem);
   }
@@ -1676,6 +1688,10 @@
     --tw-tracking: 0.15em;
     letter-spacing: 0.15em;
   }
+  .tracking-\[0\.16em\] {
+    --tw-tracking: 0.16em;
+    letter-spacing: 0.16em;
+  }
   .tracking-\[0\.18em\] {
     --tw-tracking: 0.18em;
     letter-spacing: 0.18em;
@@ -1699,6 +1715,9 @@
   }
   .text-bone-50 {
     color: var(--color-bone-50);
+  }
+  .text-bone-100 {
+    color: var(--color-bone-100);
   }
   .text-bone-200 {
     color: var(--color-bone-200);
@@ -1760,6 +1779,9 @@
   .text-lime-300 {
     color: var(--color-lime-300);
   }
+  .text-mist-500 {
+    color: var(--color-mist-500);
+  }
   .text-white {
     color: var(--color-white);
   }
@@ -1790,6 +1812,9 @@
   }
   .opacity-50 {
     opacity: 50%;
+  }
+  .opacity-60 {
+    opacity: 60%;
   }
   .opacity-80 {
     opacity: 80%;
@@ -1990,6 +2015,13 @@
       }
     }
   }
+  .hover\:opacity-100 {
+    &:hover {
+      @media (hover: hover) {
+        opacity: 100%;
+      }
+    }
+  }
   .hover\:shadow-\[0_8px_24px_rgba\(0\,0\,0\,0\.12\)\] {
     &:hover {
       @media (hover: hover) {
@@ -2109,6 +2141,11 @@
       justify-content: space-between;
     }
   }
+  .md\:gap-4 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 4);
+    }
+  }
   .md\:gap-12 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 12);
@@ -2202,6 +2239,11 @@
     @media (width >= 48rem) {
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .md\:text-charcoal-500 {
+    @media (width >= 48rem) {
+      color: var(--color-charcoal-500);
     }
   }
   .lg\:col-span-5 {

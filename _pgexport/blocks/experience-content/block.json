@@ -21,7 +21,7 @@
             "default": "Who This Is For"
         }
     },
-    "version": "1.0.122",
+    "version": "1.0.125",
     "editorScript": "block-tenda21-experience-content-script",
     "example": {
         "attributes": {}

@@ -49,7 +49,7 @@
             "default": "No upcoming sessions for this facilitator yet."
         }
     },
-    "version": "1.0.122",
+    "version": "1.0.125",
     "editorScript": "block-tenda21-facilitator-upcoming-events-script",
     "example": {
         "attributes": {}
