@@ -8,10 +8,10 @@
                     -->
             <div class="aspect-[4/5] bg-mist-200 overflow-hidden relative">
                 <?php if ( !PG_Blocks_v7::getImageSVG( $args, 'portrait_image', false) && PG_Blocks_v7::getImageUrl( $args, 'portrait_image', 'full' ) ) : ?>
-                    <img src="<?php echo PG_Blocks_v7::getImageUrl( $args, 'portrait_image', 'full' ) ?>" alt="<?php echo PG_Blocks_v7::getImageField( $args, 'portrait_image', 'alt', true); ?>" class="<?php echo (PG_Blocks_v7::getImageField( $args, 'portrait_image', 'id', true) ? ('wp-image-' . PG_Blocks_v7::getImageField( $args, 'portrait_image', 'id', true)) : '') ?> absolute h-full inset-0 object-center object-cover w-full" loading="eager" decoding="async" onerror="this.style.display='none'; this.parentElement.classList.add('bg-[url(/assets/images/background_coastal_sunset_cliffs_2000w_q90.webp)]','bg-cover','bg-center');">
+                    <img src="<?php echo PG_Blocks_v7::getImageUrl( $args, 'portrait_image', 'full' ) ?>" alt="<?php echo PG_Blocks_v7::getImageField( $args, 'portrait_image', 'alt', true); ?>" class="!h-full <?php echo (PG_Blocks_v7::getImageField( $args, 'portrait_image', 'id', true) ? ('wp-image-' . PG_Blocks_v7::getImageField( $args, 'portrait_image', 'id', true)) : '') ?> absolute inset-0 object-center object-cover w-full" loading="eager" decoding="async" onerror="this.style.display='none'; this.parentElement.classList.add('bg-[url(/assets/images/background_coastal_sunset_cliffs_2000w_q90.webp)]','bg-cover','bg-center');">
                 <?php endif; ?>
                 <?php if ( PG_Blocks_v7::getImageSVG( $args, 'portrait_image', false) ) : ?>
-                    <?php echo PG_Blocks_v7::mergeInlineSVGAttributes( PG_Blocks_v7::getImageSVG( $args, 'portrait_image' ), array( 'class' => 'absolute h-full inset-0 object-center object-cover w-full' ) ) ?>
+                    <?php echo PG_Blocks_v7::mergeInlineSVGAttributes( PG_Blocks_v7::getImageSVG( $args, 'portrait_image' ), array( 'class' => '!h-full absolute inset-0 object-center object-cover w-full' ) ) ?>
                 <?php endif; ?>
                 <!-- Subtle vignette for focus -->
                 <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-950/10 via-transparent to-transparent"></div>

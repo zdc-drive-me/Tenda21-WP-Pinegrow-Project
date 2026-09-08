@@ -855,6 +855,15 @@
     --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .scale-100 {
+    --tw-scale-x: 100%;
+    --tw-scale-y: 100%;
+    --tw-scale-z: 100%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-\[0\.985\] {
+    scale: 0.985;
+  }
   .\[animation\:fadeInScale_1s_ease-out_forwards\] {
     animation: fadeInScale 1s ease-out forwards;
   }
@@ -1819,6 +1828,9 @@
   .opacity-80 {
     opacity: 80%;
   }
+  .opacity-100 {
+    opacity: 100%;
+  }
   .shadow-\[0_1px_0_rgba\(42\,41\,38\,0\.04\)\,0_1px_2px_rgba\(42\,41\,38\,0\.06\)\] {
     --tw-shadow: 0 1px 0 var(--tw-shadow-color, rgba(42,41,38,0.04)), 0 1px 2px var(--tw-shadow-color, rgba(42,41,38,0.06));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -1859,6 +1871,14 @@
   .duration-500 {
     --tw-duration: 500ms;
     transition-duration: 500ms;
+  }
+  .duration-700 {
+    --tw-duration: 700ms;
+    transition-duration: 700ms;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
   }
   .select-none {
     -webkit-user-select: none;
@@ -2475,6 +2495,21 @@ a:hover, a:focus, a:active {
   inherits: false;
   initial-value: 0;
 }
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 @property --tw-space-y-reverse {
   syntax: "*";
   inherits: false;
@@ -2644,6 +2679,10 @@ a:hover, a:focus, a:active {
   syntax: "*";
   inherits: false;
 }
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-content {
   syntax: "*";
   initial-value: "";
@@ -2681,6 +2720,9 @@ a:hover, a:focus, a:active {
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-gradient-position: initial;
@@ -2719,6 +2761,7 @@ a:hover, a:focus, a:active {
       --tw-backdrop-saturate: initial;
       --tw-backdrop-sepia: initial;
       --tw-duration: initial;
+      --tw-ease: initial;
       --tw-content: "";
     }
   }
