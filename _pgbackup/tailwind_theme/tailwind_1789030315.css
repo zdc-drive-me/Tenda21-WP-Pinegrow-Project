@@ -644,9 +644,6 @@
   .top-32 {
     top: calc(var(--spacing) * 32);
   }
-  .top-\[30\%\] {
-    top: 30%;
-  }
   .top-\[48\%\] {
     top: 48%;
   }
@@ -664,9 +661,6 @@
   }
   .left-1\/2 {
     left: calc(1 / 2 * 100%);
-  }
-  .left-\[17\%\] {
-    left: 17%;
   }
   .left-\[19\%\] {
     left: 19%;
@@ -691,27 +685,6 @@
   }
   .col-span-2 {
     grid-column: span 2 / span 2;
-  }
-  .container {
-    width: 100%;
-    @media (width >= 40rem) {
-      max-width: 40rem;
-    }
-    @media (width >= 48rem) {
-      max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-      max-width: 64rem;
-    }
-    @media (width >= 80rem) {
-      max-width: 80rem;
-    }
-    @media (width >= 96rem) {
-      max-width: 96rem;
-    }
-  }
-  .-mx-4 {
-    margin-inline: calc(var(--spacing) * -4);
   }
   .mx-auto {
     margin-inline: auto;
@@ -869,9 +842,6 @@
   .h-\[62px\] {
     height: 62px;
   }
-  .h-\[220px\] {
-    height: 220px;
-  }
   .h-auto {
     height: auto;
   }
@@ -974,9 +944,6 @@
   .max-w-\[1160px\] {
     max-width: 1160px;
   }
-  .max-w-\[1200px\] {
-    max-width: 1200px;
-  }
   .max-w-\[1600px\] {
     max-width: 1600px;
   }
@@ -1016,9 +983,6 @@
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .grid-cols-\[72px_1fr\] {
     grid-template-columns: 72px 1fr;
@@ -1202,9 +1166,6 @@
   .rounded-sm {
     border-radius: var(--radius-sm);
   }
-  .rounded-xs {
-    border-radius: var(--radius-xs);
-  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -1293,12 +1254,6 @@
   .bg-\[\#7897ad\] {
     background-color: #7897ad;
   }
-  .bg-\[\#7899b1\] {
-    background-color: #7899b1;
-  }
-  .bg-blue-600 {
-    background-color: var(--color-blue-600);
-  }
   .bg-bone-50 {
     background-color: var(--color-bone-50);
   }
@@ -1382,12 +1337,6 @@
   }
   .bg-clay-500 {
     background-color: var(--color-clay-500);
-  }
-  .bg-gray-100 {
-    background-color: var(--color-gray-100);
-  }
-  .bg-gray-800 {
-    background-color: var(--color-gray-800);
   }
   .bg-mist-100 {
     background-color: var(--color-mist-100);
@@ -1698,10 +1647,6 @@
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
-  .text-6xl {
-    font-size: var(--text-6xl);
-    line-height: var(--tw-leading, var(--text-6xl--line-height));
-  }
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
@@ -1767,14 +1712,8 @@
   .text-\[17px\] {
     font-size: 17px;
   }
-  .text-\[24px\] {
-    font-size: 24px;
-  }
   .text-\[30px\] {
     font-size: 30px;
-  }
-  .text-\[48px\] {
-    font-size: 48px;
   }
   .text-\[clamp\(1\.5rem\,3\.5vw\,2\.5rem\)\] {
     font-size: clamp(1.5rem, 3.5vw, 2.5rem);
@@ -1855,10 +1794,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .font-extrabold {
-    --tw-font-weight: var(--font-weight-extrabold);
-    font-weight: var(--font-weight-extrabold);
   }
   .font-extralight {
     --tw-font-weight: var(--font-weight-extralight);
@@ -1945,17 +1880,11 @@
   .text-\[\#7897ad\] {
     color: #7897ad;
   }
-  .text-\[\#c47d59\] {
-    color: #c47d59;
-  }
   .text-\[\#c67c55\] {
     color: #c67c55;
   }
   .text-black {
     color: var(--color-black);
-  }
-  .text-blue-600 {
-    color: var(--color-blue-600);
   }
   .text-bone-50 {
     color: var(--color-bone-50);
@@ -2019,9 +1948,6 @@
   }
   .text-forest-700 {
     color: var(--color-forest-700);
-  }
-  .text-gray-400 {
-    color: var(--color-gray-400);
   }
   .text-lime-300 {
     color: var(--color-lime-300);
@@ -2210,13 +2136,6 @@
     &:hover {
       @media (hover: hover) {
         border-color: var(--color-charcoal-700);
-      }
-    }
-  }
-  .hover\:bg-blue-700 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-blue-700);
       }
     }
   }
@@ -2673,11 +2592,6 @@
   .lg\:min-h-\[730px\] {
     @media (width >= 64rem) {
       min-height: 730px;
-    }
-  }
-  .lg\:w-8\/12 {
-    @media (width >= 64rem) {
-      width: calc(8 / 12 * 100%);
     }
   }
   .lg\:-translate-x-1\/2 {
