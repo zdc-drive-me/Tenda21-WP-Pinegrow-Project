@@ -17,7 +17,7 @@
             "default": "Sobre quem sustenta a casa"
         }
     },
-    "version": "1.0.128",
+    "version": "1.0.129",
     "editorScript": "block-tenda21-tenda21-page-hero-host-script",
     "example": {
         "attributes": {}
