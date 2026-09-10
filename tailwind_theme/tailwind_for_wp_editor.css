@@ -644,6 +644,9 @@
   .top-32 {
     top: calc(var(--spacing) * 32);
   }
+  .top-\[24\%\] {
+    top: 24%;
+  }
   .top-\[30\%\] {
     top: 30%;
   }
@@ -664,6 +667,9 @@
   }
   .left-1\/2 {
     left: calc(1 / 2 * 100%);
+  }
+  .left-\[16\%\] {
+    left: 16%;
   }
   .left-\[17\%\] {
     left: 17%;
@@ -688,6 +694,15 @@
   }
   .z-\[-1\] {
     z-index: -1;
+  }
+  .z-\[1\] {
+    z-index: 1;
+  }
+  .z-\[5\] {
+    z-index: 5;
+  }
+  .z-\[999\] {
+    z-index: 999;
   }
   .col-span-2 {
     grid-column: span 2 / span 2;
@@ -718,6 +733,9 @@
   }
   .my-1\.5 {
     margin-block: calc(var(--spacing) * 1.5);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
   }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
@@ -869,8 +887,14 @@
   .h-\[62px\] {
     height: 62px;
   }
+  .h-\[100px\] {
+    height: 100px;
+  }
   .h-\[220px\] {
     height: 220px;
+  }
+  .h-\[px\] {
+    height: px;
   }
   .h-auto {
     height: auto;
@@ -979,6 +1003,9 @@
   }
   .max-w-\[1600px\] {
     max-width: 1600px;
+  }
+  .max-w-none {
+    max-width: none;
   }
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
@@ -1403,6 +1430,9 @@
   }
   .bg-mist-500 {
     background-color: var(--color-mist-500);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
   }
   .bg-verde_oliva-500 {
     background-color: var(--color-verde_oliva-500);
