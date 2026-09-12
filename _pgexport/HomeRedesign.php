@@ -204,27 +204,15 @@
                     <!-- =====================================================
                          CTA
                          ===================================================== -->
-                    <div class="absolute z-30" style="
-                            left: 50%;
-                            bottom: 24px;
-                            transform: translateX(-50%);
-                        ">
-                        <a href="#" class="
- bg-slate-500 duration-300
- font-medium
- font-sans
- inline-flex
- items-center
- justify-center
- rounded-full
- text-white
- transition-transform
- hover:bg-sand_tenda-600 hover:duration-150 hover:transition hover:transition-normal hover:scale-[1.025]
-" style="
-                                min-height: 44px;
-                                padding: 0 24px;
-                                font-size: 12px;
-                            "> <?php _e( 'Conheça as experiências', 'tenda21' ); ?> </a>
+                    <!-- CTA -->
+                    <div style="
+        position: absolute;
+        left: 50%;
+        bottom: 28px;
+        transform: translateX(-50%);
+        z-index: 100;
+    ">
+                        <a href="#" class="tenda-line-cta font-sans"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/cta-line.webp" alt="" aria-hidden="true" class="tenda-line-cta__line tenda-line-cta__line--top"> <span class="tenda-line-cta__label"> <?php _e( 'Conheça as experiências', 'tenda21' ); ?> </span> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/cta-line.webp" alt="" aria-hidden="true" class="tenda-line-cta__line tenda-line-cta__line--bottom"> </a>
                     </div>
                 </div>
             </section>
