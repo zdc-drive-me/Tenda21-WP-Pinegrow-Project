@@ -71,148 +71,24 @@
              ========================================================= -->
         <main>
             <section class="relative overflow-hidden bg-white">
-                <div class="relative mx-auto max-w-[1600px]" style="height: 760px;">
-                    <!-- =====================================================
-                         LEFT DECORATIVE TRACE
-                         traccia_per_testo
-                         ===================================================== -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/traccia_per_testo.webp" alt="" aria-hidden="true" class="
-                            pointer-events-none
-                            absolute
-                            z-0
-                            max-w-none
-                            object-contain
-                        " style="
-                            left: -6%;
-                            top: 30%;
-                            width: 31%;
-                        ">
-                    <!-- =====================================================
-                         RIGHT / CENTRAL DECORATIVE TRACE
-                         traccia_per_home
-                         ===================================================== -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/traccia_per_home.webp" alt="" aria-hidden="true" class="
-                            pointer-events-none
-                            absolute
-                            z-[1]
-                            max-w-none
-                            object-contain
-                        " style="
-                            left: 30%;
-                            top: 10%;
-                            width: 34%;
-                        ">
-                    <!-- =====================================================
-                         TENDA 21 + DRAGONFLY
-                         ===================================================== -->
-                    <div class="
-                            absolute
-                            z-20
-                            flex
-                            flex-col
-                            items-center
-                        " style="
-                            left: 50%;
-                            top: 4%;
-                            transform: translateX(-50%);
-                        ">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/hero-dragonfly.webp" alt="" aria-hidden="true" class="
-                                mt-2
-                                h-auto
-                                object-contain
-                            " style="width: 225px;">
+                <div class="relative mx-auto max-w-[1600px] px-5 pb-10 pt-8 md:px-8 md:pb-14 md:pt-12 lg:px-10 lg:pb-16 lg:pt-14">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/traccia_per_testo.webp" alt="" aria-hidden="true" class="pointer-events-none absolute left-[-18%] top-[30%] z-0 hidden w-[60%] max-w-none object-contain md:block lg:left-[-6%] lg:w-[31%]">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/traccia_per_home.webp" alt="" aria-hidden="true" class="pointer-events-none absolute left-[38%] top-[12%] z-[1] hidden w-[40%] max-w-none object-contain md:block lg:left-[30%] lg:w-[34%]">
+                    <div class="relative z-20 mx-auto flex max-w-[260px] justify-center lg:absolute lg:left-1/2 lg:top-[4%] lg:max-w-none lg:-translate-x-1/2">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/hero-dragonfly.webp" alt="" aria-hidden="true" class="mt-2 h-auto w-[150px] object-contain md:w-[190px] lg:w-[225px]">
                     </div>
-                    <!-- =====================================================
-                         TEXT BLOCK 1
-                         ===================================================== -->
-                    <div class="
-                            absolute
-                            z-10
-                            text-center
-                        " style="
-                            left: 16%;
-                            top: 24%;
-                            width: 430px;
-                        ">
-                        <p class="
-                                font-sans
-                                text-[17px]
-                                font-light
-                                leading-[1.35]
-                                text-[#7899b1]
-                            "> <?php _e( 'Com o oceano no horizonte,', 'tenda21' ); ?><br> <?php _e( 'abre-se um espaço para o que é essencial.', 'tenda21' ); ?><br> <?php _e( 'Um espaço vivo de escuta e presença.', 'tenda21' ); ?> </p>
+                    <div class="relative z-10 mt-8 grid items-start gap-8 md:mt-10 md:gap-10 lg:mt-0 lg:min-h-[660px] lg:grid-cols-12 lg:gap-8">
+                        <div class="space-y-8 text-center lg:col-span-6 lg:self-center lg:space-y-12 lg:pl-6">
+                            <p class="mx-auto max-w-[440px] font-sans text-[15px] font-light leading-[1.5] text-gray_tenda-500 md:text-[17px] md:leading-[1.35]"> <?php _e( 'Com o oceano no horizonte,', 'tenda21' ); ?><br> <?php _e( 'abre-se um espaço para o que é essencial.', 'tenda21' ); ?><br> <?php _e( 'Um espaço vivo de escuta e presença.', 'tenda21' ); ?> </p>
+                            <p class="mx-auto max-w-[440px] font-sans text-[15px] font-light leading-[1.5] text-gray_tenda-500 md:text-[17px] md:leading-[1.35]"> <?php _e( 'Criado para nutrir a reconexão com o corpo,', 'tenda21' ); ?><br> <?php _e( 'a leveza da respiração, a liberdade de sentir', 'tenda21' ); ?><br> <?php _e( 'e o encontro com o que é verdadeiro.', 'tenda21' ); ?> </p>
+                            <p class="mx-auto max-w-[420px] font-sans text-[15px] font-light leading-[1.5] text-gray_tenda-500 md:text-[17px] md:leading-[1.35]"> <?php _e( 'Um abrigo que recebe você.', 'tenda21' ); ?><br> <?php _e( 'Apenas respire. Chegue.', 'tenda21' ); ?><br> <?php _e( 'Deixe seu coração se abrir no seu tempo.', 'tenda21' ); ?><br> <?php _e( 'A alma sabe o caminho.', 'tenda21' ); ?> </p>
+                        </div>
+                        <figure class="mx-auto w-full max-w-[640px] lg:col-span-6 lg:self-center lg:max-w-none lg:pr-2">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/architecture-drawing.webp" alt="Tenda 21 architecture" class="block h-auto w-full object-contain">
+                        </figure>
                     </div>
-                    <!-- =====================================================
-                         TEXT BLOCK 2
-                         ===================================================== -->
-                    <div class="
-                            absolute
-                            z-10
-                            text-center
-                        " style="
-                            left: 16%;
-                            top: 49%;
-                            width: 440px;
-                        ">
-                        <p class="
-                                font-sans
-                                text-[17px]
-                                font-light
-                                leading-[1.35]
-                                text-[#7899b1]
-                            "> <?php _e( 'Criado para nutrir a reconexão com o corpo,', 'tenda21' ); ?><br> <?php _e( 'a leveza da respiração, a liberdade de sentir', 'tenda21' ); ?><br> <?php _e( 'e o encontro com o que é verdadeiro.', 'tenda21' ); ?> </p>
-                    </div>
-                    <!-- =====================================================
-                         TEXT BLOCK 3
-                         ===================================================== -->
-                    <div class="
-                            absolute
-                            z-10
-                            text-center
-                        " style="
-                            left: 19%;
-                            top: 70%;
-                            width: 410px;
-                        ">
-                        <p class="
-                                font-sans
-                                text-[17px]
-                                font-light
-                                leading-[1.35]
-                                text-[#7899b1]
-                            "> <?php _e( 'Um abrigo que recebe você.', 'tenda21' ); ?><br> <?php _e( 'Apenas respire. Chegue.', 'tenda21' ); ?><br> <?php _e( 'Deixe seu coração se abrir no seu tempo.', 'tenda21' ); ?><br> <?php _e( 'A alma sabe o caminho.', 'tenda21' ); ?> </p>
-                    </div>
-                    <!-- =====================================================
-                         ARCHITECTURE DRAWING
-                         ===================================================== -->
-                    <figure class="
-                            absolute
-                            z-[5]
-                        " style="
-                            right: -2%;
-                            top: 23%;
-                            width: 43.5%;
-                            margin: 0;
-                        ">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/architecture-drawing.webp" alt="Tenda 21 architecture" class="
-                                block
-                                h-auto
-                                w-full
-                                object-contain
-                            ">
-                    </figure>
-                    <!-- =====================================================
-                         CTA
-                         ===================================================== -->
-                    <!-- CTA -->
-                    <div style="
-        position: absolute;
-        left: 50%;
-        bottom: 28px;
-        transform: translateX(-50%);
-        z-index: 100;
-    ">
-                        <a href="#" class="tenda-line-cta font-sans"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/cta-line.webp" alt="" aria-hidden="true" class="tenda-line-cta__line tenda-line-cta__line--top"> <span class="tenda-line-cta__label"> <?php _e( 'Conheça as experiências', 'tenda21' ); ?> </span> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/cta-line.webp" alt="" aria-hidden="true" class="tenda-line-cta__line tenda-line-cta__line--bottom"> </a>
+                    <div class="relative z-20 mt-10 flex justify-center md:mt-12 lg:absolute lg:bottom-7 lg:left-1/2 lg:mt-0 lg:-translate-x-1/2">
+                        <a href="#" class="inline-flex flex-col items-center font-sans text-[11px] font-light uppercase tracking-[0.12em] text-gray_tenda-500 transition-opacity hover:opacity-70"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/cta-line.webp" alt="" aria-hidden="true" class="h-auto w-[240px] object-contain md:w-[280px]"> <span class="-mt-1 mb-1"><?php _e( 'Conheça as experiências', 'tenda21' ); ?></span> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/cta-line.webp" alt="" aria-hidden="true" class="h-auto w-[240px] object-contain md:w-[280px]"> </a>
                     </div>
                 </div>
             </section>
