@@ -5,7 +5,7 @@
 @layer theme {
   :root, :host {
     --font-sans: 'Montserrat';
-    --font-serif: 'Cormorant Garamond';
+    --font-serif: 'Montserrat';
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
     --color-red-50: oklch(0.971 0.013 17.38);
@@ -319,7 +319,7 @@
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
-    --text-base: 1rem;
+    --text-base: 1.0625rem;
     --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
@@ -890,6 +890,10 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .size-33 {
+    width: calc(var(--spacing) * 33);
+    height: calc(var(--spacing) * 33);
+  }
   .\!h-full {
     height: 100% !important;
   }
@@ -914,6 +918,24 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
+  .h-28 {
+    height: calc(var(--spacing) * 28);
+  }
+  .h-35 {
+    height: calc(var(--spacing) * 35);
+  }
+  .h-43 {
+    height: calc(var(--spacing) * 43);
+  }
+  .h-50 {
+    height: calc(var(--spacing) * 50);
+  }
+  .h-\[2px\] {
+    height: 2px;
+  }
   .h-\[3px\] {
     height: 3px;
   }
@@ -932,8 +954,17 @@
   .h-\[52px\] {
     height: 52px;
   }
+  .h-\[55px\] {
+    height: 55px;
+  }
+  .h-\[60px\] {
+    height: 60px;
+  }
   .h-\[62px\] {
     height: 62px;
+  }
+  .h-\[65px\] {
+    height: 65px;
   }
   .h-\[100px\] {
     height: 100px;
@@ -980,6 +1011,27 @@
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
+  .w-25 {
+    width: calc(var(--spacing) * 25);
+  }
+  .w-35 {
+    width: calc(var(--spacing) * 35);
+  }
+  .w-38 {
+    width: calc(var(--spacing) * 38);
+  }
+  .w-73 {
+    width: calc(var(--spacing) * 73);
+  }
+  .w-\[2px\] {
+    width: 2px;
+  }
+  .w-\[5px\] {
+    width: 5px;
+  }
+  .w-\[6px\] {
+    width: 6px;
+  }
   .w-\[24px\] {
     width: 24px;
   }
@@ -995,11 +1047,20 @@
   .w-\[52px\] {
     width: 52px;
   }
+  .w-\[55px\] {
+    width: 55px;
+  }
   .w-\[58\%\] {
     width: 58%;
   }
   .w-\[60\%\] {
     width: 60%;
+  }
+  .w-\[60px\] {
+    width: 60px;
+  }
+  .w-\[62px\] {
+    width: 62px;
   }
   .w-\[150px\] {
     width: 150px;
@@ -1009,6 +1070,9 @@
   }
   .w-\[240px\] {
     width: 240px;
+  }
+  .w-\[px\] {
+    width: px;
   }
   .w-full {
     width: 100%;
@@ -1785,6 +1849,12 @@
   .text-center {
     text-align: center;
   }
+  .text-left {
+    text-align: left;
+  }
+  .indent-26 {
+    text-indent: calc(var(--spacing) * 26);
+  }
   .font-sans {
     font-family: var(--font-sans);
   }
@@ -1802,6 +1872,10 @@
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
   .text-6xl {
     font-size: var(--text-6xl);
@@ -1988,6 +2062,10 @@
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
   }
+  .font-thin {
+    --tw-font-weight: var(--font-weight-thin);
+    font-weight: var(--font-weight-thin);
+  }
   .tracking-\[-0\.01em\] {
     --tw-tracking: -0.01em;
     letter-spacing: -0.01em;
@@ -2048,6 +2126,10 @@
     --tw-tracking: 0.28em;
     letter-spacing: 0.28em;
   }
+  .tracking-tight {
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
+  }
   .whitespace-nowrap {
     white-space: nowrap;
   }
@@ -2096,6 +2178,9 @@
       color: color-mix(in oklab, var(--color-bone-200) 80%, transparent);
     }
   }
+  .text-caramelo_tenda-500 {
+    color: var(--color-caramelo_tenda-500);
+  }
   .text-charcoal-300 {
     color: var(--color-charcoal-300);
   }
@@ -2135,6 +2220,9 @@
   .text-gray-400 {
     color: var(--color-gray-400);
   }
+  .text-gray-900 {
+    color: var(--color-gray-900);
+  }
   .text-gray_tenda-500 {
     color: var(--color-gray_tenda-500);
   }
@@ -2143,6 +2231,9 @@
   }
   .text-mist-500 {
     color: var(--color-mist-500);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
   }
   .text-white {
     color: var(--color-white);

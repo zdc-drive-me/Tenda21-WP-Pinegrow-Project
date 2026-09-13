@@ -35,7 +35,7 @@
                 <dmcolor key="sand_tenda" color="oklch(77.74% 0.0840 79.94)" shade-50="#f9f5f0" shade-100="#f3e7d7" shade-200="#ecd9bf" shade-300="#e4cca7" shade-400="#dcbe8f" shade-500="oklch(77.74% 0.0840 79.94)" shade-600="#c1a26e" shade-700="#b09364" shade-800="#9e855a" shade-900="#8d7750" shade-950="#7d6947"/>
                 <dmcolor key="caramelo_tenda" color="oklch(64.54% 0.0877 50.59)" shade-50="#f6f0ee" shade-100="#ebd8cf" shade-200="#e0c1b1" shade-300="#d4aa94" shade-400="#c79478" shade-500="oklch(64.54% 0.0877 50.59)" shade-600="#a97354" shade-700="#9a694d" shade-800="#8b5f45" shade-900="#7c543e" shade-950="#6d4b36"/>
             </dmdesignskill>
-            <dmdesignskill skill="fonts" family_1="Montserrat" family_2="Montserrat" h1_2 h2_2 h3_2 family_3="" h1_3="h1" h2_3="h2" name_3=""></dmdesignskill>
+            <dmdesignskill skill="fonts" family_1="Montserrat" family_2="Cormorant Garamond" h1_2 h2_2 h3_2 family_3="" h1_3="h1" h2_3="h2" name_3=""></dmdesignskill>
             <dmdesignskill skill="background" image_for_colors="true" advanced="true" filter_blur="0" filter_brightness="100" filter_contrast="100" filter_grayscale="0" filter_hue-rotate="0" filter_invert="0" filter_opacity="100" filter_saturate="100" filter_sepia="0"></dmdesignskill>
             <dmdesignskill skill="tailwind"></dmdesignskill>
         </dmdesign>
@@ -43,6 +43,5 @@
     <dmlocked tw-colors-red="true" tw-colors-orange="true" tw-colors-amber="true" tw-colors-yellow="true" tw-colors-lime="true" tw-colors-green="true" tw-colors-emerald="true" tw-colors-teal="true" tw-colors-cyan="true" tw-colors-sky="true" tw-colors-blue="true" tw-colors-indigo="true" tw-colors-violet="true" tw-colors-purple="true" tw-colors-fuchsia="true" tw-colors-pink="true" tw-colors-rose="true" tw-colors-slate="true" tw-colors-gray="true" tw-colors-zinc="true" tw-colors-neutral="true" tw-colors-stone="true"></dmlocked>
     <classstyles>
         <classstyle name="footer_butons" key="footer_butons" class="bg-charcoal-900 font-medium font-sans inline-block px-4 py-3 text-bone-50 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800" expanded></classstyle>
-        <classstyle name="text_block" key="text_block" class="font-light leading-snug text-base text-gray-900 tracking-tight" expanded></classstyle>
     </classstyles>
 </project>
