@@ -106,9 +106,3 @@ a:active {
 .tenda-line-cta:hover .tenda-line-cta__line--bottom {
     transform: translateX(-8px);
 }
-
-/* hamburger lines */
-[data-mobile-menu-line] {
-    transition: transform 220ms ease;
-    transform-origin: center;
-}

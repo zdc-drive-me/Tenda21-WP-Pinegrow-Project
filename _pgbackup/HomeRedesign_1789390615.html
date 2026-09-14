@@ -10,10 +10,19 @@
         <!-- =========================================================
              FUTURE WORDPRESS BLOCK: main-navigation
              ========================================================= -->
-        <header class="relative z-30 bg-white px-5 md:px-8 lg:px-10">
+        <header class="
+                relative
+                z-30
+                bg-white
+                px-5
+                md:px-8
+                lg:px-10
+            ">
             <div class="mx-auto max-w-[1600px]">
                 <div class="flex h-[62px] items-center">
-                    <a href="#" class="shrink-0" aria-label="Tenda 21"> <img src="assets/images/home/site logo.webp" alt="Tenda 21" class="h-[52px] w-[52px] object-contain"> </a>
+                    <!-- Logo -->
+                    <a href="#" class="shrink-0" aria-label="Tenda 21"> <img src="assets/images/home/site logo.webp" alt="Tenda 21" class="h-[55px] w-[55px] object-contain"> </a>
+                    <!-- Navigation -->
                     <nav class="hidden flex-1 lg:block" aria-label="Primary navigation">
                         <ul class="
                                 mx-auto
@@ -54,6 +63,7 @@
                             </li>
                         </ul>
                     </nav>
+                    <!-- Language -->
                     <a href="#" class="
                             ml-auto
                             hidden
@@ -65,6 +75,7 @@
                             lg:block
                         ">
                         EN-PT </a>
+                    <!-- Mobile menu -->
                     <button type="button" class="
                             ml-auto
                             font-sans
@@ -77,6 +88,7 @@
                         Menu
 </button>
                 </div>
+                <!-- Menu divider -->
                 <img src="assets/images/home/menu_line_devider.webp" alt="" aria-hidden="true" class="block w-full object-fill" style="height: 15px;">
             </div>
         </header>
@@ -88,22 +100,15 @@
                 <div class="relative mx-auto max-w-[1600px]" style="height: 760px;">
                     <!-- =====================================================
                          LEFT DECORATIVE TRACE
-                         traccia_per_testo
                          ===================================================== -->
-                    <img src="assets/images/home/traccia_per_testo.webp" alt="" aria-hidden="true" class="
-                            pointer-events-none
-                            absolute
-                            z-0
-                            max-w-none
-                            object-contain
-                        " style="
+                    <img src="assets/images/home/traccia_per_testo.webp" alt="" aria-hidden="true" class="absolute max-w-none
+ object-center object-contain pointer-events-none z-0" style="
                             left: -6%;
                             top: 30%;
                             width: 31%;
                         ">
                     <!-- =====================================================
                          RIGHT / CENTRAL DECORATIVE TRACE
-                         traccia_per_home
                          ===================================================== -->
                     <img src="assets/images/home/traccia_per_home.webp" alt="" aria-hidden="true" class="
                             pointer-events-none
@@ -117,139 +122,93 @@
                             width: 34%;
                         ">
                     <!-- =====================================================
-                         TENDA 21 + DRAGONFLY
+                         TENDA 21 / DRAGONFLY
                          ===================================================== -->
-                    <div class="
-                            absolute
-                            z-20
-                            flex
-                            flex-col
-                            items-center
-                        " style="
+                    <div class="absolute flex flex-col items-center z-20" style="
                             left: 50%;
                             top: 4%;
                             transform: translateX(-50%);
                         ">
-                        <img src="assets/images/home/hero-dragonfly.webp" alt="" aria-hidden="true" class="
-                                mt-2
-                                h-auto
-                                object-contain
-                            " style="width: 225px;">
+                        <img src="assets/images/home/hero-dragonfly.webp" alt="" aria-hidden="true" style="width: 258.75px;">
                     </div>
                     <!-- =====================================================
-                         TEXT BLOCK 1
+                         TEXT GROUP
+
+                         One parent establishes:
+                         - horizontal position
+                         - common width
+                         - common center axis
+
+                         Individual paragraphs no longer carry their own
+                         left / width values.
                          ===================================================== -->
-                    <div class="
-                            absolute
-                            z-10
-                            text-center
-                        " style="
+                    <div class="absolute flex flex-col items-center justify-between text-center z-10" style="
                             left: 16%;
                             top: 24%;
-                            width: 430px;
-                        ">
-                        <p class="
-                                font-sans
-                                text-[17px]
-                                font-light
-                                leading-[1.35]
-                                text-[#7899b1]
-                            ">
-                            Com o oceano no horizonte,<br>
-                            abre-se um espaço para o que é essencial.<br>
-                            Um espaço vivo de escuta e presença. </p>
-                    </div>
-                    <!-- =====================================================
-                         TEXT BLOCK 2
-                         ===================================================== -->
-                    <div class="
-                            absolute
-                            z-10
-                            text-center
-                        " style="
-                            left: 16%;
-                            top: 49%;
                             width: 440px;
+                            height: 430px;
                         ">
-                        <p class="
-                                font-sans
-                                text-[17px]
-                                font-light
-                                leading-[1.35]
-                                text-[#7899b1]
-                            ">
-                            Criado para nutrir a reconexão com o corpo,<br>
-                            a leveza da respiração, a liberdade de sentir<br>
-                            e o encontro com o que é verdadeiro. </p>
-                    </div>
-                    <!-- =====================================================
-                         TEXT BLOCK 3
-                         ===================================================== -->
-                    <div class="
-                            absolute
-                            z-10
-                            text-center
-                        " style="
-                            left: 19%;
-                            top: 70%;
-                            width: 410px;
-                        ">
-                        <p class="
-                                font-sans
-                                text-[17px]
-                                font-light
-                                leading-[1.35]
-                                text-[#7899b1]
-                            ">
-                            Um abrigo que recebe você.<br>
-                            Apenas respire. Chegue.<br>
-                            Deixe seu coração se abrir no seu tempo.<br>
-                            A alma sabe o caminho. </p>
+                        <!-- Text 1 -->
+                        <div class="w-full">
+                            <h1 class="font-light leading-snug text-base text-gray-900 tracking-tight" data-pg-class-style="text_block">
+                                Com o oceano no horizonte,<br>
+                                abre-se um espaço para o que é essencial.<br>
+                                Um espaço vivo de escuta e presença. </h1>
+                        </div>
+                        <!-- Text 2 -->
+                        <div class="w-full">
+                            <h2 class="font-light leading-snug text-base text-gray-900 tracking-tight" data-pg-class-style="text_block">
+                                Criado para nutrir a reconexão com o corpo,<br>
+                                a leveza da respiração, a liberdade de sentir<br>
+                                e o encontro com o que é verdadeiro. </h2>
+                        </div>
+                        <!-- Text 3 -->
+                        <div class="w-full">
+                            <h2 class="font-light leading-snug text-base text-gray-900 tracking-tight" data-pg-class-style="text_block">
+                                Um abrigo que recebe você.<br>
+                                Apenas respire. Chegue.<br>
+                                Deixe seu coração se abrir no seu tempo.<br>
+                                A alma sabe o caminho. </h2>
+                        </div>
                     </div>
                     <!-- =====================================================
                          ARCHITECTURE DRAWING
                          ===================================================== -->
-                    <figure class="
-                            absolute
-                            z-[5]
-                        " style="
+                    <figure class="absolute z-[5]
+" style="
                             right: -2%;
                             top: 23%;
                             width: 43.5%;
                             margin: 0;
                         ">
-                        <img src="assets/images/home/architecture-drawing.webp" alt="Tenda 21 architecture" class="
-                                block
-                                h-auto
-                                w-full
-                                object-contain
-                            ">
+                        <img src="assets/images/home/architecture-drawing.webp" alt="Tenda 21 architecture" class="block
+ h-auto
+ w-full
+ object-contain
+">
                     </figure>
                     <!-- =====================================================
                          CTA
                          ===================================================== -->
-                    <div class="absolute z-30" style="
+                    <div style="
+                            position: absolute;
                             left: 50%;
-                            bottom: 24px;
+                            bottom: 28px;
                             transform: translateX(-50%);
+                            z-index: 100;
                         ">
-                        <a href="#" class="
- bg-slate-500 duration-300
- font-medium
- font-sans
- inline-flex
- items-center
- justify-center
- rounded-full
- text-white
- transition-transform
- hover:bg-sand_tenda-600 hover:scale-[1.025]
-" style="
-                                min-height: 44px;
-                                padding: 0 24px;
-                                font-size: 12px;
-                            ">
-                            Conheça as experiências </a>
+                        <a href="#" class="tenda-line-cta font-sans"> <img src="assets/images/home/cta-line.webp" alt="" aria-hidden="true" class="
+                                    tenda-line-cta__line
+                                    tenda-line-cta__line--top
+                                "> <span class="
+                                    tenda-line-cta__label
+                                    text-base
+                                    text-gray-900
+                                ">
+                                Conheça as experiências </span> <img src="assets/images/home/cta-line.webp" alt="" aria-hidden="true" class="
+                                    tenda-line-cta__line
+                                    tenda-line-cta__line--bottom
+                                "> </a>
                     </div>
                 </div>
             </section>
@@ -265,6 +224,7 @@
                 lg:px-10
             ">
             <div class="mx-auto max-w-[1600px]">
+                <!-- Footer divider -->
                 <img src="assets/images/home/footer devider.webp" alt="" aria-hidden="true" class="block w-full object-fill" style="height: 15px;">
                 <div class="
                         mx-auto
@@ -318,13 +278,8 @@
                         </div>
                     </div>
                 </div>
-                <p class="
- font-light
- font-sans
- pb-1
- text-[#7899b1]
- text-center
-" style="
+                <!-- Copyright -->
+                <p class="text-caramelo_tenda-500 text-center" style="
                         font-size: 7.5px;
                         line-height: 1.2;
                     ">
