@@ -1,4 +1,4 @@
-<footer <?php if(empty($_GET['context']) || $_GET['context'] !== 'edit') echo get_block_wrapper_attributes( array('class' => "bg-verde_oliva-500 px-6 py-16 site-footer-nav text-charcoal-900", 'data-block-name' => "site-footer", ) ); else echo 'data-wp-block-props="true"'; ?>>
+<footer <?php if(empty($_GET['context']) || $_GET['context'] !== 'edit') echo get_block_wrapper_attributes( array('class' => "bg-blue_tenda-500 px-6 py-16 site-footer-nav text-charcoal-900", 'data-block-name' => "site-footer", ) ); else echo 'data-wp-block-props="true"'; ?>>
     <div class="max-w-7xl mx-auto w-full">
         <!-- Main Footer Content -->
         <div class="grid md:grid-cols-4 gap-12 mb-16">

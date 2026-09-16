@@ -817,9 +817,6 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
-  .mt-14 {
-    margin-top: calc(var(--spacing) * 14);
-  }
   .mt-auto {
     margin-top: auto;
   }
@@ -1037,9 +1034,6 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-2\/3 {
-    width: calc(2 / 3 * 100%);
-  }
   .w-4 {
     width: calc(var(--spacing) * 4);
   }
@@ -1195,9 +1189,6 @@
   }
   .max-w-none {
     max-width: none;
-  }
-  .max-w-xl {
-    max-width: var(--container-xl);
   }
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
@@ -1809,32 +1800,299 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
+  .py-4\.5 {
+    padding-block: calc(var(--spacing) * 4.5);
+  }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
+  .py-7 {
+    padding-block: calc(var(--spacing) * 7);
+  }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
+  }
+  .py-9 {
+    padding-block: calc(var(--spacing) * 9);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+  .py-11 {
+    padding-block: calc(var(--spacing) * 11);
   }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
+  .py-13 {
+    padding-block: calc(var(--spacing) * 13);
+  }
+  .py-14 {
+    padding-block: calc(var(--spacing) * 14);
+  }
+  .py-15 {
+    padding-block: calc(var(--spacing) * 15);
+  }
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
+  }
+  .py-17 {
+    padding-block: calc(var(--spacing) * 17);
+  }
+  .py-18 {
+    padding-block: calc(var(--spacing) * 18);
+  }
+  .py-19 {
+    padding-block: calc(var(--spacing) * 19);
   }
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
   }
+  .py-21 {
+    padding-block: calc(var(--spacing) * 21);
+  }
+  .py-22 {
+    padding-block: calc(var(--spacing) * 22);
+  }
+  .py-23 {
+    padding-block: calc(var(--spacing) * 23);
+  }
   .py-24 {
     padding-block: calc(var(--spacing) * 24);
+  }
+  .py-25 {
+    padding-block: calc(var(--spacing) * 25);
+  }
+  .py-26 {
+    padding-block: calc(var(--spacing) * 26);
+  }
+  .py-27 {
+    padding-block: calc(var(--spacing) * 27);
+  }
+  .py-28 {
+    padding-block: calc(var(--spacing) * 28);
+  }
+  .py-29 {
+    padding-block: calc(var(--spacing) * 29);
+  }
+  .py-30 {
+    padding-block: calc(var(--spacing) * 30);
+  }
+  .py-31 {
+    padding-block: calc(var(--spacing) * 31);
   }
   .py-32 {
     padding-block: calc(var(--spacing) * 32);
   }
+  .py-33 {
+    padding-block: calc(var(--spacing) * 33);
+  }
+  .py-34 {
+    padding-block: calc(var(--spacing) * 34);
+  }
+  .py-35 {
+    padding-block: calc(var(--spacing) * 35);
+  }
+  .py-36 {
+    padding-block: calc(var(--spacing) * 36);
+  }
+  .py-37 {
+    padding-block: calc(var(--spacing) * 37);
+  }
+  .py-38 {
+    padding-block: calc(var(--spacing) * 38);
+  }
+  .py-39 {
+    padding-block: calc(var(--spacing) * 39);
+  }
+  .py-40 {
+    padding-block: calc(var(--spacing) * 40);
+  }
+  .py-41 {
+    padding-block: calc(var(--spacing) * 41);
+  }
+  .py-42 {
+    padding-block: calc(var(--spacing) * 42);
+  }
+  .py-43 {
+    padding-block: calc(var(--spacing) * 43);
+  }
+  .py-44 {
+    padding-block: calc(var(--spacing) * 44);
+  }
+  .py-45 {
+    padding-block: calc(var(--spacing) * 45);
+  }
+  .py-46 {
+    padding-block: calc(var(--spacing) * 46);
+  }
+  .py-47 {
+    padding-block: calc(var(--spacing) * 47);
+  }
   .py-48 {
     padding-block: calc(var(--spacing) * 48);
+  }
+  .py-49 {
+    padding-block: calc(var(--spacing) * 49);
+  }
+  .py-50 {
+    padding-block: calc(var(--spacing) * 50);
+  }
+  .py-51 {
+    padding-block: calc(var(--spacing) * 51);
+  }
+  .py-52 {
+    padding-block: calc(var(--spacing) * 52);
+  }
+  .py-53 {
+    padding-block: calc(var(--spacing) * 53);
+  }
+  .py-54 {
+    padding-block: calc(var(--spacing) * 54);
+  }
+  .py-55 {
+    padding-block: calc(var(--spacing) * 55);
+  }
+  .py-56 {
+    padding-block: calc(var(--spacing) * 56);
+  }
+  .py-57 {
+    padding-block: calc(var(--spacing) * 57);
+  }
+  .py-58 {
+    padding-block: calc(var(--spacing) * 58);
+  }
+  .py-59 {
+    padding-block: calc(var(--spacing) * 59);
+  }
+  .py-60 {
+    padding-block: calc(var(--spacing) * 60);
+  }
+  .py-61 {
+    padding-block: calc(var(--spacing) * 61);
+  }
+  .py-62 {
+    padding-block: calc(var(--spacing) * 62);
+  }
+  .py-63 {
+    padding-block: calc(var(--spacing) * 63);
+  }
+  .py-64 {
+    padding-block: calc(var(--spacing) * 64);
+  }
+  .py-65 {
+    padding-block: calc(var(--spacing) * 65);
+  }
+  .py-66 {
+    padding-block: calc(var(--spacing) * 66);
+  }
+  .py-67 {
+    padding-block: calc(var(--spacing) * 67);
+  }
+  .py-68 {
+    padding-block: calc(var(--spacing) * 68);
+  }
+  .py-69 {
+    padding-block: calc(var(--spacing) * 69);
+  }
+  .py-70 {
+    padding-block: calc(var(--spacing) * 70);
+  }
+  .py-71 {
+    padding-block: calc(var(--spacing) * 71);
+  }
+  .py-72 {
+    padding-block: calc(var(--spacing) * 72);
+  }
+  .py-73 {
+    padding-block: calc(var(--spacing) * 73);
+  }
+  .py-74 {
+    padding-block: calc(var(--spacing) * 74);
+  }
+  .py-75 {
+    padding-block: calc(var(--spacing) * 75);
+  }
+  .py-76 {
+    padding-block: calc(var(--spacing) * 76);
+  }
+  .py-77 {
+    padding-block: calc(var(--spacing) * 77);
+  }
+  .py-78 {
+    padding-block: calc(var(--spacing) * 78);
+  }
+  .py-79 {
+    padding-block: calc(var(--spacing) * 79);
+  }
+  .py-80 {
+    padding-block: calc(var(--spacing) * 80);
+  }
+  .py-81 {
+    padding-block: calc(var(--spacing) * 81);
+  }
+  .py-82 {
+    padding-block: calc(var(--spacing) * 82);
+  }
+  .py-83 {
+    padding-block: calc(var(--spacing) * 83);
+  }
+  .py-84 {
+    padding-block: calc(var(--spacing) * 84);
+  }
+  .py-85 {
+    padding-block: calc(var(--spacing) * 85);
+  }
+  .py-86 {
+    padding-block: calc(var(--spacing) * 86);
+  }
+  .py-87 {
+    padding-block: calc(var(--spacing) * 87);
+  }
+  .py-88 {
+    padding-block: calc(var(--spacing) * 88);
+  }
+  .py-89 {
+    padding-block: calc(var(--spacing) * 89);
+  }
+  .py-90 {
+    padding-block: calc(var(--spacing) * 90);
+  }
+  .py-91 {
+    padding-block: calc(var(--spacing) * 91);
+  }
+  .py-92 {
+    padding-block: calc(var(--spacing) * 92);
+  }
+  .py-93 {
+    padding-block: calc(var(--spacing) * 93);
+  }
+  .py-94 {
+    padding-block: calc(var(--spacing) * 94);
+  }
+  .py-95 {
+    padding-block: calc(var(--spacing) * 95);
+  }
+  .py-96 {
+    padding-block: calc(var(--spacing) * 96);
+  }
+  .py-97 {
+    padding-block: calc(var(--spacing) * 97);
+  }
+  .py-98 {
+    padding-block: calc(var(--spacing) * 98);
+  }
+  .py-99 {
+    padding-block: calc(var(--spacing) * 99);
+  }
+  .py-100 {
+    padding-block: calc(var(--spacing) * 100);
+  }
+  .py-px {
+    padding-block: 1px;
   }
   .pt-0\.5 {
     padding-top: calc(var(--spacing) * 0.5);
@@ -2222,12 +2480,6 @@
   }
   .text-blue-600 {
     color: var(--color-blue-600);
-  }
-  .text-blue_tenda-600 {
-    color: var(--color-blue_tenda-600);
-  }
-  .text-blue_tenda-900 {
-    color: var(--color-blue_tenda-900);
   }
   .text-bone-50 {
     color: var(--color-bone-50);
@@ -2738,21 +2990,6 @@
       margin-top: calc(var(--spacing) * 12);
     }
   }
-  .md\:mt-14 {
-    @media (width >= 48rem) {
-      margin-top: calc(var(--spacing) * 14);
-    }
-  }
-  .md\:mt-20 {
-    @media (width >= 48rem) {
-      margin-top: calc(var(--spacing) * 20);
-    }
-  }
-  .md\:mb-16 {
-    @media (width >= 48rem) {
-      margin-bottom: calc(var(--spacing) * 16);
-    }
-  }
   .md\:block {
     @media (width >= 48rem) {
       display: block;
@@ -2771,11 +3008,6 @@
   .md\:h-14 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 14);
-    }
-  }
-  .md\:w-1\/2 {
-    @media (width >= 48rem) {
-      width: calc(1 / 2 * 100%);
     }
   }
   .md\:w-14 {
@@ -2871,11 +3103,6 @@
   .md\:gap-12 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 12);
-    }
-  }
-  .md\:gap-16 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 16);
     }
   }
   .md\:gap-20 {

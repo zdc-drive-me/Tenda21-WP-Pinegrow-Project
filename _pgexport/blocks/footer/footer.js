@@ -48,7 +48,7 @@
     
     const blockSettings = {
         edit: function ( props ) {
-            const blockProps = useBlockProps({ className: 'bg-verde_oliva-500 px-6 py-16 site-footer-nav text-charcoal-900', 'data-block-name': 'site-footer' });
+            const blockProps = useBlockProps({ className: 'bg-blue_tenda-500 px-6 py-16 site-footer-nav text-charcoal-900', 'data-block-name': 'site-footer' });
             const setAttributes = props.setAttributes; 
             
             
