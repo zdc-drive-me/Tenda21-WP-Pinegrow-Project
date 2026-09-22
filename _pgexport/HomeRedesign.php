@@ -3,7 +3,7 @@
         <!-- =========================================================
              FUTURE WORDPRESS BLOCK: main-navigation
              ========================================================= -->
-        <header class="relative z-30 hidden bg-white px-5 md:px-8 lg:block lg:px-10">
+        <header class="bg-white hidden px-5 relative site-main-nav z-30 md:px-8 lg:block lg:px-10">
             <div class="mx-auto max-w-[1600px]">
                 <div class="flex h-[62px] items-center">
                     <!-- Logo -->
@@ -256,66 +256,70 @@
         <!-- =========================================================
              FUTURE WORDPRESS BLOCK: site-footer
              ========================================================= -->
-        <footer class="bg-white hidden pb-2 px-5 md:block md:px-8 lg:px-10">
-            <div class="mx-auto max-w-[1600px]">
-                <!-- Footer divider -->
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/footer devider.webp" alt="" aria-hidden="true" class="block w-full object-fill" style="height: 15px;">
-                <!-- Footer content -->
-                <div class="gap-8
- grid
- grid-cols-1
- max-w-[760px]
- mx-auto
- py-5 text-center
- sm:gap-12
- sm:grid-cols-2
- md:gap-[160px]
-">
-                    <!-- Stay tuned -->
-                    <div>
-                        <h2 class="
-                                mb-4
-                                font-sans
-                                text-[15px]
-                                font-light
-                                uppercase
-                                text-[#7899b1]
-                            "> <?php _e( 'Stay tuned', 'tenda21' ); ?> </h2>
-                        <div class="
-                                flex
-                                items-center
-                                justify-center
-                                gap-4
-                            ">
-                            <a href="#" aria-label="Instagram"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/instagram icon.webp" alt="" class="h-[24px] w-[24px] object-contain"> </a>
-                            <a href="#" aria-label="Telegram"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/telegram icon.webp" alt="" class="h-[24px] w-[24px] object-contain"> </a>
+        <footer class="hidden md:block site-footer-nav bg-white">
+            <div class="mx-auto max-w-[1600px] px-5 md:px-8 lg:px-10">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/footer devider.webp" alt="" aria-hidden="true" class="block h-[15px] w-full object-fill">
+                <div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-10 py-12 text-center sm:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:py-16">
+                    <!-- CONNECT -->
+                    <div class="flex flex-col items-center">
+                        <h2 class="mb-5 font-sans text-[13px] font-normal uppercase tracking-[0.18em] text-blue_tenda-500"> <?php _e( 'Connect', 'tenda21' ); ?> </h2>
+                        <div class="flex flex-col items-center gap-3">
+                            <a href="#" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500"> <?php _e( 'Instagram', 'tenda21' ); ?> </a>
+                            <a href="#" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500"> <?php _e( 'WhatsApp', 'tenda21' ); ?> </a>
                         </div>
                     </div>
-                    <!-- Contacts -->
-                    <div>
-                        <h2 class="
-                                mb-4
-                                font-sans
-                                text-[15px]
-                                font-light
-                                uppercase
-                                text-[#7899b1]
-                            "> <?php _e( 'Contatos', 'tenda21' ); ?> </h2>
-                        <div class="
-                                flex
-                                items-center
-                                justify-center
-                                gap-4
-                            ">
-                            <a href="mailto:hello@tenda21.com" aria-label="Email"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/contact icon.webp" alt="" class="h-[27px] w-[27px] object-contain"> </a>
-                            <a href="#" aria-label="WhatsApp"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/whatsapp icon.webp" alt="" class="h-[27px] w-[27px] object-contain"> </a>
-                        </div>
+                    <!-- TENDA 21 -->
+                    <div class="flex flex-col items-center">
+                        <h2 class="mb-5 font-sans text-[13px] font-normal uppercase tracking-[0.18em] text-blue_tenda-500"> <?php _e( 'Tenda 21', 'tenda21' ); ?> </h2>
+                        <?php if ( has_nav_menu( 'footer_block_one' ) ) : ?>
+                            <?php
+                                PG_Smart_Walker_Nav_Menu::init();
+                                PG_Smart_Walker_Nav_Menu::$options['template'] = '<a class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500 {CLASSES}" id="{ID}" {ATTRS}>{TITLE}
+                                                    </a>';
+                                wp_nav_menu( array(
+                                    'container' => '',
+                                    'theme_location' => 'footer_block_one',
+                                    'items_wrap' => '<nav class="%2$s flex flex-col footer-menu gap-3 items-center" aria-label="Tenda 21 footer menu" id="%1$s">%3$s</nav>',
+                                    'walker' => new PG_Smart_Walker_Nav_Menu()
+                            ) ); ?>
+                        <?php endif; ?>
+                    </div>
+                    <!-- COMMUNITY -->
+                    <div class="flex flex-col items-center">
+                        <h2 class="mb-5 font-sans text-[13px] font-normal uppercase tracking-[0.18em] text-blue_tenda-500"> <?php _e( 'Community', 'tenda21' ); ?> </h2>
+                        <?php if ( has_nav_menu( 'footer_block_two' ) ) : ?>
+                            <?php
+                                PG_Smart_Walker_Nav_Menu::init();
+                                PG_Smart_Walker_Nav_Menu::$options['template'] = '<a class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500 {CLASSES}" id="{ID}" {ATTRS}>{TITLE}
+                                                    </a>';
+                                wp_nav_menu( array(
+                                    'container' => '',
+                                    'theme_location' => 'footer_block_two',
+                                    'items_wrap' => '<nav class="%2$s flex flex-col footer-menu gap-3 items-center" aria-label="Community footer menu" id="%1$s">%3$s</nav>',
+                                    'walker' => new PG_Smart_Walker_Nav_Menu()
+                            ) ); ?>
+                        <?php endif; ?>
+                    </div>
+                    <!-- VISIT US -->
+                    <div class="flex flex-col items-center">
+                        <h2 class="mb-5 font-sans text-[13px] font-normal uppercase tracking-[0.18em] text-blue_tenda-500"> <?php _e( 'Visit Us', 'tenda21' ); ?> </h2>
+                        <?php if ( has_nav_menu( 'footer_block_three' ) ) : ?>
+                            <?php
+                                PG_Smart_Walker_Nav_Menu::init();
+                                PG_Smart_Walker_Nav_Menu::$options['template'] = '<a class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500 {CLASSES}" id="{ID}" {ATTRS}>{TITLE}
+                                                    </a>';
+                                wp_nav_menu( array(
+                                    'container' => '',
+                                    'theme_location' => 'footer_block_three',
+                                    'items_wrap' => '<nav class="%2$s flex flex-col footer-menu gap-3 items-center" aria-label="Visit us footer menu" id="%1$s">%3$s</nav>',
+                                    'walker' => new PG_Smart_Walker_Nav_Menu()
+                            ) ); ?>
+                        <?php endif; ?>
                     </div>
                 </div>
-                <!-- Copyright -->
-                <p class="text-caramelo_tenda-500
- text-center
- text-sm"> <?php _e( 'Tenda 21 · All rights reserved · 2026', 'tenda21' ); ?> </p>
+                <div class="border-t border-blue_tenda-500/10 py-6">
+                    <p class="text-center font-sans text-[11px] font-light uppercase tracking-[0.18em] text-caramelo_tenda-500"> <?php _e( 'Tenda 21 · All rights reserved · 2026', 'tenda21' ); ?> </p>
+                </div>
             </div>
         </footer>        
 

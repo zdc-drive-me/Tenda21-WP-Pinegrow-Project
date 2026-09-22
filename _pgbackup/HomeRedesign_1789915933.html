@@ -300,64 +300,157 @@
         <!-- =========================================================
              FUTURE WORDPRESS BLOCK: site-footer
              ========================================================= -->
-        <footer class="hidden md:block site-footer-nav bg-white">
-            <div class="mx-auto max-w-[1600px] px-5 md:px-8 lg:px-10">
-                <img src="assets/images/home/footer devider.webp" alt="" aria-hidden="true" class="block h-[15px] w-full object-fill">
-                <div class="mx-auto grid max-w-[1100px] grid-cols-1 gap-10 py-12 text-center sm:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:py-16">
-                    <!-- CONNECT -->
-                    <div class="flex flex-col items-center">
-                        <h2 class="mb-5 font-sans text-[13px] font-normal uppercase tracking-[0.18em] text-blue_tenda-500">
-                    Connect </h2>
-                        <div class="flex flex-col items-center gap-3">
-                            <a href="#" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
-                        Instagram </a>
-                            <a href="#" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
-                        WhatsApp </a>
+        <footer class="bg-white hidden pb-2 px-5 site-footer-nav md:block md:px-8 lg:px-10">
+            <div class="mx-auto max-w-[1600px]">
+                <!-- Footer divider -->
+                <img src="assets/images/home/footer devider.webp" alt="" aria-hidden="true" class="block w-full object-fill" style="height: 15px;">
+                <!-- Footer content -->
+                <div class="gap-8
+ grid
+ grid-cols-1
+ max-w-[760px]
+ mx-auto
+ py-5 text-center
+ sm:gap-12
+ sm:grid-cols-2
+ md:gap-[160px]
+">
+                    <!-- Stay tuned -->
+                    <div>
+                        <h2 class="
+                                mb-4
+                                font-sans
+                                text-[15px]
+                                font-light
+                                uppercase
+                                text-[#7899b1]
+                            ">
+                            Stay tuned </h2>
+                        <div class="
+                                flex
+                                items-center
+                                justify-center
+                                gap-4
+                            ">
+                            <a href="#" aria-label="Instagram"> <img src="assets/images/home/instagram icon.webp" alt="" class="h-[24px] w-[24px] object-contain"> </a>
+                            <a href="#" aria-label="Telegram"> <img src="assets/images/home/telegram icon.webp" alt="" class="h-[24px] w-[24px] object-contain"> </a>
                         </div>
                     </div>
-                    <!-- TENDA 21 -->
-                    <div class="flex flex-col items-center">
-                        <h2 class="mb-5 font-sans text-[13px] font-normal uppercase tracking-[0.18em] text-blue_tenda-500">
-                    Tenda 21 </h2>
-                        <nav class="footer-menu flex flex-col items-center gap-3" cms-menu="footer_block_one" cms-menu-register cms-menu-register-description="Footer menu Block 1" aria-label="Tenda 21 footer menu">
-                            <a href="#about" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
+                    <!-- Contacts -->
+                    <div>
+                        <h2 class="
+                                mb-4
+                                font-sans
+                                text-[15px]
+                                font-light
+                                uppercase
+                                text-[#7899b1]
+                            ">
+                            Contatos </h2>
+                        <div class="
+                                flex
+                                items-center
+                                justify-center
+                                gap-4
+                            ">
+                            <a href="mailto:hello@tenda21.com" aria-label="Email"> <img src="assets/images/home/contact icon.webp" alt="" class="h-[27px] w-[27px] object-contain"> </a>
+                            <a href="#" aria-label="WhatsApp"> <img src="assets/images/home/whatsapp icon.webp" alt="" class="h-[27px] w-[27px] object-contain"> </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright -->
+                <p class="text-caramelo_tenda-500
+ text-center
+ text-sm">
+                    Tenda 21 · All rights reserved · 2026 </p>
+            </div>
+        </footer>
+        <footer class="bg-blue_tenda-500 px-6 py-16 site-footer-nav text-charcoal-900" data-block-name="site-footer" cms-block="footer" cms-block-title="Footer" cms-block-description="Website footer with contact information, navigation and social links">
+            <div class="max-w-7xl mx-auto w-full">
+                <!-- Main Footer Content -->
+                <div class="grid md:grid-cols-4 gap-12 mb-16">
+                    <!-- Column 1: Location & Contact -->
+                    <div class="space-y-4">
+                        <h3 class="font-bold font-serif mb-0 text-2xl text-charcoal-900" cms-site-name>
+                    Tenda 21 </h3>
+                        <address class="font-bold font-sans leading-tight not-italic text-2xl text-charcoal-800" cms-block-field="address" cms-block-field-type="content" cms-block-field-title="Address" cms-block-field-control="richtext">
+                    Serra da Estrela<br>
+                    6260 Manteigas<br>
+                    Portugal </address>
+                        <div class="font-sans font-light text-sm text-charcoal-800 space-y-1">
+                            <p> <a href="tel:+351275000000" cms-block-field="phone" cms-block-field-type="content" cms-block-field-title="Phone" cms-block-field-2="phone" cms-block-field-type-2="none" cms-block-field-title-2="Phone link" cms-block-field-expression-2="tel:{{ phone }}">
+                            T: +351 275 000 000 </a> </p>
+                            <p> <a href="mailto:hello@tenda21.com" cms-block-field="email" cms-block-field-type="content" cms-block-field-title="Email" cms-block-field-2="email" cms-block-field-type-2="attr" cms-block-field-attribute-2="href" cms-block-field-expression-2="mailto:{{ email }}">
+                            E: hello@tenda21.com </a> </p>
+                        </div>
+                    </div>
+                    <!-- Column 2: Action Buttons -->
+                    <div class="flex flex-col items-start space-y-4">
+                        <a href="experiences.html" class="!text-white bg-clay-500 font-normal font-sans inline-block px-4 py-3 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800" cms-block-field="btn_experiences_link" cms-block-field-type="link" cms-block-field-title="Experiences button link" cms-block-field-2="btn_experiences_label" cms-block-field-type-2="content" cms-block-field-title-2="Experiences button label">
+                    Experiences </a>
+                        <a href="mailto:hello@tenda21.com?subject=Booking%20Inquiry" class="!text-white bg-clay-500 font-normal font-sans inline-block px-4 py-3 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800" cms-block-field="btn_book_link" cms-block-field-type="link" cms-block-field-title="Book Now button link" cms-block-field-2="btn_book_label" cms-block-field-type-2="content" cms-block-field-title-2="Book Now button label">
+                    Book Now </a>
+                        <a href="mailto:hello@tenda21.com?subject=Support%20Inquiry" class="!text-white bg-clay-500 font-normal font-sans inline-block px-4 py-3 text-center text-sm tracking-[0.12em] transition-colors uppercase hover:bg-charcoal-800" cms-block-field="btn_support_link" cms-block-field-type="link" cms-block-field-title="Support button link" cms-block-field-2="btn_support_label" cms-block-field-type-2="content" cms-block-field-title-2="Support button label">
+                    Support </a>
+                    </div>
+                    <!-- Column 3: About -->
+                    <div>
+                        <h4 class="font-medium font-sans mb-6 text-charcoal-900 text-sm tracking-[0.12em] uppercase" cms-site-name>
+                    Tenda 21 </h4>
+                        <nav class="footer-menu space-y-3" cms-menu="footer_block_one" cms-menu-register cms-menu-register-description="Footer menu Block 1">
+                            <a href="#about" class="block font-light font-sans text-charcoal-800 text-sm transition-colors hover:text-charcoal-900">
                         About Us </a>
-                            <a href="facilitators.html" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
+                            <a href="facilitators.html" class="block font-sans font-light text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors">
                         Facilitators </a>
-                            <a href="mailto:hello@tenda21.com" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
+                            <a href="#volunteering" class="block font-sans font-light text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors">
+                        Volunteering </a>
+                            <a href="mailto:hello@tenda21.com" class="block font-sans font-light text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors">
                         Contact Us </a>
-                        </nav>
-                    </div>
-                    <!-- COMMUNITY -->
-                    <div class="flex flex-col items-center">
-                        <h2 class="mb-5 font-sans text-[13px] font-normal uppercase tracking-[0.18em] text-blue_tenda-500">
-                    Community </h2>
-                        <nav class="footer-menu flex flex-col items-center gap-3" cms-menu="footer_block_two" cms-menu-register cms-menu-register-description="Footer menu Block 2" aria-label="Community footer menu">
-                            <a href="#guidelines" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
+                            <a href="#guidelines" class="block font-sans font-light text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors">
                         Community Guidelines </a>
-                            <a href="#policy" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
+                            <a href="#policy" class="block font-sans font-light text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors">
                         Cancellation Policy </a>
-                            <a href="#events" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
-                        Upcoming Events </a>
                         </nav>
                     </div>
-                    <!-- VISIT US -->
-                    <div class="flex flex-col items-center">
-                        <h2 class="mb-5 font-sans text-[13px] font-normal uppercase tracking-[0.18em] text-blue_tenda-500">
-                    Visit Us </h2>
-                        <nav class="footer-menu flex flex-col items-center gap-3" cms-menu="footer_block_three" cms-menu-register cms-menu-register-description="Footer menu Block 3" aria-label="Visit us footer menu">
-                            <a href="experiences.html" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
+                    <!-- Column 4: Visit -->
+                    <div>
+                        <h4 class="font-sans font-medium text-sm uppercase tracking-[0.12em] text-charcoal-900 mb-6" cms-block-field="visit_heading" cms-block-field-type="content" cms-block-field-title="Visit Us heading">
+                    Visit Us </h4>
+                        <nav class="footer-menu space-y-3" cms-menu="footer_block_two" cms-menu-register cms-menu-register-description="Footer menu Block 2">
+                            <a href="experiences.html" class="block font-sans font-light text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors">
                         All Experiences </a>
-                            <a href="#retreats" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
+                            <a href="#events" class="block font-sans font-light text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors">
+                        Upcoming Events </a>
+                            <a href="#retreats" class="block font-sans font-light text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors">
                         Retreats </a>
-                            <a href="#accommodation" class="font-sans text-sm font-light text-blue_tenda-500 transition-colors duration-300 hover:text-caramelo_tenda-500">
+                            <a href="#accommodation" class="block font-sans font-light text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors">
                         Accommodation </a>
                         </nav>
                     </div>
                 </div>
-                <div class="border-t border-blue_tenda-500/10 py-6">
-                    <p class="text-center font-sans text-[11px] font-light uppercase tracking-[0.18em] text-caramelo_tenda-500">
-                Tenda 21 · All rights reserved · 2026 </p>
+                <!-- Social Links & Language -->
+                <div class="flex items-center justify-between border-t border-charcoal-400/30 pt-8 mb-8">
+                    <div class="flex gap-6">
+                        <a href="#" class="font-sans text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors" cms-block-field="social_ig" cms-block-field-type="link" cms-block-field-if-empty="if" cms-block-field-title="Instagram">
+                    Instagram </a>
+                        <a href="#" class="font-sans text-sm text-charcoal-800 hover:text-charcoal-900 transition-colors" cms-block-field="social_fb" cms-block-field-type="link" cms-block-field-if-empty="if" cms-block-field-title="Facebook">
+                    Facebook </a>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="font-sans text-sm font-medium text-charcoal-900 underline">
+                    English </a>
+                        <a href="#" class="font-sans text-sm text-charcoal-700 hover:text-charcoal-900 transition-colors">
+                    Português </a>
+                    </div>
+                </div>
+                <!-- Bottom Legal -->
+                <div class="text-center border-t border-charcoal-400/30 pt-8">
+                    <p class="font-sans text-xs font-light text-charcoal-700 leading-relaxed">
+                NIF: <span cms-block-field="nif" cms-block-field-type="content" cms-block-field-title="NIF number">PT000000000</span>
+                — <a href="#privacy" class="hover:text-charcoal-900 transition-colors">Privacy Policy</a>
+                — <a href="#cookies" class="hover:text-charcoal-900 transition-colors">Cookie Policy</a>
+                — <a href="#transparency" class="hover:text-charcoal-900 transition-colors">Transparency</a>
+                — <a href="#policy" class="hover:text-charcoal-900 transition-colors">Cancellation Policy</a> </p>
                 </div>
             </div>
         </footer>
