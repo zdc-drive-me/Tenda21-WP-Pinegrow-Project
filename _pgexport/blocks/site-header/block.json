@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/site-header",
+    "title": "Site Header",
+    "description": "Site header with logo, primary navigation and language switcher",
+    "category": "tenda21_blocks",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "logo": {
+            "type": "object",
+            "default": {
+                "id": 0,
+                "url": "assets/images/home/site%20logo.webp",
+                "size": "",
+                "svg": "",
+                "alt": "Tenda 21"
+            }
+        },
+        "divider_image": {
+            "type": "object",
+            "default": {
+                "id": 0,
+                "url": "assets/images/home/menu_line_devider.webp",
+                "size": "",
+                "svg": "",
+                "alt": ""
+            }
+        },
+        "language_link_en_mobile": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "#",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "language_label_en_mobile": {
+            "type": "string",
+            "default": "EN"
+        },
+        "language_link_pt_mobile": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "#",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "language_label_pt_mobile": {
+            "type": "string",
+            "default": "PT"
+        }
+    },
+    "version": "1.0.134",
+    "editorScript": "block-tenda21-site-header-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}

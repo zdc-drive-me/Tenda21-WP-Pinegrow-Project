@@ -40,7 +40,7 @@
             "default": "Short facilitator bio."
         }
     },
-    "version": "1.0.129",
+    "version": "1.0.137",
     "editorScript": "block-tenda21-facilitators-grid-script",
     "example": {
         "attributes": {}

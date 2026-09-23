@@ -3,10 +3,10 @@
 <html <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <meta content="Pinegrow Web Editor" name="generator">
         <?php wp_head(); ?>
     </head>
-    <body class="bg-bone-200 text-charcoal-800 antialiased <?php echo implode(' ', get_body_class()); ?>">
+    <body class="antialiased bg-gray_tenda-500 <?php echo implode(' ', get_body_class()); ?>">
         <?php if( function_exists( 'wp_body_open' ) ) wp_body_open(); ?>

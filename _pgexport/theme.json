@@ -1568,6 +1568,226 @@
                     "color": "#62654d",
                     "name": "verde_oliva-950",
                     "slug": "verde_oliva-950"
+                },
+                {
+                    "color": "#eff1f3",
+                    "name": "blue_tenda-50",
+                    "slug": "blue_tenda-50"
+                },
+                {
+                    "color": "#d5dde3",
+                    "name": "blue_tenda-100",
+                    "slug": "blue_tenda-100"
+                },
+                {
+                    "color": "#bbc9d3",
+                    "name": "blue_tenda-200",
+                    "slug": "blue_tenda-200"
+                },
+                {
+                    "color": "#a2b5c3",
+                    "name": "blue_tenda-300",
+                    "slug": "blue_tenda-300"
+                },
+                {
+                    "color": "#88a1b3",
+                    "name": "blue_tenda-400",
+                    "slug": "blue_tenda-400"
+                },
+                {
+                    "color": "oklch(63.07% 0.0472 238.12)",
+                    "name": "blue_tenda-500",
+                    "slug": "blue_tenda-500"
+                },
+                {
+                    "color": "#668295",
+                    "name": "blue_tenda-600",
+                    "slug": "blue_tenda-600"
+                },
+                {
+                    "color": "#5c7688",
+                    "name": "blue_tenda-700",
+                    "slug": "blue_tenda-700"
+                },
+                {
+                    "color": "#536b7a",
+                    "name": "blue_tenda-800",
+                    "slug": "blue_tenda-800"
+                },
+                {
+                    "color": "#4a5f6d",
+                    "name": "blue_tenda-900",
+                    "slug": "blue_tenda-900"
+                },
+                {
+                    "color": "#425460",
+                    "name": "blue_tenda-950",
+                    "slug": "blue_tenda-950"
+                },
+                {
+                    "color": "#f9f5f0",
+                    "name": "sand_tenda-50",
+                    "slug": "sand_tenda-50"
+                },
+                {
+                    "color": "#f3e7d7",
+                    "name": "sand_tenda-100",
+                    "slug": "sand_tenda-100"
+                },
+                {
+                    "color": "#ecd9bf",
+                    "name": "sand_tenda-200",
+                    "slug": "sand_tenda-200"
+                },
+                {
+                    "color": "#e4cca7",
+                    "name": "sand_tenda-300",
+                    "slug": "sand_tenda-300"
+                },
+                {
+                    "color": "#dcbe8f",
+                    "name": "sand_tenda-400",
+                    "slug": "sand_tenda-400"
+                },
+                {
+                    "color": "oklch(77.74% 0.0840 79.94)",
+                    "name": "sand_tenda-500",
+                    "slug": "sand_tenda-500"
+                },
+                {
+                    "color": "#c1a26e",
+                    "name": "sand_tenda-600",
+                    "slug": "sand_tenda-600"
+                },
+                {
+                    "color": "#b09364",
+                    "name": "sand_tenda-700",
+                    "slug": "sand_tenda-700"
+                },
+                {
+                    "color": "#9e855a",
+                    "name": "sand_tenda-800",
+                    "slug": "sand_tenda-800"
+                },
+                {
+                    "color": "#8d7750",
+                    "name": "sand_tenda-900",
+                    "slug": "sand_tenda-900"
+                },
+                {
+                    "color": "#7d6947",
+                    "name": "sand_tenda-950",
+                    "slug": "sand_tenda-950"
+                },
+                {
+                    "color": "#f6f0ee",
+                    "name": "caramelo_tenda-50",
+                    "slug": "caramelo_tenda-50"
+                },
+                {
+                    "color": "#ebd8cf",
+                    "name": "caramelo_tenda-100",
+                    "slug": "caramelo_tenda-100"
+                },
+                {
+                    "color": "#e0c1b1",
+                    "name": "caramelo_tenda-200",
+                    "slug": "caramelo_tenda-200"
+                },
+                {
+                    "color": "#d4aa94",
+                    "name": "caramelo_tenda-300",
+                    "slug": "caramelo_tenda-300"
+                },
+                {
+                    "color": "#c79478",
+                    "name": "caramelo_tenda-400",
+                    "slug": "caramelo_tenda-400"
+                },
+                {
+                    "color": "oklch(64.54% 0.0877 50.59)",
+                    "name": "caramelo_tenda-500",
+                    "slug": "caramelo_tenda-500"
+                },
+                {
+                    "color": "#a97354",
+                    "name": "caramelo_tenda-600",
+                    "slug": "caramelo_tenda-600"
+                },
+                {
+                    "color": "#9a694d",
+                    "name": "caramelo_tenda-700",
+                    "slug": "caramelo_tenda-700"
+                },
+                {
+                    "color": "#8b5f45",
+                    "name": "caramelo_tenda-800",
+                    "slug": "caramelo_tenda-800"
+                },
+                {
+                    "color": "#7c543e",
+                    "name": "caramelo_tenda-900",
+                    "slug": "caramelo_tenda-900"
+                },
+                {
+                    "color": "#6d4b36",
+                    "name": "caramelo_tenda-950",
+                    "slug": "caramelo_tenda-950"
+                },
+                {
+                    "color": "#fdfefd",
+                    "name": "gray_tenda-50",
+                    "slug": "gray_tenda-50"
+                },
+                {
+                    "color": "#fcfcfb",
+                    "name": "gray_tenda-100",
+                    "slug": "gray_tenda-100"
+                },
+                {
+                    "color": "#fafbf9",
+                    "name": "gray_tenda-200",
+                    "slug": "gray_tenda-200"
+                },
+                {
+                    "color": "#f8f9f6",
+                    "name": "gray_tenda-300",
+                    "slug": "gray_tenda-300"
+                },
+                {
+                    "color": "#f6f8f4",
+                    "name": "gray_tenda-400",
+                    "slug": "gray_tenda-400"
+                },
+                {
+                    "color": "oklch(97.05% 0.0057 128.53)",
+                    "name": "gray_tenda-500",
+                    "slug": "gray_tenda-500"
+                },
+                {
+                    "color": "#dfe1dd",
+                    "name": "gray_tenda-600",
+                    "slug": "gray_tenda-600"
+                },
+                {
+                    "color": "#cbcdc9",
+                    "name": "gray_tenda-700",
+                    "slug": "gray_tenda-700"
+                },
+                {
+                    "color": "#b7b9b6",
+                    "name": "gray_tenda-800",
+                    "slug": "gray_tenda-800"
+                },
+                {
+                    "color": "#a3a5a2",
+                    "name": "gray_tenda-900",
+                    "slug": "gray_tenda-900"
+                },
+                {
+                    "color": "#90928f",
+                    "name": "gray_tenda-950",
+                    "slug": "gray_tenda-950"
                 }
             ]
         },
@@ -1577,11 +1797,6 @@
                     "fontFamily": "'Montserrat'",
                     "name": "Montserrat",
                     "slug": "montserrat"
-                },
-                {
-                    "fontFamily": "'Cormorant Garamond'",
-                    "name": "Cormorant Garamond",
-                    "slug": "cormorant-garamond"
                 }
             ]
         }

@@ -42,7 +42,7 @@
             }
         }
     },
-    "version": "1.0.129",
+    "version": "1.0.137",
     "editorScript": "block-tenda21-experience-upcoming-events-script",
     "example": {
         "attributes": {}

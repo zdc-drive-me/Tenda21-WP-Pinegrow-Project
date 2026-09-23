@@ -77,7 +77,7 @@
             }
         }
     },
-    "version": "1.0.129",
+    "version": "1.0.137",
     "editorScript": "block-tenda21-event-row-script",
     "example": {
         "attributes": {}

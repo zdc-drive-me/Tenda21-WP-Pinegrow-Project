@@ -7,5 +7,5 @@
             'metadata_path' => __DIR__,
             'js_file' => 'blocks/experience-content/experience-content.js',
             'dynamic' => true,
-            'version' => '1.0.129'
+            'version' => '1.0.137'
         ) );

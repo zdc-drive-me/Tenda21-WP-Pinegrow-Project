@@ -9,7 +9,9 @@ a:active {
     text-decoration: none;
 }
 
+
 /* Main nav */
+
 .site-main-nav a,
 .site-main-nav a:visited,
 .site-footer-nav .footer-menu a,
@@ -25,7 +27,9 @@ a:active {
     text-underline-offset: 0.18em;
 }
 
+
 /* Main nav active */
+
 .site-main-nav .current-menu-item > a,
 .site-main-nav .current_page_item > a,
 .site-main-nav .current-menu-ancestor > a,
@@ -35,7 +39,9 @@ a:active {
     text-underline-offset: 0.18em;
 }
 
-/* Footer active — support both anchor-only and wrapped output */
+
+/* Footer active */
+
 .site-footer-nav .footer-menu .current-menu-item,
 .site-footer-nav .footer-menu .current_page_item,
 .site-footer-nav .footer-menu .current-menu-ancestor,
@@ -47,4 +53,12 @@ a:active {
 .site-footer-nav .footer-menu a[aria-current="page"] {
     text-decoration: underline;
     text-underline-offset: 0.18em;
+}
+
+
+/* Mobile menu hamburger animation */
+
+[data-mobile-menu-line] {
+    transition: transform 220ms ease;
+    transform-origin: center;
 }

@@ -37,9 +37,13 @@ function tenda21_setup() {
      */
     /* Pinegrow generated Register Menus Begin */
 
+    register_nav_menu(  'lang_menu', __( 'Language Menu', 'tenda21' )  );
+
     register_nav_menu(  'footer_block_one', __( 'Footer menu Block 1', 'tenda21' )  );
 
     register_nav_menu(  'footer_block_two', __( 'Footer menu Block 2', 'tenda21' )  );
+
+    register_nav_menu(  'footer_block_three', __( 'Footer menu Block 3', 'tenda21' )  );
 
     /* Pinegrow generated Register Menus End */
     
@@ -161,10 +165,10 @@ if ( ! function_exists( 'tenda21_enqueue_scripts' ) ) :
         /* Pinegrow generated Enqueue Styles Begin */
 
     wp_deregister_style( 'tenda21-tailwind' );
-    wp_enqueue_style( 'tenda21-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', [], '1.0.129', 'all');
+    wp_enqueue_style( 'tenda21-tailwind', get_template_directory_uri() . '/tailwind_theme/tailwind.css', [], '1.0.137', 'all');
 
     wp_deregister_style( 'tenda21-style' );
-    wp_enqueue_style( 'tenda21-style', get_bloginfo('stylesheet_url'), [], '1.0.129', 'all');
+    wp_enqueue_style( 'tenda21-style', get_bloginfo('stylesheet_url'), [], '1.0.137', 'all');
 
     /* Pinegrow generated Enqueue Styles End */
 
@@ -203,27 +207,21 @@ function tenda21_blocks_init() {
     require_once 'blocks/experience-facilitator/experience-facilitator_register.php';
     require_once 'blocks/experience-hero/experience-hero_register.php';
     require_once 'blocks/experiences-cta/experiences-cta_register.php';
-    require_once 'blocks/experiences-grid/experiences-grid_register.php';
     require_once 'blocks/experiences-hero/experiences-hero_register.php';
-    require_once 'blocks/facilitator-cta/facilitator-cta_register.php';
     require_once 'blocks/facilitator-card/facilitator-card_register.php';
+    require_once 'blocks/experiences-grid/experiences-grid_register.php';
+    require_once 'blocks/facilitator-cta/facilitator-cta_register.php';
     require_once 'blocks/facilitator-hero/facilitator-hero_register.php';
-    require_once 'blocks/facilitator-meta/facilitator-meta_register.php';
     require_once 'blocks/facilitator-specialties/facilitator-specialties_register.php';
+    require_once 'blocks/facilitator-meta/facilitator-meta_register.php';
     require_once 'blocks/facilitator-upcoming-events/facilitator-upcoming-events_register.php';
     require_once 'blocks/facilitators-grid/facilitators-grid_register.php';
     require_once 'blocks/facilitators-hero/facilitators-hero_register.php';
     require_once 'blocks/experience-upcoming-events/experience-upcoming-events_register.php';
     require_once 'blocks/tenda21-page-hero-host/tenda21-page-hero-host_register.php';
     require_once 'blocks/tenda21-host-profile/tenda21-host-profile_register.php';
-    require_once 'blocks/main-navigation/main-navigation_register.php';
-    require_once 'blocks/hero-tenda21/hero-tenda21_register.php';
-    require_once 'blocks/philosophy/philosophy_register.php';
-    require_once 'blocks/experiences-block-index/experiences-block-index_register.php';
-    require_once 'blocks/space-gallery/space-gallery_register.php';
-    require_once 'blocks/practical-info/practical-info_register.php';
-    require_once 'blocks/cta-invitation/cta-invitation_register.php';
-    require_once 'blocks/footer/footer_register.php';
+    require_once 'blocks/tenda21-site-header/tenda21-site-header_register.php';
+    require_once 'blocks/site-footer/site-footer_register.php';
 
     /* Pinegrow generated Register Pinegrow Blocks End */
 }

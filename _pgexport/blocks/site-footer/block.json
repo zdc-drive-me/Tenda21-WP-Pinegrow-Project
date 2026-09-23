@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "tenda21/site-footer",
+    "title": "Site footer",
+    "description": "Footer with contact links, menus and copyright",
+    "category": "tenda21_blocks",
+    "keywords": [],
+    "supports": {},
+    "attributes": {
+        "connect_heading": {
+            "type": "string",
+            "default": "Connect"
+        },
+        "instagram_link": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "#",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "instagram_label": {
+            "type": "string",
+            "default": "Instagram"
+        },
+        "whatsapp_link": {
+            "type": "object",
+            "default": {
+                "post_id": 0,
+                "url": "#",
+                "title": "",
+                "post_type": null
+            }
+        },
+        "whatsapp_label": {
+            "type": "string",
+            "default": "WhatsApp"
+        },
+        "tenda_heading": {
+            "type": "string",
+            "default": "Tenda 21"
+        },
+        "community_heading": {
+            "type": "string",
+            "default": "Community"
+        },
+        "visit_heading": {
+            "type": "string",
+            "default": "Visit Us"
+        }
+    },
+    "version": "1.0.137",
+    "editorScript": "block-tenda21-site-footer-script",
+    "example": {
+        "attributes": {}
+    },
+    "icon": "block-default"
+}
